@@ -1,0 +1,122 @@
+\documentclass[12pt, a4paper]{report}
+\title{SUM Projekt - Kollegiekontoret}
+\author{Silas Fontain Jakobsen \and Tina Jensen \and Andreas Kristoffersen \and Jannie Gier Larsen \and Erik Holm Sejersen}
+\date{21. Maj 2012}
+
+% latex crash course: http://www.haptonstahl.org/latex/
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\begin{abstract}
+Forord
+\end{abstract}
+
+\tableofcontents
+
+\chapter*{Forundersøgelse}
+% SE PRÆSENTATION OM FORUNDERSØGELSE 3
+
+\section*{Forberedelse}
+ \begin{itemize}
+   \item Udgangspunkt
+   \item Organisering
+   \item Interessentanalyse
+   \item Metode
+ \end{itemize}
+
+\section*{Projektgrundlag}
+\subsection{Udgangspunkt}
+\subsubsection{Baggrund}
+Vi har i forbindelse med en stillet eksamensopgave taget kontakt til kollegiekontoret
+\subsubsection{Opgaven og formål}
+\subsubsection{Økonomiske og tekniske rammer}
+\subsubsection{Kritiske faktorer}
+
+\subsection{Organisering}
+\input{organisering.tex}
+\subsection{Metode}
+\subsubsection{Overodnet fremgangsmåde}
+\subsubsection{Plan}
+\subsubsection{Teknikker og beskrivelsesværktøjer}
+\subsubsection{Arbejdsform}
+
+\subsection{Underskrifter}
+
+\section*{Fokusering}
+ \begin{itemize}
+   \item Virksomhedsbeskrivelse
+
+\begin{itemize}
+
+   \item Interne forhold
+
+   \item Omgivelser
+
+   \item Foretningsstrategi og IT-strategi
+
+   \item SWOT-analyse
+
+\end{itemize}
+   \item Projektets arbejdsområder
+ \end{itemize}
+
+\section*{Fordybelse}
+\begin{itemize}
+\item Dataindsamling, beskrivelser af nuværende arbejdspraksis
+\begin{itemize}
+\item Referat af observationer og interviews
+\end{itemize}
+\item Rige billeder
+\item Diagnostiske kort, mål, problemer, behov og idéer til løsning
+\end{itemize}
+
+\section{Fornyelse}
+\begin{itemize}
+\item Visioner om den samlede forandring
+Strategi og plan for realisering
+\item Eksperimenter med prototyper
+\end{itemize}
+
+\section*{Konklusion på forundersøgelse}
+Valg af vision
+
+\chapter{Processen}
+\section{Projektetablering}
+\input{projektetablering}
+
+\section{Projektplan}
+\input{projektplan}
+
+\section{Iterationer}
+\input{iterationer}
+
+\section{Kvalitetsbeskrivelse}
+\input{kvalitetsbeskrivelse}
+
+\section{Projektevaluering}
+\input{projektevaluering}
+
+\chapter{Produktet}
+\section{Kravspecifikation}
+\input{kravspecs}
+
+\section{Testcases}
+\input{testcases}
+
+\section{Modeller}
+\input{modeller}
+
+\section{Design}
+\input{design}
+
+\section{Kode}
+\input{kode}
+
+\section{Foranalyse / Projektgrundlag}
+\input{foranalyse}
+
+
+\end{document}

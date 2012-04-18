@@ -237,45 +237,5 @@ Se bilag
 \section{Konklusion på forundersøgelse}
 Vi har været godt rundt om Kollegiekontoret, og afklaret at de har et reelt behov for en tidsvarende hjemmeside der giver en bedre servicering af ansøgere. Der er lagt op til at projektgruppen, som omfatter os som studerende implementerer vision 2 bl.a. pga. den begrænsede tid. Den manglende integrering med webbolig får ikke konsekvenser for Kollegiekontoret da de ikke regner med at få et kørende system.
 
-
-%Please edit below this point by editing files on the git repo! - AS IF
-% Lolediting trollolololol
-%FFFFFFFUUUUUUUUUUUU
-%Seriøst..
-\chapter{Processen}
-\section{Projektetablering}
-
-\section{Projektplan}
-\input{projektplan}
-
-\section{Iterationer}
-\input{iterationer}
-
-\section{Kvalitetsbeskrivelse}
-\input{kvalitetsbeskrivelse}
-
-\section{Projektevaluering}
-\input{projektevaluering}
-
-\chapter{Produktet}
-\section{Kravspecifikation}
-\input{kravspecs}
-
-\section{Testcases}
-\input{testcases}
-
-\section{Modeller}
-\input{modeller}
-
-\section{Design}
-\input{design}
-
-\section{Kode}
-\input{kode}
-
-\section{Foranalyse / Projektgrundlag}
-\input{foranalyse}
-
-
 \end{document}
 
