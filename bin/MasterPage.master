@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Ungdomsboligaarhus.dk</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+<body id="pagebody">
+    <center>
+    <table class="maintable" cellpadding="0" cellspacing="0">
+    <tr><td class="topbar"></td></tr>
+    <tr><td class="space1"></td></tr>    
+    <tr><td class="menubar">4 teh luls</td></tr>    
+    <tr><td class="space2"></td></tr>    
+    <tr><td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </td></tr>
+    <tr><td class="bottombar"></td></tr>   
+    </table>
+    </center>
+</body>
+</html>

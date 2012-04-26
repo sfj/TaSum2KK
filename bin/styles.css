@@ -1,0 +1,39 @@
+﻿#bodytable
+{
+    background-color: #ffffff;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    color: #222222;
+    padding: 0px;
+    margin: 0px;
+    font-size: 11px;
+    
+}
+.maintable 
+{
+    width: 970px;
+    background-color: #f8f8f8;    
+}
+.topbar
+{
+    height: 15px;
+}
+.space1
+{
+    height: 80px;    
+}
+.menubar
+{
+    height: 29px;
+    background-color: #66ccee;
+}
+.space2
+{
+    height: 20px;
+}
+.bottombar
+{
+    height: 30px;
+}
+
+
+
