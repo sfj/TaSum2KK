@@ -14,7 +14,11 @@
     <table class="maintable" cellpadding="0" cellspacing="0">
     <tr><td class="topbar"></td></tr>
     <tr><td class="space1"></td></tr>    
-    <tr><td class="menubar">4 teh luls</td></tr>    
+    <tr><td class="menubar">
+    
+        <table><tr><asp:PlaceHolder ID="Menu" runat="server"></asp:PlaceHolder></tr></table>
+
+    </td></tr>    
     <tr><td class="space2"></td></tr>    
     <tr><td>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
