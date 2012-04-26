@@ -12,6 +12,8 @@
 \usepackage[a4paper,margin=2.5cm,headheight=2cm]{geometry}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{sidecap}
 \pagestyle{fancy} %skift til fancy
 \fancyhead[L]{Kollegiekontoret}
 \fancyhead[R]{\today}
@@ -41,8 +43,7 @@ Forord
 \chapter{Forundersøgelse}
 
 \section{Forberedelse og projektgrundlag}
-På vores indledende projektetableringsmøde blev vi enige om at vi alle var klar over projektets omfang, men måtte også indse at vi med al sandsynlighed ikke når at levere et færdigt og brugbart produkt indenfor den afsatte tid.
-Derfor har vi valgt at vi gerne vil arbejde med en agil metode, der bl.a. sikrer at vi når at lære noget om udviklingsprocessen involveret i det, og fordi det også har være salgstalen overfor Kollegiekontoret, så de får en smag for den side af udviklingsverdenen inden de endeligt får løst deres behov for en hjemmeside.
+På vores indledende projektetableringsmøde blev vi enige om projektets omfang og blev enige om, at vi med al sandsynlighed ikke når at levere et færdigt og brugbart produkt indenfor den afsatte tid.
 
 \subsubsection{Baggrund}
 Vi har i forbindelse med en stillet eksamensopgave taget kontakt til Kollegiekontoret, da de har et kommende IT projekt med henblik på at få opgraderet deres hjemmeside til udlejning af ungdomsboliger.
@@ -58,11 +59,11 @@ Det er ikke målet at vi på den afsatte tid når at udvikle et kørende system,
 
 \subsection{Organisering}
 \subsubsection{Projektets organisering}
-Projektgruppen består primært at de fem undertegnede, hvoraf Tina Jensen er valgt som formel leder af gruppen. Kollegiekontorets interesser kan repræsenteres i projektgruppen af Silas F. Jakobsen der er medlem af Kollegiekontorets Forretningsudvalg. Kontakterne der arbejder til dagligt på Kollegiekontoret er informationsmedarbejder Lene Billeskov Jensen og administrationschef Diana Jørgensen. Andreas Kristoffersen er valgt som ansvarlig for versions og dokumentstyring.
+Projektgruppen består primært at de fem undertegnede, hvoraf Tina Jensen er valgt som formel leder af gruppen. Kollegiekontorets interesser kan repræsenteres i projektgruppen af Silas F. Jakobsen der er medlem af Kollegiekontorets Forretningsudvalg. Kontakterne der arbejder til dagligt på Kollegiekontoret er informationsmedarbejder Lene Billeskov Jensen og administrationschef Diana Jørgensen. Andreas Kristoffersen er valgt som ansvarlig for versions- og dokumentstyring.
 I princippet kunne en formel styregruppe etableres med kontaktpersonerne fra kollegiekontoret, men da dette også er et læringsprojekt vil vi alle gerne være lidt involveret i beslutningsprocesserne, og når hele projektgruppen indgår er det lidt strakt at kalde det en styregruppe.
 
 \subsubsection{Ressourcer}
-Uden tildelte økonomiske midler må vi anvende de gratis værktøjer vi kan få fat i, heldigvis er det er udbudet af gratis værktøjer ganske omfattende, og vi har opsat infrastruktur i for af dokumentstyring og versionskontrol, og vi har de nødvendige udviklingsværktøjer til rådighed.
+Uden tildelte økonomiske midler må vi anvende de gratis værktøjer vi kan få fat i, heldigvis er det er udbudet af gratis værktøjer ganske omfattende, og vi har opsat infrastruktur i form af dokumentstyring og versionskontrol, og vi har de nødvendige udviklingsværktøjer til rådighed.
 
 \subsubsection{Interessenter}
 Vi vurderer, at der på projektet findes følgende relevante og klart definerede interessenter:
@@ -74,35 +75,23 @@ Vi vurderer, at der på projektet findes følgende relevante og klart definerede
 \item Udviklere: Team Awesome
 \item Testere: Team Awesome
 \item Konsulent: Hanne Sommer
-\end{itemize]}
+\end{itemize}
 
 \begin{figure}[h!]
- \caption{Figur, der viser interessenternes indflydelse.}
-   \includegraphics[width=0.5\textwidth]{dickbutt}
+\includegraphics[width=0.5\textwidth]{interessenter}
+\caption{Figur, der viser interessenternes indflydelse.}
 \end{figure}
-
-% http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Figures
-
 
 \begin{figure}[h!]
- \caption{Figur, der viserinteressenternes succeskriterier .}
-   \includegraphics[width=0.5\textwidth]{success}
+  \includegraphics[width=0.5\textwidth]{succeskriterium}
+  \caption{Figur, der viserinteressenternes succeskriterier .}
 \end{figure}
 
-Idet vi grundet projektets størrelse er kommet frem til, at et færdigt produkt næppe vil kunne leveres indenfor tidsfristen, er der opnået et fælles mål fra leverandørens såvel som fra kundens side, om fokus på læringsprocessen. For kunden er det vigtigt at opleve, hvordan et udviklingsforløb er. Det indebærer, at det i høj grad er leverandøren (og dermed også projektlederen), der i sidste ende tager beslutninger angående projektet.
+En mulig konflikt i vores succeskriterier - i og med at der er tale om et skoleprojekt - kan være at vi som studerende har mere fokus på at lære noget, end at levere noget kunden kan bruge og bliver tilfreds med. Udviklingsforløbet er en læreproces for os, som derfor vil bruge længere tid på hver enkelt del end en udvikler fra erhvervslivet, og vi vil lave flere eksperimenter med hvordan produktet skal fungere, som måske ikke er forenlige med kundens forestillinger om et færdigt system.
 
-\subsection{Turboanalyse}
-\begin{tabular}{| l | l | l | l |}
-\hline
-Mål og vilkår & Særlig styrke & Særlig svaghed & Mulige beslutninger \\ \hline
-Teknikken &  & Usikkerhed om nuværende anvendt teknik & Vi kan starte fra bunden, fremfor at bygge ovenpå eksisterende \\ \hline
-Udviklerne &  & Uerfarne & Vi skal være forberedte på at få hjælp fra undervisere. \\ \hline
-Resultat & Skal ikke blive færdigt, da det ikke er målet &  & Fokuser på at lære noget \\ \hline
-Brugerne & Brugerne har svært ved at fravælge produktet &  &  \\ \hline
-Omgivelserne &  & Projektgruppen har andre opgaver under forløbet & Afstem forventninger og prioriteter \\ \hline
-& \multicolumn{3}{| c |}{Projektets strategi} \\ \hline
-Sammenfatning & \multicolumn{3}{| l |}{ Vi starter umiddelbart udviklingsprojektet fra bar bund, og satser ikke på at levere et færdig produkt, men at vi lærer noget af proccessen ved et udviklingsprojekt. Vi vil også være eksperimenterende i idéerne så der kan komme noget brugbart og inspirerende ud af projektet for alle parter. } \\ \hline
-\end{tabular}
+Grundet projektets størrelse er det næppe sandsynligt at et færdigt system vil kunne leveres indenfor tidsfristen, er der opnået et fælles mål fra leverandørens såvel som fra kundens side, om fokus på læringsprocessen. For kunden er det vigtigt at opleve, hvordan et udviklingsforløb er. Det indebærer, at det i høj grad er leverandøren (og dermed også projektlederen), der i sidste ende tager beslutninger angående projektet.
+
+
 
 \subsection{Risikoanalyse}
 \subsubsection{Produkt}
@@ -110,11 +99,12 @@ Sammenfatning & \multicolumn{3}{| l |}{ Vi starter umiddelbart udviklingsprojekt
 \subsubsection{Proces}
 
 \subsubsection{Personressourcer}
-Hele holdet har taget en TRAP test. Testen viste at holdet har balance i de fleste punkter men har en manglende evne i kommunikation. Holdet har ellers medlemmer, som har mindst 15 point i de andre kategorier mens den højeste scorer i kommunikation kun er ca. 11 point. Selvom kommunikationen er lav kender hele holdet hinanden forholdsvis godt, da vi har arbejdet sammen flere gange før.
-TRAP testen skal ikke bruges som factum men mere skal bruges som en test der giver et fingerpeg om hvordan gruppen er, og hvilken form for samarbejde man kan forvente.
+Hele holdet har taget en TRAP-test. Testen viste at holdet har balance i de fleste punkter men har en manglende evne i kommunikation. Holdet har ellers medlemmer, som har mindst 15 point i de andre kategorier mens den højeste scorer i kommunikation kun er ca. 11 point. Selvom kommunikationen er lav kender hele holdet hinanden forholdsvis godt, da vi har arbejdet sammen flere gange før.
+TRAP-testen skal ikke ses som endegyldige fakta, men mere skal bruges som en test der giver et fingerpeg om hvordan gruppen er sammensat, og hvordan de enkeltes styrker dækker de andres svagheder ind. Testen giver også et overbliksbillede over gruppens generelle svagheder, som vi skal være særligt opmærksomme på. De områder hvor flere gruppemedlemmer er mindre stærke, kræver fælles indsats for at opnå bedst mulig synergi på området.
+
 \begin{figure}[h!]
- \caption{Figur, der viser resultatet af TRAP-testen.}
-   \includegraphics[width=0.5\textwidth]{itsaTRAP}
+\includegraphics[width=0.5\textwidth]{itsaTRAP}
+\caption{Figur, der viser resultatet af TRAP-testen.}
 \end{figure}
 
 \subsubsection{Aftaler og koordinering}
@@ -126,8 +116,8 @@ Vi har lært om at bruge MUST-metoden, og det er overordnet denne metode vi vil 
 
 \subsubsection{Plan}
 \begin{figure}[h!]
- \caption{Billede af planen.}
-   \includegraphics[width=0.5\textwidth]{forundersøgelsesplan}
+\includegraphics[width=0.5\textwidth]{forundersoegelsesplan.jpg}
+\caption{Billede af planen.}
 \end{figure}
 
 \subsubsection{Teknikker og beskrivelsesværktøjer}
@@ -138,62 +128,80 @@ Internt i projektgruppen forventer vi at arbejde samme i løse grupper og indivi
 I det daglige vil vi bruge opslagstavler og alm. tavler til at holde styr på organiseringen.
 
 \section{Fokusering}
- \subsection{Virksomhedsbeskrivelse}
+\subsection{Virksomhedsbeskrivelse}
 Hvis man er ung og skal i uddannelse eller er i gang med en uddannelse i Aarhus vil man med høj sandsynlighed benytte Ungdomsbolig Aarhus for at finde en bolig. På Ungdomsbolig Aarhus hjemmeside søger unge efter en ungdomsbolig. Hjemmesiden holder styr på unge der ansøger og boligforeninger som har boliger der skal beboes. De står for at udsende tilbud når boliger bliver frie, og for opsigelse af boliger.
-   \subsubsection{Interne forhold}
+
+  \subsubsection{Interne forhold}
 De ansatte ved kollegiekontoret er primært kontorarbejdere der administrerer ungdomsboligerne igennem webbolig, der er et ERP værktøj for boliger. Arbejdet består bl.a i at tildele tilbud til ansøgere ved ledige boliger og opsige aftaler, samt rydde op i information som brugerne indtaster forkert, fx dobbelte ansøgninger. Opgaven er til dels papirtung da der anvendes udkørsler fra systemet som en oversigt over ledige boliger der skal tildeles. Arbejdsfordelingen er ret afklaret, og webbolig fungerer rimelig effektivt til at klare opgaven. Arbejdsgangen er tilrettelagt for at undgå fejl der kan medføre lejetab for de kollegier der administreres, omend i en idéel verden udføres der et arbejde der fra et teknisk synspunkt godt kunne automatiseres.
 
 Ønsket om forandring ligger derimod i præsentationen af data ind/ud fra brugerne, der groft sagt er meget basal og uoverskuelig for mange. Der er ønsker om at gøre det lettere at udvælge relevante boliger i forbindelse med oprettelse af ansøgning, så det mindsker antallet af fejl brugerne laver, samt reducerer behovet for henvendelser fra ansøgere der ikke har kunnet overskue systemet.
-   \subsubsection{Omgivelser}
+  \subsubsection{Omgivelser}
 Da man som ung boligsøgende under uddannelse reelt ikke har et andet alternativ end ungdomsbolig Århus har de tilnærmelsesvis opnået et markedsmonopol. Markedssituationen i sig selv må ses som værende stabilt, om end der typisk er større efterspørgsel end udbud. Det er dog ikke faktorer, som Kollegiekontoret som sådan hverken kan eller skal ændre på. Det er naturligvis nødvendigt at indrette sig efter den gældende lovgivning på området, og til dels også boligforeningerne, som de har et tæt samarbejde med.
 
 \subsubsection{SWOT-analyse}
 \begin{tabular}{ | l | r | }
- \hline
- Styrker & Svagheder \\
- Markedsmonopol & Ingen konkurrence → Ingen fornyelse \\
- Stabilt marked & Umiddelbart ingen mulighed for markedsekspansion \\
+\hline
+Styrker & Svagheder \\ \hline
+Markedsmonopol & Ingen konkurrence -> Ingen fornyelse \\
+Stabilt marked & Umiddelbart ingen mulighed for markedsekspansion \\ \hline
 Muligheder & Trusler \\
 Teknologisk udvikling & \\
- \hline
+\hline
 \end{tabular}
-Idet Kollegiekontoret på dette område tilnærmelsesvis har monopol på markedet, har de ikke behov for at fornye sig. De har dog heller ikke umiddelbart mulighed for det da markedets situation hele tiden er mere eller mindre stabil i forhold til målgruppen. De ønsker alligevel at levere en god service til deres brugere, hvor det ses at man kan udnytte den teknologiske udvikling til eks. at lave en bedre hjemmeside. Umiddelbart har de ingen eksterne trusler idet markedet er statisk.
+\newline
+Idet Kollegiekontoret på dette område tilnærmelsesvis har monopol på markedet, har de ikke behov for at forny sig. De har dog heller ikke umiddelbart mulighed for det da markedets situation hele tiden er mere eller mindre stabil i forhold til målgruppen. De ønsker alligevel at levere en god service til deres brugere, hvor det ses at man kan udnytte den teknologiske udvikling til eks. at lave en bedre hjemmeside. Umiddelbart har de ingen eksterne trusler idet markedet er statisk.
 
-   \subsubsection{IT-strategi}
+  \subsubsection{IT-strategi}
 Kollegiekontoret har ikke en decideret IT-strategi, men der er fokus på IT i deres aktivitetsmål. De relevante delmål går ud på at få bedre IT-systemer og lettere (kortere) arbejdsgange i administrationen. Disse mål skal opnås ved en mere sammenhængende elektronisk håndtering. Under mødet d. 16. april 2012 kom det også frem at de ønsker fremtidig fokus på brugervenlighed, som undgomsboligaarhus.dk skal afspejle. I den forbindelse har vi fået en behovspecifikation, som er baseret på feedback de har fået fra brugere.
 
-   \subsection{Projektets arbejdsområder}
-- Mere brugervenlig og tidssvarende brugeroplevelse af ungdomsboligaarhus.dk
-- Mere stabilt
-- Øget funktionalitet i præsentation af data og søgekriterier
+  \subsection{Projektets arbejdsområder}
+- Mere brugervenlig og tidssvarende brugeroplevelse af ungdomsboligaarhus.dk \newline
+- Mere stabilt \newline
+- Øget funktionalitet i præsentation af data og søgekriterier \newline
 
 \section{Fordybelse}
 \subsubsection{Referat af observationer og interviews}
-\subsubsubsection{Møde hos Kollegiekontoret d. 16/4-2012}
-På mødet var der fokus på Kollegiekontorets bevæggrunde for ønske af et nyt system, og hvad de forventer det nye system skal kunne i forhold til det gamle. Der blev talt en del om at brugeren på den nye hjemmeside skal have en bedre oplevelse end på den gamle, samt at den nuværende hjemmeside har problemer med stabilitet, som den nye skal løse. Problemer ved den nuværende hjemmeside er udspecificerede i det diagnostiske kort nedenunder.
+\paragraph{Møde hos Kollegiekontoret d. 16/4-2012}
+På mødet var der fokus på Kollegiekontorets bevæggrunde for ønske af et nyt system, og hvad de forventer det nye system skal kunne i forhold til det gamle. Der blev talt en del om at brugeren på den nye hjemmeside skal have en bedre oplevelse end på den gamle, samt at den nuværende hjemmeside har problemer med stabilitet, som den nye skal løse. Problemer med den nuværende arbejdssituation er udspecificerede i det diagnostiske kort nedenunder.
 Desuden observerede vi, hvordan de bruger deres system i praksis og hvordan deres arbejdsproces med ansøgningerne og opdatering af hjemmesiden foregår. Dette havde til formål at finde frem til måder hvorpå det nye system kan effektivisere processen.
 
+\subsubsection{Arbejdsgange}
+\paragraph{Tildeling af bolig} foregår i webbolig, hvor en udlejningsmedarbejder har udkørsler med ledige boliger, der sammenholdes med en liste produceret i webbolig over ansøgere med længst anciennitet og evt. andre boligtilbud udsendt for nylig.
+
+\paragraph{Retning af brugerdata} administreres ofte af medarbejderen, der må sidde med udkørsler og sammenligne brugere med enslydende navne for at rydde op i dobbelte ansøgere.
+
 \subsection{Rige billeder}
-\begin{figure}[h!]
- \caption{Rigt billede.}
-   \includegraphics[width=0.5\textwidth]{rigtbillede}
+Se Figur ~\ref{r_billede}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{rigtbillede}
+\caption{Rigt billede.}
+\label{r_billede}
 \end{figure}
 
 \subsection{Diagnostiske kort}
-\begin{tabular}{| l | l | l | l |}
+Se: Tabel ~\ref{d_kort}
+\begin{table}
+\caption{Diagnostiske kort}
+\label{d_kort}
+\begin{tabular}{| p{4cm} | p{4cm} | p{4cm} | p{4cm} |}
 \hline
 Problem & Årsag & Konsekvens & Ideer til løsning \\ \hline
-Information forsvinder i systemet \tabularnewline Siden kan kun bruges optimalt i IE & Brugere logges ud under ansøgning \tabularnewline Informationer kan forsvinde ved for mange opdateringer \tabularnewline Bøvlet opdateringsproces \tabularnewline Dårlig kode & Frustrede ansøgere \tabularnewline Klager & Fejl lokaliseres \tabularnewline Der startes forfra \\ \hline
+Information forsvinder i systemet. \newline Siden kan kun bruges optimalt i IE. & Brugere logges ud under ansøgning. \newline Informationer kan forsvinde ved for mange opdateringer. \newline Bøvlet opdateringsproces. \newline Dårlig kode. & Frustrede ansøgere. \newline Klager. & Fejl lokaliseres. \newline Der startes forfra. \\ \hline
 
-Siden er svær at navigere & Layoutet er ikke intuitivt eller sammenhængende & Brugeren finder ikke den ønskede information & Mere gennemtænkt og brugervenligt layout \\ \hline
+Siden er svær at navigere. & Layoutet er ikke intuitivt eller sammenhængende. & Brugeren finder ikke den ønskede information. & Mere gennemtænkt og brugervenligt layout. \\ \hline
 
-Siden er uoverskuelig & Mangel på søgekriterier & Frustrerede ansøgere \tabularnewline Ansøgere havner måske et sted de ikke havde tænkt sig & Etablering af søgefunktion \\ \hline
+Oprydning i information brugeren taster forkert. & Besværligt loginsystem & Ekstra arbejde med at vedligeholde data & Login systemet gentænkes \\ \hline
 
-Besværlig login proces & Autogenererede login oplysninger & Ansøgerne opretter nye ansøgninger istedet for at bruge den allerede oprettede & Brugerne får selv mulighed for at oprette et personligt login \\ \hline
+Bruger meget papir på store udkørsler. & Mange data der skal sammenholdes. & Papirspild & Bedre repræsentation af data i systemet \newline Opgraderet arbejdsplads med to skærme i stedet for én \\ \hline
 
-Nedbrud i systemer & Forskellige leverandører af systemer til hjemmesider og webbolig & Dyr vedligeholdelse og fejlretning & Bedre kvalitet i løsninger \tabularnewline Brug samme leverandør, giv dem et samlet ansvar \\ \hline
+Siden er uoverskuelig. & Mangel på søgekriterier. & Frustrerede ansøgere. \newline Ansøgere havner måske et sted de ikke havde tænkt sig. & Etablering af søgefunktion. \\ \hline
+
+Besværlig login proces. & Autogenererede login oplysninger. & Ansøgerne opretter nye ansøgninger istedet for at bruge den allerede oprettede. & Brugerne får selv mulighed for at oprette et personligt login. \\ \hline
+
+Nedbrud i systemer. & Forskellige leverandører af systemer til hjemmesider og webbolig. & Dyr vedligeholdelse og fejlretning. & Bedre kvalitet i løsninger. \newline Brug samme leverandør, giv dem et samlet ansvar. \\ \hline
 
 \end{tabular}
+\end{table}
 
 \subsection{Mål}
 \begin{enumerate}
@@ -214,17 +222,17 @@ Samlet set er problemerne for Kollegiekontoret ikke så omfattende, og kræver i
 
 \subsection{Visioner om den samlede forandring}
 \subsubsection{Vision 1}
-Tilretning af eksisterende hjemmeside.
+Tilretning af eksisterende hjemmeside, hvor den oprindelige kode opgraderes med yderligere funktionalitet og nuværende fejl rettes så brugerne får en bedre oplevelse med hjemmesiden og der bliver færre inputfejl at rette i de bagvedliggende data.
 
-Denne vision er ikke let at implementere i praksis, da vi ikke har adgang til det eksisterende system internt, og da det er så ukompatibelt med de nye tanker om hvordan systemet skal virke at det ville være urentabelt at bruge denne fremgangsmåde. Fordelen kunne være at det ville være en billig lappeløsning på problemerne, men de eksisterende småproblemer kan vokse sig større. Det kunne også være at systemet er konstrueret dårligt og derfor ville tage lang tid at sætte sig ind i systemet og rette på det uden at forårsage nye fejl.
+Dennes vision er ikke let at implementere i praksis, da vi ikke har adgang til det eksisterende system internt, og da det er så ukompatibelt med de nye tanker om hvordan systemet skal virke at det ville være urentabelt at bruge denne fremgangsmåde. Fordelen kunne være at det ville være en billig lappeløsning på problemerne, men de eksisterende småproblemer kan vokse sig større. Det kunne også være at systemet er konstrueret dårligt og derfor ville tage lang tid at sætte sig ind i systemet og rette på det uden at forårsage nye fejl.
 
 \subsubsection{Vision 2}
-Gentænkning af systemet og efterfølgende ny implementation.
+Gentænkning af systemet og efterfølgende ny implementation, hvor der skrives helt ny kode helt fra bunden af, og alle eksisterende fejl derfor elimineres og ny funktionalitet kan tilføjes uden hensyntagen til kompatibilitet med oprindelige systemer.
 
 Dette kan gennemføres i praksis og være en rentabel løsning. Det tager sandsynligvis ikke længere tid end at rette i den eksisterende løsning, og resultatet vil være mere helt, og lettere og billigere at opdatere i fremtiden, og det vil være lettere at udføre vision 3.
 
 \subsubsection{Vision 3}
-Implementation af integrering af webbolig.
+Implementation af integrering af Webbolig, som er en udbygning af scenariet beskrevet i Vision 2, og indebærer fuld kompatibilitet med systemet Webbolig.
 
 En fuld integration vil være meget svær at kunne lave på den afsatte tid. Det er derfor ikke noget vi vil bestræbe os på at opnå, men det er et oplagt fremtidsprojekt.
 
@@ -237,45 +245,116 @@ Se bilag
 \section{Konklusion på forundersøgelse}
 Vi har været godt rundt om Kollegiekontoret, og afklaret at de har et reelt behov for en tidsvarende hjemmeside der giver en bedre servicering af ansøgere. Der er lagt op til at projektgruppen, som omfatter os som studerende implementerer vision 2 bl.a. pga. den begrænsede tid. Den manglende integrering med webbolig får ikke konsekvenser for Kollegiekontoret da de ikke regner med at få et kørende system.
 
-
 %Please edit below this point by editing files on the git repo! - AS IF
 % Lolediting trollolololol
 %FFFFFFFUUUUUUUUUUUU
 %Seriøst..
+%Det fungerer jo ikke i multiplayer.. latexforholdet er anstrengt nok i forvejen
+
 \chapter{Processen}
 \section{Projektetablering}
+%TODO Rewrite
+
+Vi har lavet meget teambuilding
+Indledende snakket med kollegiekontoret om at arbejde med en agil metode
+
+\subsection{Turboanalyse}
+\begin{tabular}{| p{3cm} | p{3cm} | p{3cm} | p{5cm} |}
+\hline
+Mål og vilkår & Særlig styrke & Særlig svaghed & Mulige beslutninger \\ \hline
+Teknikken &  & Usikkerhed om nuværende anvendt teknik & Vi kan starte fra bunden, fremfor at bygge ovenpå eksisterende \\ \hline
+Udviklerne &  & Uerfarne & Vi skal være forberedte på at få hjælp fra undervisere. \\ \hline
+Resultat & Skal ikke blive færdigt, da det ikke er målet &  & Fokuser på at lære noget \\ \hline
+Brugerne & Brugerne har svært ved at fravælge produktet &  &  \\ \hline
+Omgivelserne &  & Projektgruppen har andre opgaver under forløbet & Afstem forventninger og prioriteter \\ \hline
+& \multicolumn{3}{| c |}{Projektets strategi} \\ \hline
+Sammenfatning & \multicolumn{3}{| p {11cm} |}{ Vi starter umiddelbart udviklingsprojektet fra bar bund, og satser ikke på at levere et færdig produkt, men at vi lærer noget af proccessen ved et udviklingsprojekt. Vi vil også være eksperimenterende i idéerne så der kan komme noget brugbart og inspirerende ud af projektet for alle parter. } \\ \hline
+\end{tabular}
+
+\subsection{Risikoanalyse}
+
+\begin{tabular}{| p {5cm} | p{2cm} | p{2cm} | p{2cm} | p{4cm} |}
+\hline
+Risici & Sandsynlighed & Alvorlighed & Riskotal (Sandsynlighed * alvor) & Håndtering \\ \hline
+For lidt viden om det eksisterende system & 37 & 3 & 111 & Kommunikere ofte med kunden \\ \hline
+Miskommunikation med kunden & 10 & 7 & 70 & Opnå enighed i gruppen om kundens udmeldinger \\ \hline
+Manglende kommunikation internt i projektteamet & 5 & 8 & 40 & Være åbne overfor hinanden \\ \hline
+Manglende teknisk viden hos udviklerne & 25 & 3 & 75 & Søge hjælp ved lærere, hinanden og internettet \\ \hline
+Sygdom i teamet & 75 & 3 & 225 & Tage højde for dette i planlægning og metodevalg \\ \hline
+Tekniske problemer med udviklingsværktøjer & 80 & 1 & 80 & Vælge værktøjer vi ved fungerer godt og søge teknisk hjælp hvis det alligevel ikke fungerer \\ \hline
+Mangelfuld planlægning fra udviklernes side & 10 & 4 & 40 & Holde møder ofte og vælge en udviklingsmetode der understøtter tæt kommunikation \\ \hline
+\end{tabular}
+
+\subsection{Metodevalg}
+
+Projektets karakter gør det oplagt at bruge agile metoder, da der er brug for en tæt kontakt mellem os som udviklere og kollegiekontoret, da der er en vis usikkerhed i kravene til systemet og ikke så klare retningslinjer for dets funktionalitet. Personalet er ikke særligt teknisk anlagt, og vi har ikke noget stort indblik i det eksisterende systems implementation og funktioner.
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{amoebe}
+\caption{Boehms Dimensioner}
+\label{amoeb}
+\end{figure}
+
+Figur ~\ref{amoeb} viser forholdet mellem opgavens kompleksitet, antallet af personer på projektteamet, kundens afhængighed af systemet, projektmedlemmernes evne til at arbejde agilt og produktkravenes foranderlighed.
+
+Derfor har vi valgt at vi gerne vil arbejde med en agil metode, der bl.a. sikrer at vi når at lære noget om udviklingsprocessen involveret i det, og fordi det også har være salgstalen overfor Kollegiekontoret, så de får en smag for den side af udviklingsverdenen inden de endeligt får løst deres behov for en ny hjemmeside.
+
+Vi har endeligt valgt SCRUM som udviklingsmetode, da vi gerne selv vil prøve at arbejde efter en ny metode, og da principperne i SCRUM passer godt til projektets lidt usikre og udefinerede karakter.
+
+\subsection{Projektets organisering}
+Overordnet set er vi alle ansvarlige for at projektet går godt, da en af hovedkarakteristika ved agil udvikling er en flad organisatorisk struktur med fælles ansvarsfordeling i et projektteam. Teamet har en ansvarlig for overholdelse af metoden, en SCRUM-master. Der er i metoden også brug for en ansvarlig til at opretholde en Product Backlog for kunden, denne er Product Owner.
+
+SCRUM-Master: Tina Jensen \newline
+Product Owner: Erik Sejersen \newline
+Dokument- og versionsstyring: Andreas Kristoffersen \newline
 
 \section{Projektplan}
-\input{projektplan}
+
 
 \section{Iterationer}
-\input{iterationer}
+
 
 \section{Kvalitetsbeskrivelse}
-\input{kvalitetsbeskrivelse}
+
 
 \section{Projektevaluering}
-\input{projektevaluering}
+
 
 \chapter{Produktet}
 \section{Kravspecifikation}
-\input{kravspecs}
+
 
 \section{Testcases}
-\input{testcases}
+
 
 \section{Modeller}
-\input{modeller}
+
 
 \section{Design}
-\input{design}
+
 
 \section{Kode}
-\input{kode}
 
-\section{Foranalyse / Projektgrundlag}
-\input{foranalyse}
 
+\chapter{Bilag}
+
+\begin{SCfigure}
+\includegraphics[width=0.5\textwidth]{eksperiment_forside}
+\caption{Eksperiment: Forside med nyheder som hovedelementet, en simpel menu i toppen giver bedre overblik og navigation}
+\label{e_forside}
+\end{SCfigure}
+
+\begin{SCfigure}
+\includegraphics[width=0.5\textwidth]{eksperiment_liste}
+\caption{Eksperiment: Liste / Søgeresultat med fokus på det værelse der passer til søgningen men stadig med data fra den afdeling det hører under}
+\label{e_liste}
+\end{SCfigure}
+
+\begin{SCfigure}
+\includegraphics[width=0.5\textwidth]{eksperiment_soeg}
+\caption{Eksperiment: Avanceret søgning. Overblik over de muligheder der kunne være i en avanceret og tilpasset søgning, layout vil blive optimeret.}
+\label{e_soeg}
+\end{SCfigure}
 
 \end{document}
 
