@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 
 [assembly: EdmRelationshipAttribute("tempdbModel", "FK__menu__page_type__32E0915F", "skabelon", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(tempdbModel.skabelon), "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(tempdbModel.menu), true)]
 [assembly: EdmRelationshipAttribute("tempdbModel", "FK__menu__parent__33D4B598", "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(tempdbModel.menu), "menu1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(tempdbModel.menu), true)]
+[assembly: EdmRelationshipAttribute("tempdbModel", "FK__tekst__side_id__3C69FB99", "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(tempdbModel.menu), "tekst", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(tempdbModel.tekst), true)]
 
 #endregion
 
@@ -106,6 +107,22 @@ namespace tempdbModel
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<tekst> teksts
+        {
+            get
+            {
+                if ((_teksts == null))
+                {
+                    _teksts = base.CreateObjectSet<tekst>("teksts");
+                }
+                return _teksts;
+            }
+        }
+        private ObjectSet<tekst> _teksts;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<user> users
         {
             get
@@ -136,6 +153,14 @@ namespace tempdbModel
         public void AddToskabelons(skabelon skabelon)
         {
             base.AddObject("skabelons", skabelon);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the teksts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToteksts(tekst tekst)
+        {
+            base.AddObject("teksts", tekst);
         }
     
         /// <summary>
@@ -450,6 +475,28 @@ namespace tempdbModel
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("tempdbModel", "FK__tekst__side_id__3C69FB99", "tekst")]
+        public EntityCollection<tekst> teksts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tekst>("tempdbModel.FK__tekst__side_id__3C69FB99", "tekst");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tekst>("tempdbModel.FK__tekst__side_id__3C69FB99", "tekst", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -553,6 +600,174 @@ namespace tempdbModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<menu>("tempdbModel.FK__menu__page_type__32E0915F", "menu", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tempdbModel", Name="tekst")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tekst : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tekst object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        public static tekst Createtekst(global::System.Int32 id)
+        {
+            tekst tekst = new tekst();
+            tekst.id = id;
+            return tekst;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String text_dk
+        {
+            get
+            {
+                return _text_dk;
+            }
+            set
+            {
+                Ontext_dkChanging(value);
+                ReportPropertyChanging("text_dk");
+                _text_dk = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("text_dk");
+                Ontext_dkChanged();
+            }
+        }
+        private global::System.String _text_dk;
+        partial void Ontext_dkChanging(global::System.String value);
+        partial void Ontext_dkChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String text_en
+        {
+            get
+            {
+                return _text_en;
+            }
+            set
+            {
+                Ontext_enChanging(value);
+                ReportPropertyChanging("text_en");
+                _text_en = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("text_en");
+                Ontext_enChanged();
+            }
+        }
+        private global::System.String _text_en;
+        partial void Ontext_enChanging(global::System.String value);
+        partial void Ontext_enChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> side_id
+        {
+            get
+            {
+                return _side_id;
+            }
+            set
+            {
+                Onside_idChanging(value);
+                ReportPropertyChanging("side_id");
+                _side_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("side_id");
+                Onside_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _side_id;
+        partial void Onside_idChanging(Nullable<global::System.Int32> value);
+        partial void Onside_idChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("tempdbModel", "FK__tekst__side_id__3C69FB99", "menu")]
+        public menu menu
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("tempdbModel.FK__tekst__side_id__3C69FB99", "menu").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("tempdbModel.FK__tekst__side_id__3C69FB99", "menu").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<menu> menuReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("tempdbModel.FK__tekst__side_id__3C69FB99", "menu");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<menu>("tempdbModel.FK__tekst__side_id__3C69FB99", "menu", value);
                 }
             }
         }
