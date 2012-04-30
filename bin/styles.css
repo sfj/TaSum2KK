@@ -84,6 +84,30 @@ a:hover.dd_menulink
 {
     height: 20px;
 }
+.left
+{
+    width: 550px;   
+}
+.logintext
+{
+    width: 100px;
+}
+.loginuser
+{
+    width: 100px;
+}
+.loginpass
+{
+    width: 100px;
+}
+.loginbutton
+{
+    width: 80px;
+}
+.right
+{
+    width: 40px;
+}
 .bottombar
 {
     height: 30px;

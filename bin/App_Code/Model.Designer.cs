@@ -30,32 +30,32 @@ namespace tempdbModel
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class menuEntities : ObjectContext
+    public partial class tempdbEntities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new menuEntities object using the connection string found in the 'menuEntities' section of the application configuration file.
+        /// Initializes a new tempdbEntities object using the connection string found in the 'tempdbEntities' section of the application configuration file.
         /// </summary>
-        public menuEntities() : base("name=menuEntities", "menuEntities")
+        public tempdbEntities() : base("name=tempdbEntities", "tempdbEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new menuEntities object.
+        /// Initialize a new tempdbEntities object.
         /// </summary>
-        public menuEntities(string connectionString) : base(connectionString, "menuEntities")
+        public tempdbEntities(string connectionString) : base(connectionString, "tempdbEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new menuEntities object.
+        /// Initialize a new tempdbEntities object.
         /// </summary>
-        public menuEntities(EntityConnection connection) : base(connection, "menuEntities")
+        public tempdbEntities(EntityConnection connection) : base(connection, "tempdbEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -102,6 +102,22 @@ namespace tempdbModel
             }
         }
         private ObjectSet<skabelon> _skabelons;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<user> users
+        {
+            get
+            {
+                if ((_users == null))
+                {
+                    _users = base.CreateObjectSet<user>("users");
+                }
+                return _users;
+            }
+        }
+        private ObjectSet<user> _users;
 
         #endregion
         #region AddTo Methods
@@ -120,6 +136,14 @@ namespace tempdbModel
         public void AddToskabelons(skabelon skabelon)
         {
             base.AddObject("skabelons", skabelon);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTousers(user user)
+        {
+            base.AddObject("users", user);
         }
 
         #endregion
@@ -534,6 +558,139 @@ namespace tempdbModel
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tempdbModel", Name="user")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class user : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new user object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="username">Initial value of the username property.</param>
+        /// <param name="password">Initial value of the password property.</param>
+        /// <param name="userlevel">Initial value of the userlevel property.</param>
+        public static user Createuser(global::System.Int32 id, global::System.String username, global::System.String password, global::System.Int32 userlevel)
+        {
+            user user = new user();
+            user.id = id;
+            user.username = username;
+            user.password = password;
+            user.userlevel = userlevel;
+            return user;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String username
+        {
+            get
+            {
+                return _username;
+            }
+            set
+            {
+                OnusernameChanging(value);
+                ReportPropertyChanging("username");
+                _username = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("username");
+                OnusernameChanged();
+            }
+        }
+        private global::System.String _username;
+        partial void OnusernameChanging(global::System.String value);
+        partial void OnusernameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                OnpasswordChanging(value);
+                ReportPropertyChanging("password");
+                _password = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("password");
+                OnpasswordChanged();
+            }
+        }
+        private global::System.String _password;
+        partial void OnpasswordChanging(global::System.String value);
+        partial void OnpasswordChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 userlevel
+        {
+            get
+            {
+                return _userlevel;
+            }
+            set
+            {
+                OnuserlevelChanging(value);
+                ReportPropertyChanging("userlevel");
+                _userlevel = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("userlevel");
+                OnuserlevelChanged();
+            }
+        }
+        private global::System.Int32 _userlevel;
+        partial void OnuserlevelChanging(global::System.Int32 value);
+        partial void OnuserlevelChanged();
+
+        #endregion
+    
     }
 
     #endregion
