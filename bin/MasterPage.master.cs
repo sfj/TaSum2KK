@@ -11,6 +11,36 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         CreateMenu();
+
+        if (IsPostBack)
+        {
+            ValidateLogin();
+        }
+        if (Session["user"] != null)
+        {
+            loginform.Visible = false;
+            LoggedIn.Controls.Add(new Literal() { Text = "Velkommen " + ((user)Session["user"]).username });
+        }
+    }
+
+    private void ValidateLogin()
+    {
+        tempdbEntities DB = new tempdbEntities();
+
+        string name = userlogin.Text ?? "";
+        string pass = userpass.Text ?? "";
+
+        tempdbModel.user user = (from u in DB.users where u.username == name && u.password == pass select u).SingleOrDefault();
+
+        if (user != null)
+        {
+            user.password = "";
+            Session["user"] = user;
+        }
+        else
+        {
+            Response.Redirect("LoginError.aspx");
+        }
     }
 
     /// <summary>
@@ -18,7 +48,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     /// </summary>
     private void CreateMenu()
     {
-        menuEntities DB = new menuEntities();
+        tempdbEntities DB = new tempdbEntities();
 
         var punkter = from p in DB.menus where p.level == 0 select p;
 
@@ -33,7 +63,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             {
                 CssClass = "menu_link",
                 Text = p.text_dk,
-                NavigateUrl = p.skabelon.filename
+                NavigateUrl = p.skabelon.filename + "?id=" + p.id
             };            
             Menu.Controls.Add(link);
 
@@ -64,7 +94,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 {
                     CssClass = "dd_menulink",
                     Text = s.text_dk,
-                    NavigateUrl = s.skabelon.filename
+                    NavigateUrl = s.skabelon.filename + "?id=" + s.id
                 };                
 
                 cell.Controls.Add(sublink);

@@ -18,7 +18,15 @@ sort int,
 parent int foreign key references menu(id)
 );
 
+create table users
+(
+id int identity primary key,
+username varchar(128) not null,
+password varchar(128) not null,
+userlevel int not null
+);
 
+insert into users values('tara', 'pinkiepie', 1)
 
 select * from menu;
 

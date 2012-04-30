@@ -26,11 +26,26 @@
     <tr><td class="topbar"></td></tr>
     <tr><td class="space1"></td></tr>    
     <tr><td class="menubar">
-    
+
         <table><tr><asp:PlaceHolder ID="Menu" runat="server"></asp:PlaceHolder></tr></table>
 
     </td></tr>    
-    <tr><td class="space2"></td></tr>    
+    <tr><td class="space2"></td></tr>
+    <tr><td>
+    <form action="" runat="server" ID="loginform">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="left"></td>
+                <td class="logintext">Login:</td>
+                <td class="loginuser"><asp:TextBox ID="userlogin" runat="server"></asp:TextBox></td>
+                <td class="loginpass"><asp:TextBox ID="userpass" runat="server" TextMode="Password"></asp:TextBox></td>
+                <td class="loginbutton"><asp:Button ID="loginbutton" Text="Login" runat="server" /></td>
+                <td class="right"></td>
+            </tr>
+        </table>
+    </form>
+    <asp:Placeholder ID="LoggedIn" runat="server"></asp:Placeholder>
+    </td></tr>
     <tr><td>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
