@@ -9,6 +9,8 @@ using System.Web.UI.HtmlControls;
 
 public partial class Tekstside : System.Web.UI.Page
 {
+    tempdbEntities DB = new tempdbEntities();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         user u  = ((user)Session["user"]);
@@ -22,6 +24,13 @@ public partial class Tekstside : System.Web.UI.Page
         }
 
         var post = Request.Form["editbox"];
+        var post_id = Convert.ToInt32(Request.Form["hiddenid"]);
+
+        tekst po = (from t in DB.teksts where t.side_id == PageID() && t.id == post_id select t).SingleOrDefault();
+
+        po.text_dk = post;
+
+        DB.SaveChanges();
 
         var div = text1.FindControl("box1") as HtmlGenericControl;
         var omgcake = div.InnerHtml;
@@ -83,7 +92,6 @@ public partial class Tekstside : System.Web.UI.Page
 
     private tekst fetchTekstFromDB(int id)
     {
-        tempdbEntities DB = new tempdbEntities();
         return (from t in DB.teksts where t.side_id == id select t).SingleOrDefault();
     }
 }
