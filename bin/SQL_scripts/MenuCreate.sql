@@ -26,9 +26,19 @@ password varchar(128) not null,
 userlevel int not null
 );
 
+create table tekst
+(
+id int identity primary key,
+text_dk text,
+text_en text,
+side_id int foreign key references menu(id)
+);
+
+insert into tekst values('test tekst er bedst tekst', '', 4);
+
 insert into users values('tara', 'pinkiepie', 1)
 
-select * from menu;
+select * from skabelon;
 
 insert into skabelon values('Forside.aspx');
 insert into skabelon values('Tekstside.aspx');
