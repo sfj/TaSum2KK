@@ -14,12 +14,19 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         if (IsPostBack)
         {
-            ValidateLogin();
+            if (loginform.Visible == true)
+            {
+                ValidateLogin();
+            }
         }
         if (Session["user"] != null)
         {
             loginform.Visible = false;
             LoggedIn.Controls.Add(new Literal() { Text = "Velkommen " + ((user)Session["user"]).username });
+        }
+        else
+        {
+            loginform.Visible = true;
         }
     }
 
@@ -27,8 +34,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         tempdbEntities DB = new tempdbEntities();
 
-        string name = userlogin.Text ?? "";
-        string pass = userpass.Text ?? "";
+        string name = userlogin.Text;
+        string pass = userpass.Text;
 
         tempdbModel.user user = (from u in DB.users where u.username == name && u.password == pass select u).SingleOrDefault();
 
