@@ -38,7 +38,9 @@ insert into tekst values('test tekst er bedst tekst', '', 4);
 
 insert into users values('tara', 'pinkiepie', 1)
 
-select * from skabelon;
+update tekst set text_dk = 'test tekst er bedst tekst' where side_id = 4;
+
+select * from tekst;
 
 insert into skabelon values('Forside.aspx');
 insert into skabelon values('Tekstside.aspx');

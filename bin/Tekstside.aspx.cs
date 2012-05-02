@@ -10,10 +10,12 @@ using System.IO;
 
 public partial class Tekstside : System.Web.UI.Page
 {
-    tempdbEntities DB = new tempdbEntities();
+    tempdbModel.Entities DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        DB = DataAccess.getDataAccess().DB;
+
         if (Request.QueryString.Count < 1)
         {
             Response.Redirect("BadRequest.aspx");

@@ -31,32 +31,32 @@ namespace tempdbModel
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class tempdbEntities : ObjectContext
+    public partial class Entities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new tempdbEntities object using the connection string found in the 'tempdbEntities' section of the application configuration file.
+        /// Initializes a new Entities object using the connection string found in the 'Entities' section of the application configuration file.
         /// </summary>
-        public tempdbEntities() : base("name=tempdbEntities", "tempdbEntities")
+        public Entities() : base("name=Entities", "Entities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new tempdbEntities object.
+        /// Initialize a new Entities object.
         /// </summary>
-        public tempdbEntities(string connectionString) : base(connectionString, "tempdbEntities")
+        public Entities(string connectionString) : base(connectionString, "Entities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new tempdbEntities object.
+        /// Initialize a new Entities object.
         /// </summary>
-        public tempdbEntities(EntityConnection connection) : base(connection, "tempdbEntities")
+        public Entities(EntityConnection connection) : base(connection, "Entities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
