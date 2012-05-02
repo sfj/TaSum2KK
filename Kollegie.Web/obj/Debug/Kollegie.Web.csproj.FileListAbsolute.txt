@@ -5,6 +5,7 @@ E:\Dropbox\CasaMols\tinas kode\kollegiekontoret web\Kollegie.Web\Kollegie.Web\ob
 E:\Dropbox\CasaMols\tinas kode\kollegiekontoret web\Kollegie.Web\Kollegie.Web\obj\Debug\Kollegie.Web.csprojResolveAssemblyReference.cache
 E:\Dropbox\CasaMols\tinas kode\kollegiekontoret web\Kollegie.Web\Kollegie.Web\bin\Kollegie.Model.dll
 E:\Dropbox\CasaMols\tinas kode\kollegiekontoret web\Kollegie.Web\Kollegie.Web\bin\Kollegie.Model.pdb
+<<<<<<< HEAD
 C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Web.dll
 C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Web.pdb
 C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Model.dll
@@ -12,3 +13,12 @@ C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Model.pdb
 C:\source\TaSum2KK\Kollegie.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\source\TaSum2KK\Kollegie.Web\obj\Debug\Kollegie.Web.dll
 C:\source\TaSum2KK\Kollegie.Web\obj\Debug\Kollegie.Web.pdb
+=======
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\bin\Kollegie.Web.dll
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\bin\Kollegie.Web.pdb
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\bin\Kollegie.Model.dll
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\bin\Kollegie.Model.pdb
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\obj\Debug\Kollegie.Web.dll
+C:\Users\Silas Fontain\git\TaSum2KK\Kollegie.Web\obj\Debug\Kollegie.Web.pdb
+>>>>>>> 46523e93263f8572e51c5e15c9ddeadfcfa78d71
