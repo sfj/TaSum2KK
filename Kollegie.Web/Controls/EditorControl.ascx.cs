@@ -14,6 +14,14 @@ public partial class EditorControl : UserControl {
 	protected override void OnLoad(EventArgs e) {
 		Page.ClientScript.RegisterClientScriptBlock(typeof(EditorControl), "CopyValue", "function CopyValue() { document.getElementById('" + EditorValue.ClientID + "').value = document.getElementById('" + Editor.ClientID + "').innerHTML; }", true);
 		SubmitButton.OnClientClick = "CopyValue();";
+
+        //Page.ClientScript.RegisterClientScriptBlock(typeof(EditorControl), "BoldText", "function BoldText() {" 
+        // +"var sel = document.selection;"
+        // +"if(sel != null) {"
+        // +"var rng = sel.createRange();"
+        // +"if (rng != null)"
+        // +"rng.pasteHTML(\"<b>\" + rng + \"</b>\");"
+        // +"}", true);
 	}
 
 	protected override void OnPreRender(EventArgs e) {		
