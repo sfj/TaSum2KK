@@ -1,7 +1,0 @@
-C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Web.dll
-C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Web.pdb
-C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Model.dll
-C:\source\TaSum2KK\Kollegie.Web\bin\Kollegie.Model.pdb
-C:\source\TaSum2KK\Kollegie.Web\obj\Debug\ResolveAssemblyReference.cache
-C:\source\TaSum2KK\Kollegie.Web\obj\Debug\Kollegie.Web.dll
-C:\source\TaSum2KK\Kollegie.Web\obj\Debug\Kollegie.Web.pdb
