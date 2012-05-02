@@ -35,6 +35,9 @@ side_id int foreign key references menu(id)
 );
 
 insert into tekst values('test tekst er bedst tekst', '', 4);
+insert into tekst values('Se mor, jeg kom på forsiden', '', 1);
+insert into tekst values('Endnu en nyhed er ny','', 1);
+insert into tekst values('Gammel nyhed er gammel','', 1);
 
 insert into users values('tara', 'pinkiepie', 1)
 

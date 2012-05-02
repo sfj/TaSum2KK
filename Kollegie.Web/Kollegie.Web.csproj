@@ -56,6 +56,13 @@
     <Compile Include="Controls\EditorControl.ascx.designer.cs">
       <DependentUpon>EditorControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RenderControl.ascx.cs">
+      <DependentUpon>RenderControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\RenderControl.ascx.designer.cs">
+      <DependentUpon>RenderControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Forside.aspx.designer.cs">
       <DependentUpon>Forside.aspx</DependentUpon>
     </Compile>
@@ -93,6 +100,7 @@
       <DependentUpon>Tekstside.aspx</DependentUpon>
     </Compile>
     <Content Include="Controls\EditorControl.ascx" />
+    <Content Include="Controls\RenderControl.ascx" />
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginError.aspx" />
