@@ -14,14 +14,12 @@ public partial class Forside : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-
         RenderNews(EditPageID());
     }
 
     private void RenderNews(int editStoryNo)
     {
-        var tekster = fetchAllTekstsFromDB(page_id);
+        var tekster = from t in DB.teksts where t.side_id == page_id select t;
         foreach (tekst t in tekster)
         {
             if (editStoryNo == t.id)
@@ -38,14 +36,9 @@ public partial class Forside : System.Web.UI.Page
                 OControl.canEdit = (u != null && u.userlevel <= 2) ? true : false;
                 NewsContent.Controls.Add(OControl);
             }
-            
         }
     }
 
-    private IEnumerable<tekst> fetchAllTekstsFromDB(int page_id)
-    {
-        return from t in DB.teksts where t.side_id == page_id select t;
-    }
     private int EditPageID()
     {
         string id_req = Request.QueryString["edit"];

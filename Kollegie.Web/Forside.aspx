@@ -7,4 +7,3 @@
         <asp:PlaceHolder ID="NewsContent" runat="server"></asp:PlaceHolder>
     </table>
 </asp:Content>
-

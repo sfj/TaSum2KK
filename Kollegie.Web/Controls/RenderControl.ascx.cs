@@ -13,8 +13,6 @@ namespace Kollegie.Web.Controls
         public tekst Text { get; set; }
         public bool canEdit;
 
-        private tempdbEntities DB = new tempdbEntities();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             
