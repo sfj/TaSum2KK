@@ -97,6 +97,11 @@ public partial class Tekstside : System.Web.UI.Page
         div.InnerHtml = fetchOneTekstFromDB(PageID()).text_dk;
         form.Controls.Add(div);
 
+        HiddenField hidden2 = new HiddenField();
+        hidden2.ID = "text_commit";
+        hidden2.Value = "";
+        form.Controls.Add(hidden2);
+
         Button but = new Button();
         but.OnClientClick = "document.forms['editform'].submit();";
         but.Text = "Gem";

@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPage" Codebehind="MasterPage.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Ungdomsboligaarhus.dk</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script type="text/JavaScript" language="JavaScript1.1">
+        <!--
+        function justshow(elm){
+        document.getElementById(elm).style.visibility = 'visible';
+        }
+
+        function justhide(elm){
+        document.getElementById(elm).style.visibility = 'hidden';
+        }
+        //-->
+    </script>
+</head>
+<body id="pagebody">
+  	<form runat="server" ID="MainForm">
+			<center>
+			<table class="maintable" cellpadding="0" cellspacing="0">
+			<tr><td class="topbar"></td></tr>
+			<tr><td class="space1"><asp:HyperLink NavigateUrl="Forside.aspx" runat="server"><img src="titlebanner.png" alt="title banner" /></asp:HyperLink></td></tr>    
+			<tr><td class="menubar">
+
+					<table><tr><asp:PlaceHolder ID="Menu" runat="server"></asp:PlaceHolder></tr></table>
+
+			</td></tr>    
+			<tr><td class="space2"></td></tr>
+			<tr><td>    
+					<table cellpadding="0" cellspacing="0" runat="server" id="LoginTable">
+							<tr>
+									<td class="left"></td>
+									<td class="logintext">Login:</td>
+									<td class="loginuser"><asp:TextBox ID="userlogin" runat="server"></asp:TextBox></td>
+									<td class="loginpass"><asp:TextBox ID="userpass" runat="server" TextMode="Password"></asp:TextBox></td>
+									<td class="loginbutton"><asp:Button ID="loginbutton" Text="Login" runat="server" /></td>
+									<td class="right"></td>
+							</tr>
+					</table>    
+			<asp:Placeholder ID="LoggedIn" runat="server"></asp:Placeholder>
+			</td></tr>
+			<tr><td>
+					<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+					</asp:ContentPlaceHolder>
+			</td></tr>
+			<tr><td class="bottombar"></td></tr>   
+			</table>
+			</center>
+	 </form>
+</body>
+</html>

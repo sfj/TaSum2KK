@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tempdbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="tempdbModelStoreContainer">
+    <EntitySet Name="menu" EntityType="tempdbModel.Store.menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="skabelon" EntityType="tempdbModel.Store.skabelon" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tekst" EntityType="tempdbModel.Store.tekst" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="tempdbModel.Store.users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="tempdbModel.Store.FK__menu__page_type__0519C6AF">
+      <End Role="skabelon" EntitySet="skabelon" />
+      <End Role="menu" EntitySet="menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__menu__parent__060DEAE8" Association="tempdbModel.Store.FK__menu__parent__060DEAE8">
+      <End Role="menu" EntitySet="menu" />
+      <End Role="menu1" EntitySet="menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tekst__side_id__0EA330E9" Association="tempdbModel.Store.FK__tekst__side_id__0EA330E9">
+      <End Role="menu" EntitySet="menu" />
+      <End Role="tekst" EntitySet="tekst" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="text_dk" Type="text" />
+    <Property Name="text_en" Type="text" />
+    <Property Name="page_type" Type="int" />
+    <Property Name="level" Type="int" />
+    <Property Name="sort" Type="int" />
+    <Property Name="parent" Type="int" />
+  </EntityType>
+  <EntityType Name="skabelon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tekst">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="text_dk" Type="text" />
+    <Property Name="text_en" Type="text" />
+    <Property Name="side_id" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="userlevel" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__menu__page_type__0519C6AF">
+    <End Role="skabelon" Type="tempdbModel.Store.skabelon" Multiplicity="0..1" />
+    <End Role="menu" Type="tempdbModel.Store.menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="skabelon">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="menu">
+        <PropertyRef Name="page_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__menu__parent__060DEAE8">
+    <End Role="menu" Type="tempdbModel.Store.menu" Multiplicity="0..1" />
+    <End Role="menu1" Type="tempdbModel.Store.menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="menu1">
+        <PropertyRef Name="parent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tekst__side_id__0EA330E9">
+    <End Role="menu" Type="tempdbModel.Store.menu" Multiplicity="0..1" />
+    <End Role="tekst" Type="tempdbModel.Store.tekst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tekst">
+        <PropertyRef Name="side_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tempdbModelStoreContainer" CdmEntityContainer="tempdbEntities">
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="tempdbModel.menu">
+        <MappingFragment StoreEntitySet="menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text_dk" ColumnName="text_dk" />
+          <ScalarProperty Name="text_en" ColumnName="text_en" />
+          <ScalarProperty Name="page_type" ColumnName="page_type" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="skabelons">
+      <EntityTypeMapping TypeName="tempdbModel.skabelon">
+        <MappingFragment StoreEntitySet="skabelon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teksts">
+      <EntityTypeMapping TypeName="tempdbModel.tekst">
+        <MappingFragment StoreEntitySet="tekst">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text_dk" ColumnName="text_dk" />
+          <ScalarProperty Name="text_en" ColumnName="text_en" />
+          <ScalarProperty Name="side_id" ColumnName="side_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="tempdbModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userlevel" ColumnName="userlevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

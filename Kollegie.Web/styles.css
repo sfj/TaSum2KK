@@ -1,0 +1,117 @@
+﻿#bodytable
+{
+    background-color: #ffffff;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    color: #222222;
+    padding: 0px;
+    margin: 0px;
+    font-size: 11px;
+    
+}
+.maintable 
+{
+    width: 970px;
+    background-color: #f8f8f8;    
+}
+.topbar
+{
+    height: 15px;
+}
+.space1
+{
+    height: 80px;    
+}
+.menubar
+{
+    height: 29px;
+    background-color: #66ccee;
+}
+.menupunkt
+{
+    width: 200px;
+}
+a:link.menu_link, a:active.menu_link, a:visited.menu_link 
+{ 
+    color:#666666; 
+    text-decoration:none; 
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size:18px; 
+    line-height:20px; 
+} 
+a:hover.menu_link 
+{ 
+    color:#ff0000; 
+    text-decoration:none;
+    font-family: Verdana, Tahoma, Arial, Sans; 
+    font-size:18px; 
+    line-height:20px; 
+} 
+.dd_div 
+{
+    visibility: hidden;
+    padding: 4px 0px 0px 0px;
+    width: 200px;
+    position: absolute;
+}
+.dropdown
+{
+    background-color: #eeeeee;
+    width: 195px;    
+}
+.dd_menupunkt
+{
+    height: 25px;
+    padding-left: 5px;
+}
+a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink 
+{ 
+    color:#666666; 
+    text-decoration:none; 
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size:18px; 
+    line-height:20px; 
+} 
+a:hover.dd_menulink 
+{ 
+    color:#ff0000; 
+    text-decoration:none; 
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size:18px; 
+    line-height:20px; 
+} 
+
+.space2
+{
+    height: 20px;
+}
+.left
+{
+    width: 550px;   
+}
+.logintext
+{
+    width: 100px;
+}
+.loginuser
+{
+    width: 100px;
+}
+.loginpass
+{
+    width: 100px;
+}
+.loginbutton
+{
+    width: 80px;
+}
+.right
+{
+    width: 40px;
+}
+.bottombar
+{
+    height: 30px;
+}
+
+
+
