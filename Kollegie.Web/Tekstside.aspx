@@ -4,15 +4,11 @@
 <script type="text/javascript" language="javascript" >
 <!--
     function BoldText() {
-        var sel = document.getSelection;
-        if (sel != null) {
-            var rng = sel.createRange();
-            if (rng != null) {
-                alert("Hej");
-                //rng.text = "<b>" + rng.text + "</b>";
-                rng.pasteHTML("<b>" + rng + "</b>");
-            }
-        }
+        var range = window.getSelection().getRangeAt(0);
+        var temp = document.createElement("b");
+        temp.innerHTML = range.toString();
+        range.deleteContents();
+        range.insertNode(temp);
     }
 //-->
 </script>
