@@ -26,7 +26,9 @@ public partial class Forside : System.Web.UI.Page
             {
                 EditorControl OControl = (EditorControl)LoadControl("~/Controls/EditorControl.ascx");
                 OControl.Text = t;
+                NewsContent.Controls.Add(new Literal() { Text = "<tr><td>" });
                 NewsContent.Controls.Add(OControl);
+                NewsContent.Controls.Add(new Literal() { Text = "</tr></td>" });
             }
             else
             {
