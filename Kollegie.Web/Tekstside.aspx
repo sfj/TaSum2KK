@@ -3,12 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 <script type="text/javascript" language="javascript" >
 <!--
-    function BoldText() {        
-        var sel = document.getElementById('Editor').selection;
+    function BoldText() {
+        var sel = document.getSelection;
         if (sel != null) {
-            alert("Hej");
             var rng = sel.createRange();
             if (rng != null) {
+                alert("Hej");
+                //rng.text = "<b>" + rng.text + "</b>";
                 rng.pasteHTML("<b>" + rng + "</b>");
             }
         }
