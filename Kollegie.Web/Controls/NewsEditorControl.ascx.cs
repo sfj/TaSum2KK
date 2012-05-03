@@ -18,10 +18,12 @@ public partial class NewsEditorControl : UserControl {
 	protected override void OnPreRender(EventArgs e) {
         if (Text != null)
         {
+            NewsEditorHead.Value = Text.headline_dk;
             NewsEditor.Value = Text.text_dk;
         }
         else
         {
+            NewsEditorHead.Value = "";
             NewsEditor.Value = "";
         }
 	}
@@ -36,9 +38,10 @@ public partial class NewsEditorControl : UserControl {
         }
         else
         {
-            var po = DB.CreateObject<nyhed>();
+            nyhed po = new nyhed();
             po.created = new DateTime();
             po.text_dk = NewsEditor.Value;
+            DB.nyheds.AddObject(po);
             DB.SaveChanges();
             Text = po;
         }
