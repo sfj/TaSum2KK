@@ -24,11 +24,9 @@ public partial class Forside : System.Web.UI.Page
         {
             if (editStoryNo == t.id)
             {
-                EditorControl OControl = (EditorControl)LoadControl("~/Controls/EditorControl.ascx");
+                NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
                 OControl.Text = t;
-                NewsContent.Controls.Add(new Literal() { Text = "<tr><td>" });
                 NewsContent.Controls.Add(OControl);
-                NewsContent.Controls.Add(new Literal() { Text = "</tr></td>" });
             }
             else
             {

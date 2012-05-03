@@ -9,16 +9,16 @@
 
 
 
-public partial class EditorControl {
+public partial class NewsEditorControl {
     
     /// <summary>
-    /// EditorValue control.
+    /// NewsEditor control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.HiddenField EditorValue;
+    protected global::System.Web.UI.HtmlControls.HtmlTextArea NewsEditor;
     
     /// <summary>
     /// SubmitButton control.
