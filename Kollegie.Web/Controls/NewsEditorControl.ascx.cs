@@ -29,21 +29,21 @@ public partial class NewsEditorControl : UserControl {
 	}
 
 	protected void SubmitButton_Click(object sender, EventArgs e) {
+        nyhed po;
         if (Text != null)
         {
-            nyhed po = (from t in DB.nyheds where t.id == Text.id select t).SingleOrDefault();
-            po.text_dk = NewsEditor.Value;
-            DB.SaveChanges();
-            Text = po;
+            po = (from t in DB.nyheds where t.id == Text.id select t).SingleOrDefault();
         }
         else
         {
-            nyhed po = new nyhed();
+            po = new nyhed();
             po.created = new DateTime();
-            po.text_dk = NewsEditor.Value;
             DB.nyheds.AddObject(po);
-            DB.SaveChanges();
-            Text = po;
         }
+        po.text_dk = NewsEditor.Value;
+        po.headline_dk = NewsEditorHead.Value;
+        DB.SaveChanges();
+        Text = po;
+        Response.Redirect(Request.RawUrl);
 	}
 }

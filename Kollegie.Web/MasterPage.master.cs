@@ -17,19 +17,20 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
         if (IsPostBack)
         {
-					if (LoginTable.Visible == true)
+            if (LoginTable.Visible == true)
             {
                 ValidateLogin();
             }
-        } 
+        }
         if (Session["user"] != null)
         {
-					LoginTable.Visible = false;
+            LoginTable.Visible = false;
             LoggedIn.Controls.Add(new Literal() { Text = "Velkommen " + ((user)Session["user"]).username });
+
         }
         else
         {
-					LoginTable.Visible = true;
+            LoginTable.Visible = true;
         }
     }
 
@@ -44,7 +45,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             user.password = "";
             Session["user"] = user;
-						FormsAuthentication.SetAuthCookie(user.username, true);
+		    FormsAuthentication.SetAuthCookie(user.username, true);
+            Response.Redirect(Request.RawUrl);
         }
         else
         {
