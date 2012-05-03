@@ -10,7 +10,7 @@
     </td>
 </tr>
 <tr>
-    <td>
+    <td colspan="2">
         <label class="broedtekst" runat="server" id="broedtekst"></label>
     </td>
 </tr>
