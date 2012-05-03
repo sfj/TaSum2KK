@@ -37,6 +37,7 @@ public partial class NewsEditorControl : UserControl {
         else
         {
             var po = DB.CreateObject<nyhed>();
+            po.created = new DateTime();
             po.text_dk = NewsEditor.Value;
             DB.SaveChanges();
             Text = po;

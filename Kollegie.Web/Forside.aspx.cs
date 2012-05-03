@@ -19,8 +19,8 @@ public partial class Forside : System.Web.UI.Page
 
     private void RenderNews(int editStoryNo)
     {
-        var tekster = from t in DB.teksts where t.side_id == page_id select t;
-        foreach (tekst t in tekster)
+        var tekster = from t in DB.nyheds orderby t.created descending select t;
+        foreach (var t in tekster)
         {
             if (CanEditPage())
             {
