@@ -34,6 +34,17 @@ text_en text,
 side_id int foreign key references menu(id)
 );
 
+create table nyhed
+(
+id int identity primary key,
+headline_dk varchar(255),
+text_dk text,
+headline_en varchar(255),
+text_en text,
+created date,
+shown bit
+)
+
 insert into tekst values('test tekst er bedst tekst', '', 4);
 insert into tekst values('Se mor, jeg kom på forsiden', '', 1);
 insert into tekst values('Endnu en nyhed er ny','', 1);

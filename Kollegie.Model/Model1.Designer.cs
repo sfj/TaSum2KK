@@ -8,13 +8,12 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.ComponentModel;
-using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Linq;
-using System.Runtime.Serialization;
+using System.Data.EntityClient;
+using System.ComponentModel;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
@@ -136,9 +135,24 @@ namespace Kollegie.Model
             }
         }
         private ObjectSet<user> _users;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<nyhed> nyheds
+        {
+            get
+            {
+                if ((_nyheds == null))
+                {
+                    _nyheds = base.CreateObjectSet<nyhed>("nyheds");
+                }
+                return _nyheds;
+            }
+        }
+        private ObjectSet<nyhed> _nyheds;
 
         #endregion
-
         #region AddTo Methods
     
         /// <summary>
@@ -172,13 +186,21 @@ namespace Kollegie.Model
         {
             base.AddObject("users", user);
         }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the nyheds EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTonyheds(nyhed nyhed)
+        {
+            base.AddObject("nyheds", nyhed);
+        }
 
         #endregion
-
     }
+    
 
     #endregion
-
+    
     #region Entities
     
     /// <summary>
@@ -203,7 +225,6 @@ namespace Kollegie.Model
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -378,7 +399,6 @@ namespace Kollegie.Model
         partial void OnparentChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -503,7 +523,205 @@ namespace Kollegie.Model
         }
 
         #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="tempdbModel", Name="nyhed")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class nyhed : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new nyhed object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        public static nyhed Createnyhed(global::System.Int32 id)
+        {
+            nyhed nyhed = new nyhed();
+            nyhed.id = id;
+            return nyhed;
+        }
 
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String headline_dk
+        {
+            get
+            {
+                return _headline_dk;
+            }
+            set
+            {
+                Onheadline_dkChanging(value);
+                ReportPropertyChanging("headline_dk");
+                _headline_dk = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("headline_dk");
+                Onheadline_dkChanged();
+            }
+        }
+        private global::System.String _headline_dk;
+        partial void Onheadline_dkChanging(global::System.String value);
+        partial void Onheadline_dkChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String text_dk
+        {
+            get
+            {
+                return _text_dk;
+            }
+            set
+            {
+                Ontext_dkChanging(value);
+                ReportPropertyChanging("text_dk");
+                _text_dk = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("text_dk");
+                Ontext_dkChanged();
+            }
+        }
+        private global::System.String _text_dk;
+        partial void Ontext_dkChanging(global::System.String value);
+        partial void Ontext_dkChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String headline_en
+        {
+            get
+            {
+                return _headline_en;
+            }
+            set
+            {
+                Onheadline_enChanging(value);
+                ReportPropertyChanging("headline_en");
+                _headline_en = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("headline_en");
+                Onheadline_enChanged();
+            }
+        }
+        private global::System.String _headline_en;
+        partial void Onheadline_enChanging(global::System.String value);
+        partial void Onheadline_enChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String text_en
+        {
+            get
+            {
+                return _text_en;
+            }
+            set
+            {
+                Ontext_enChanging(value);
+                ReportPropertyChanging("text_en");
+                _text_en = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("text_en");
+                Ontext_enChanged();
+            }
+        }
+        private global::System.String _text_en;
+        partial void Ontext_enChanging(global::System.String value);
+        partial void Ontext_enChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> created
+        {
+            get
+            {
+                return _created;
+            }
+            set
+            {
+                OncreatedChanging(value);
+                ReportPropertyChanging("created");
+                _created = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("created");
+                OncreatedChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _created;
+        partial void OncreatedChanging(Nullable<global::System.DateTime> value);
+        partial void OncreatedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> shown
+        {
+            get
+            {
+                return _shown;
+            }
+            set
+            {
+                OnshownChanging(value);
+                ReportPropertyChanging("shown");
+                _shown = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("shown");
+                OnshownChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _shown;
+        partial void OnshownChanging(Nullable<global::System.Boolean> value);
+        partial void OnshownChanged();
+
+        #endregion
+    
     }
     
     /// <summary>
@@ -530,7 +748,6 @@ namespace Kollegie.Model
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -585,7 +802,6 @@ namespace Kollegie.Model
         partial void OnfilenameChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -612,7 +828,6 @@ namespace Kollegie.Model
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -637,7 +852,6 @@ namespace Kollegie.Model
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -740,7 +954,6 @@ namespace Kollegie.Model
         partial void Onside_idChanged();
 
         #endregion
-
     
         #region Navigation Properties
     
@@ -783,7 +996,6 @@ namespace Kollegie.Model
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -814,7 +1026,6 @@ namespace Kollegie.Model
         }
 
         #endregion
-
         #region Primitive Properties
     
         /// <summary>
@@ -917,11 +1128,9 @@ namespace Kollegie.Model
         partial void OnuserlevelChanged();
 
         #endregion
-
     
     }
 
     #endregion
-
     
 }

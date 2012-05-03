@@ -4,12 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="tempdbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="tempdbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="tempdbModelStoreContainer">
-          <EntitySet Name="menu" EntityType="tempdbModel.Store.menu" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="skabelon" EntityType="tempdbModel.Store.skabelon" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tekst" EntityType="tempdbModel.Store.tekst" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="users" EntityType="tempdbModel.Store.users" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="menu" EntityType="tempdbModel.Store.menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="nyhed" EntityType="tempdbModel.Store.nyhed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="skabelon" EntityType="tempdbModel.Store.skabelon" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tekst" EntityType="tempdbModel.Store.tekst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="users" EntityType="tempdbModel.Store.users" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="tempdbModel.Store.FK__menu__page_type__0519C6AF">
             <End Role="skabelon" EntitySet="skabelon" />
             <End Role="menu" EntitySet="menu" />
@@ -34,6 +35,18 @@
           <Property Name="level" Type="int" />
           <Property Name="sort" Type="int" />
           <Property Name="parent" Type="int" />
+        </EntityType>
+        <EntityType Name="nyhed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="headline_dk" Type="varchar" MaxLength="255" />
+          <Property Name="text_dk" Type="text" />
+          <Property Name="headline_en" Type="varchar" MaxLength="255" />
+          <Property Name="text_en" Type="text" />
+          <Property Name="created" Type="date" />
+          <Property Name="shown" Type="bit" />
         </EntityType>
         <EntityType Name="skabelon">
           <Key>
@@ -117,6 +130,7 @@
             <End Role="menu" EntitySet="menus" />
             <End Role="tekst" EntitySet="teksts" />
           </AssociationSet>
+          <EntitySet Name="nyheds" EntityType="tempdbModel.nyhed" />
         </EntityContainer>
         <EntityType Name="menu">
           <Key>
@@ -197,6 +211,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="nyhed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="headline_dk" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="text_dk" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="headline_en" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="text_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="created" />
+          <Property Type="Boolean" Name="shown" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -228,6 +254,19 @@
             <ScalarProperty Name="password" ColumnName="password" />
             <ScalarProperty Name="userlevel" ColumnName="userlevel" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="nyheds">
+            <EntityTypeMapping TypeName="tempdbModel.nyhed">
+              <MappingFragment StoreEntitySet="nyhed">
+                <ScalarProperty Name="shown" ColumnName="shown" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="text_en" ColumnName="text_en" />
+                <ScalarProperty Name="headline_en" ColumnName="headline_en" />
+                <ScalarProperty Name="text_dk" ColumnName="text_dk" />
+                <ScalarProperty Name="headline_dk" ColumnName="headline_dk" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -242,7 +281,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
@@ -267,6 +306,7 @@
           <ConnectorPoint PointX="4.5" PointY="2.4901432291666667" />
           <ConnectorPoint PointX="5.25" PointY="2.4901432291666667" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="tempdbModel.nyhed" Width="1.5" PointX="3.375" PointY="5.75" Height="2.3648893229166656" />
       </Diagram>
     </Diagrams>
   </Designer>

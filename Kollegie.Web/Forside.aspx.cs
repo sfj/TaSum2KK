@@ -22,6 +22,13 @@ public partial class Forside : System.Web.UI.Page
         var tekster = from t in DB.teksts where t.side_id == page_id select t;
         foreach (tekst t in tekster)
         {
+            if (CanEditPage())
+            {
+                NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
+                OControl.Text = null;
+                NewsContent.Controls.Add(OControl);
+            }
+
             if (editStoryNo == t.id)
             {
                 NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
@@ -31,12 +38,17 @@ public partial class Forside : System.Web.UI.Page
             else
             {
                 RenderControl OControl = (RenderControl)LoadControl("~/Controls/RenderControl.ascx");
-                OControl.Text = t;
-                user u = ((user)Session["user"]);
-                OControl.canEdit = (u != null && u.userlevel <= 2) ? true : false;
+                OControl.Text = t;                
+                OControl.canEdit = CanEditPage();
                 NewsContent.Controls.Add(OControl);
             }
         }
+    }
+
+    private bool CanEditPage()
+    {
+        user u = ((user)Session["user"]);
+        return (u != null && u.userlevel <= 2) ? true : false;
     }
 
     private int EditPageID()
