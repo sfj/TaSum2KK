@@ -43,7 +43,7 @@ headline_en varchar(255),
 text_en text,
 created date,
 shown bit
-)
+);
 
 insert into tekst values('test tekst er bedst tekst', '', 4);
 insert into tekst values('Se mor, jeg kom på forsiden', '', 1);
