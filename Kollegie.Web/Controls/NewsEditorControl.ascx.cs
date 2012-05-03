@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 public partial class NewsEditorControl : UserControl {
 	public nyhed Text { get; set; }
-	private tempdbEntities DB = new tempdbEntities();
+    private Entities DB = DataAccess.getDataAccess().DB;
 
 	protected override void OnLoad(EventArgs e) {
 		

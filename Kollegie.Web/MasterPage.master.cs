@@ -9,6 +9,8 @@ using System.Web.Security;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
+    private Entities DB = DataAccess.getDataAccess().DB;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         CreateMenu();
@@ -33,8 +35,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
     private void ValidateLogin()
     {
-        tempdbEntities DB = new tempdbEntities();
-
         string name = userlogin.Text;
         string pass = userpass.Text;
 
@@ -57,8 +57,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
     /// </summary>
     private void CreateMenu()
     {
-        tempdbEntities DB = new tempdbEntities();
-
         var punkter = from p in DB.menus where p.level == 0 select p;
 
         foreach(menu p in punkter) {

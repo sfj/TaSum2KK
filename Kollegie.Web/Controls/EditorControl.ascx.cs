@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 public partial class EditorControl : UserControl {
 	public tekst Text { get; set; }
-	private tempdbEntities DB = new tempdbEntities();
+    private Entities DB = DataAccess.getDataAccess().DB;
 
 	protected override void OnLoad(EventArgs e) {
 		Page.ClientScript.RegisterClientScriptBlock(typeof(EditorControl), "CopyValue", "function CopyValue() { document.getElementById('" + EditorValue.ClientID + "').value = document.getElementById('" + Editor.ClientID + "').innerHTML; }", true);

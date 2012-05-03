@@ -9,7 +9,7 @@ using System.IO;
 using Kollegie.Model;
 
 public partial class Tekstside : System.Web.UI.Page {
-	tempdbEntities DB = new tempdbEntities();
+    private Entities DB = DataAccess.getDataAccess().DB;
 
 	protected void Page_Load(object sender, EventArgs e) {
 		if (Request.QueryString.Count < 1) {

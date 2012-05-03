@@ -9,8 +9,7 @@ using Kollegie.Web.Controls;
 
 public partial class Forside : System.Web.UI.Page
 {
-    int page_id = 1;
-    tempdbEntities DB = new tempdbEntities();
+    private Entities DB = DataAccess.getDataAccess().DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,16 +18,16 @@ public partial class Forside : System.Web.UI.Page
 
     private void RenderNews(int editStoryNo)
     {
+        if (CanEditPage())
+        {
+            NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
+            OControl.Text = null;
+            NewsContent.Controls.Add(OControl);
+        }
+
         var tekster = from t in DB.nyheds orderby t.created descending select t;
         foreach (var t in tekster)
         {
-            if (CanEditPage())
-            {
-                NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
-                OControl.Text = null;
-                NewsContent.Controls.Add(OControl);
-            }
-
             if (editStoryNo == t.id)
             {
                 NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
