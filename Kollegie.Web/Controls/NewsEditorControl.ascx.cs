@@ -15,9 +15,10 @@ public partial class NewsEditorControl : UserControl {
 		
 	}
 
-	protected override void OnPreRender(EventArgs e) {		
-		
+	protected override void OnPreRender(EventArgs e) {
+        NewsEditor.Value = Text.text_dk;
 	}
+
 	protected void SubmitButton_Click(object sender, EventArgs e) {		
 		tekst po = (from t in DB.teksts where t.side_id == Text.side_id && t.id == Text.id select t).SingleOrDefault();		
 		po.text_dk = NewsEditor.Value;
