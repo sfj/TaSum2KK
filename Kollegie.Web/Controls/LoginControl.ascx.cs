@@ -51,7 +51,6 @@ namespace Kollegie.Web.Controls
         {
             string name = userlogin.Text;
             string pass = userpass.Text;
-            System.Diagnostics.Debug.WriteLine("Credentials: " + name + "//" + pass);
             user user = (from u in DB.users where u.username == name && u.password == pass select u).SingleOrDefault();
 
             if (user != null)
