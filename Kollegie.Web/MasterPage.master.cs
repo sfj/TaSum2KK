@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Kollegie.Model;
 using System.Web.Security;
+using Kollegie.Web.Controls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
@@ -14,46 +15,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         CreateMenu();
-
-        var testers = from test in DB.departments select test;
-
-        if (IsPostBack)
-        {
-            if (LoginTable.Visible == true)
-            {
-                ValidateLogin();
-            }
-        }
-        if (Session["user"] != null)
-        {
-            LoginTable.Visible = false;
-            LoggedIn.Controls.Add(new Literal() { Text = "Velkommen " + ((user)Session["user"]).username });
-
-        }
-        else
-        {
-            LoginTable.Visible = true;
-        }
-    }
-
-    private void ValidateLogin()
-    {
-        string name = userlogin.Text;
-        string pass = userpass.Text;
-
-        user user = (from u in DB.users where u.username == name && u.password == pass select u).SingleOrDefault();
-
-        if (user != null)
-        {
-            user.password = "";
-            Session["user"] = user;
-		    FormsAuthentication.SetAuthCookie(user.username, true);
-            Response.Redirect(Request.RawUrl);
-        }
-        else
-        {
-            Response.Redirect("LoginError.aspx");
-        }
+        
+        LoginControl OControl = (LoginControl)LoadControl("~/Controls/LoginControl.ascx");
+        Login.Controls.Add(OControl);        
     }
 
     /// <summary>

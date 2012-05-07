@@ -56,6 +56,13 @@
     <Compile Include="Controls\EditorControl.ascx.designer.cs">
       <DependentUpon>EditorControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LoginControl.ascx.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LoginControl.ascx.designer.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\NewsEditorControl.ascx.cs">
       <DependentUpon>NewsEditorControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +114,7 @@
       <DependentUpon>Tekstside.aspx</DependentUpon>
     </Compile>
     <Content Include="Controls\EditorControl.ascx" />
+    <Content Include="Controls\LoginControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
     <Content Include="Controls\NewsRenderControl.ascx" />
     <Content Include="fed.png" />
