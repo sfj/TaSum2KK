@@ -28,6 +28,7 @@ namespace Kollegie.Web.Controls
                 DeleteButton.Visible = true;
             }
             broedtekst.InnerHtml = Text.text_dk;
+            dato.InnerHtml = ((DateTime)Text.created).ToShortDateString();
             overskrift.InnerHtml = Text.headline_dk;
         }
 
