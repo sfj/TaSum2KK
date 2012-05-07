@@ -36,7 +36,7 @@ public partial class Forside : System.Web.UI.Page
             }
             else
             {
-                RenderControl OControl = (RenderControl)LoadControl("~/Controls/RenderControl.ascx");
+                RenderControl OControl = (RenderControl)LoadControl("~/Controls/NewsRenderControl.ascx");
                 OControl.Text = t;                
                 OControl.canEdit = CanEditPage();
                 NewsContent.Controls.Add(OControl);

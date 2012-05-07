@@ -81,8 +81,7 @@ a:hover.dd_menulink
     font-family: Verdana, Tahoma, Arial, Sans;
     font-size:18px; 
     line-height:20px; 
-} 
-
+}
 .space2
 {
     height: 20px;
@@ -115,6 +114,24 @@ a:hover.dd_menulink
 {
     height: 30px;
 }
+/*
+    Faelles CSS
+*/
+.button
+{
+    background-color: #66ccee;
+    height: 26px;
+    border: 2px solid #eeeeee;
+    color: #eeeeee;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 12px;
+    font-weight: bold;
+}
+.button:hover
+{
+    border: 2px solid #dd7755;
+    color: #dd7755;
+}
 /* 
     Forside 
 */
@@ -133,21 +150,6 @@ a:hover.dd_menulink
     font-family: Verdana, Tahoma, Arial, Sans;
     color: #222222;
     font-size: 14px;
-}
-.editbutton
-{
-    background-color: #66ccee;
-    height: 26px;
-    border: 2px solid #eeeeee;
-    color: #eeeeee;
-    font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 12px;
-    font-weight: bold;
-}
-.editbutton:hover
-{
-    border: 2px solid #dd7755;
-    color: #dd7755;
 }
 .broedtekst_container
 {
@@ -177,3 +179,10 @@ a:hover.dd_menulink
     font-size: 14px;
     padding: 5px 5px 5px 5px;
 }
+/*
+    Tekstside (Se Forside)
+*/
+.format_button
+{
+    vertical-align: middle;
+} 

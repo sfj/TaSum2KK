@@ -38,7 +38,11 @@ public partial class Tekstside : System.Web.UI.Page {
 	}
 
 	private void VisTekst() {
-		ContentLabel.Text = fetchOneTekstFromDB(PageID()).text_dk;
+        ContentPlaceHolder.Controls.Add(new Label() 
+        { 
+            Text = fetchOneTekstFromDB(PageID()).text_dk,
+            CssClass = "broedtekst_container"
+        });
 	}
 
 	private tekst fetchOneTekstFromDB(int id) {

@@ -63,12 +63,12 @@
     <Compile Include="Controls\NewsEditorControl.ascx.designer.cs">
       <DependentUpon>NewsEditorControl.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\RenderControl.ascx.cs">
-      <DependentUpon>RenderControl.ascx</DependentUpon>
+    <Compile Include="Controls\NewsRenderControl.ascx.cs">
+      <DependentUpon>NewsRenderControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\RenderControl.ascx.designer.cs">
-      <DependentUpon>RenderControl.ascx</DependentUpon>
+    <Compile Include="Controls\NewsRenderControl.ascx.designer.cs">
+      <DependentUpon>NewsRenderControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Forside.aspx.designer.cs">
       <DependentUpon>Forside.aspx</DependentUpon>
@@ -108,7 +108,7 @@
     </Compile>
     <Content Include="Controls\EditorControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
-    <Content Include="Controls\RenderControl.ascx" />
+    <Content Include="Controls\NewsRenderControl.ascx" />
     <Content Include="fed.png" />
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />
