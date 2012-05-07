@@ -18,7 +18,7 @@ public partial class Forside : System.Web.UI.Page
 
     private void RenderNews(int editStoryNo)
     {
-        if (CanEditPage() && EditPageID() > -1)
+        if (CanEditPage() && !(EditPageID() > -1))
         {
             NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
             OControl.Text = null;

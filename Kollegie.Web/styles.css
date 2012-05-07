@@ -1,4 +1,7 @@
-﻿#bodytable
+﻿/* 
+    Master page 
+*/
+#bodytable
 {
     background-color: #ffffff;
     font-family: Verdana, Tahoma, Arial, Sans;
@@ -112,6 +115,65 @@ a:hover.dd_menulink
 {
     height: 30px;
 }
-
-
-
+/* 
+    Forside 
+*/
+.overskrift_container
+{
+    background-color: #66ccee;
+    padding: 5px 5px 5px 5px;
+}
+.overskrift_container_button
+{
+    background-color: #66ccee;
+    padding: 5px 5px 5px 5px;
+}
+.overskrift
+{
+    font-family: Verdana, Tahoma, Arial, Sans;
+    color: #222222;
+    font-size: 14px;
+}
+.editbutton
+{
+    background-color: #66ccee;
+    height: 26px;
+    border: 2px solid #eeeeee;
+    color: #eeeeee;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 12px;
+    font-weight: bold;
+}
+.editbutton:hover
+{
+    border: 2px solid #dd7755;
+    color: #dd7755;
+}
+.broedtekst_container
+{
+    background-color: #eeeeee;
+    padding: 5px 5px 5px 5px;
+}
+.broedtekst
+{
+    font-family: Verdana, Tahoma, Arial, Sans;
+    color: #222222;
+    font-size: 14px;
+}
+.editing_box_head
+{
+    background-color: #66ccee;
+    border: 2px solid #eeeeee;
+    color: #222222;
+    font-size: 14px;
+    padding: 5px 3px 5px 3px;
+    height: 13px;
+}
+.editing_box
+{
+    background-color: #eeeeee;
+    border: 2px solid #66ccee;
+    color: #222222;
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
+}
