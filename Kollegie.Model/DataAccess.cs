@@ -28,8 +28,8 @@ public class DataAccess
         string filename = "_dbcon.config";
 
 
-        string file_path = File.Exists(mappath + "\\" + filename) ? filename : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), filename);
-       // string file_path = mappath + "\\" + filename;
+        string file_path = File.Exists(mappath + "\\" + filename) ? mappath + "\\" + filename : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), filename);
+        
         TextReader tr = new StreamReader(file_path);
 
         constring = tr.ReadLine();

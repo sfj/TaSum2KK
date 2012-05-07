@@ -19,16 +19,15 @@ namespace Kollegie.Web {
         }
 
 		protected void Application_Start(object sender, EventArgs e) {
-            DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;      
+             DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 		}
 
-		protected void Session_Start(object sender, EventArgs e) {
+		protected void Session_Start(object sender, EventArgs e) {               
             if (User.Identity.IsAuthenticated && Session["user"] == null) {				
 				HttpCookie OCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
 				if (OCookie != null) {					
 					FormsAuthenticationTicket OTicket = FormsAuthentication.Decrypt(OCookie.Value);
-                    Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
-					user user = (from u in DB.users where u.username == OTicket.Name select u).SingleOrDefault();
+                    user user = (from u in DB.users where u.username == OTicket.Name select u).SingleOrDefault();
 					if (user != null) {
 						Session["user"] = user;
 					}
