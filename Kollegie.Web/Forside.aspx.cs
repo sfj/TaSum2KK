@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Kollegie.Model;
 using Kollegie.Web.Controls;
+using Kollegie.Web;
 
 public partial class Forside : System.Web.UI.Page
 {
-    private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
+    private Entities DB = Global.DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {

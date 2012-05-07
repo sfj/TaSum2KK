@@ -10,8 +10,16 @@ using System.Diagnostics;
 namespace Kollegie.Web {
 	public class Global : System.Web.HttpApplication {
 
-		protected void Application_Start(object sender, EventArgs e) {
+        private static Entities db;
 
+        public static Entities DB
+        {
+            get { return Global.db; }
+            set { Global.db = value; }
+        }
+
+		protected void Application_Start(object sender, EventArgs e) {
+            DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 		}
 
 		protected void Session_Start(object sender, EventArgs e) {			
@@ -45,7 +53,7 @@ namespace Kollegie.Web {
 		}
 
 		protected void Application_End(object sender, EventArgs e) {
-
+            db.Dispose();
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace Kollegie.Web.Controls
         public nyhed Text { get; set; }
         public bool canEdit;
 
-        private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
+        private Entities DB = Global.DB;
 
         protected void Page_Load(object sender, EventArgs e)
         {
