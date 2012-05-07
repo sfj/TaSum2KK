@@ -21,14 +21,17 @@ public class DataAccess
         get { return db; }
     }
 
-	public DataAccess(string mappath)
+	public DataAccess(string server_mappath)
 	{
-        string constring;
+        string constring, filename, file_on_server, file_on_desktop, file_path;
 
-        string filename = "_dbcon.config";
+        filename = "_dbcon.config";
 
+        file_on_server = server_mappath + "\\" + filename;
 
-        string file_path = File.Exists(mappath + "\\" + filename) ? mappath + "\\" + filename : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), filename);
+        file_on_desktop = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), filename);
+
+        file_path = File.Exists(file_on_server) ? file_on_server : file_on_desktop;
         
         TextReader tr = new StreamReader(file_path);
 
