@@ -63,7 +63,7 @@ public partial class NewsEditorControl : UserControl
         else
         {
             po = new nyhed();
-            po.created = new DateTime();
+            po.created = DateTime.Today;
             DB.nyheds.AddObject(po);
         }
         return po;
