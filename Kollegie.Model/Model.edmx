@@ -4,13 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="taModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="taModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="taModelStoreContainer">
+          <EntitySet Name="bolig" EntityType="taModel.Store.bolig" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="department" EntityType="taModel.Store.department" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="menu" EntityType="taModel.Store.menu" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="nyhed" EntityType="taModel.Store.nyhed" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="skabelon" EntityType="taModel.Store.skabelon" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tekst" EntityType="taModel.Store.tekst" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="users" EntityType="taModel.Store.users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__bolig__departmen__398D8EEE" Association="taModel.Store.FK__bolig__departmen__398D8EEE">
+            <End Role="department" EntitySet="department" />
+            <End Role="bolig" EntitySet="bolig" />
+          </AssociationSet>
           <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="taModel.Store.FK__menu__page_type__0519C6AF">
             <End Role="skabelon" EntitySet="skabelon" />
             <End Role="menu" EntitySet="menu" />
@@ -24,6 +30,39 @@
             <End Role="tekst" EntitySet="tekst" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="bolig">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="department" Type="int" />
+          <Property Name="description_dk" Type="text" />
+          <Property Name="description_en" Type="text" />
+          <Property Name="area" Type="int" />
+          <Property Name="surfacearea" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="persons" Type="int" />
+          <Property Name="children" Type="int" />
+          <Property Name="cat_amount" Type="int" />
+          <Property Name="dog_amount" Type="int" />
+          <Property Name="small_pets_amount" Type="int" />
+          <Property Name="bath" Type="int" />
+          <Property Name="kitchen" Type="int" />
+          <Property Name="rooms" Type="int" />
+          <Property Name="monthly_price" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="ac_expenses" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="deposit" Type="decimal" Precision="8" Scale="2" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="256" />
+          <Property Name="description_dk" Type="text" />
+          <Property Name="description_en" Type="text" />
+          <Property Name="pets" Type="int" />
+          <Property Name="pet_description" Type="text" />
+        </EntityType>
         <EntityType Name="menu">
           <Key>
             <PropertyRef Name="id" />
@@ -73,6 +112,18 @@
           <Property Name="password" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="userlevel" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK__bolig__departmen__398D8EEE">
+          <End Role="department" Type="taModel.Store.department" Multiplicity="0..1" />
+          <End Role="bolig" Type="taModel.Store.bolig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bolig">
+              <PropertyRef Name="department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__menu__page_type__0519C6AF">
           <End Role="skabelon" Type="taModel.Store.skabelon" Multiplicity="0..1" />
           <End Role="menu" Type="taModel.Store.menu" Multiplicity="*" />
@@ -109,8 +160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="taModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -131,6 +181,12 @@
           <AssociationSet Name="FK__tekst__side_id__0EA330E9" Association="taModel.FK__tekst__side_id__0EA330E9">
             <End Role="menu" EntitySet="menus" />
             <End Role="tekst" EntitySet="teksts" />
+          </AssociationSet>
+          <EntitySet Name="boligs" EntityType="taModel.bolig" />
+          <EntitySet Name="departments" EntityType="taModel.department" />
+          <AssociationSet Name="FK__bolig__departmen__398D8EEE" Association="taModel.FK__bolig__departmen__398D8EEE">
+            <End Role="department" EntitySet="departments" />
+            <End Role="bolig" EntitySet="boligs" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="menu">
@@ -224,6 +280,53 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="bolig">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="department" />
+          <Property Type="String" Name="description_dk" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="area" />
+          <Property Type="Decimal" Name="surfacearea" Precision="8" Scale="2" />
+          <Property Type="Int32" Name="persons" />
+          <Property Type="Int32" Name="children" />
+          <Property Type="Int32" Name="cat_amount" />
+          <Property Type="Int32" Name="dog_amount" />
+          <Property Type="Int32" Name="small_pets_amount" />
+          <Property Type="Int32" Name="bath" />
+          <Property Type="Int32" Name="kitchen" />
+          <Property Type="Int32" Name="rooms" />
+          <Property Type="Decimal" Name="monthly_price" Precision="8" Scale="2" />
+          <Property Type="Decimal" Name="ac_expenses" Precision="8" Scale="2" />
+          <Property Type="Decimal" Name="deposit" Precision="8" Scale="2" />
+          <NavigationProperty Name="department1" Relationship="taModel.FK__bolig__departmen__398D8EEE" FromRole="bolig" ToRole="department" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_dk" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="pets" />
+          <Property Type="String" Name="pet_description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="boligs" Relationship="taModel.FK__bolig__departmen__398D8EEE" FromRole="department" ToRole="bolig" />
+        </EntityType>
+        <Association Name="FK__bolig__departmen__398D8EEE">
+          <End Type="taModel.department" Role="department" Multiplicity="0..1" />
+          <End Type="taModel.bolig" Role="bolig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bolig">
+              <PropertyRef Name="department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -264,6 +367,41 @@
             <ScalarProperty Name="password" ColumnName="password" />
             <ScalarProperty Name="userlevel" ColumnName="userlevel" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="boligs">
+            <EntityTypeMapping TypeName="taModel.bolig">
+              <MappingFragment StoreEntitySet="bolig">
+                <ScalarProperty Name="deposit" ColumnName="deposit" />
+                <ScalarProperty Name="ac_expenses" ColumnName="ac_expenses" />
+                <ScalarProperty Name="monthly_price" ColumnName="monthly_price" />
+                <ScalarProperty Name="rooms" ColumnName="rooms" />
+                <ScalarProperty Name="kitchen" ColumnName="kitchen" />
+                <ScalarProperty Name="bath" ColumnName="bath" />
+                <ScalarProperty Name="small_pets_amount" ColumnName="small_pets_amount" />
+                <ScalarProperty Name="dog_amount" ColumnName="dog_amount" />
+                <ScalarProperty Name="cat_amount" ColumnName="cat_amount" />
+                <ScalarProperty Name="children" ColumnName="children" />
+                <ScalarProperty Name="persons" ColumnName="persons" />
+                <ScalarProperty Name="surfacearea" ColumnName="surfacearea" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="description_en" ColumnName="description_en" />
+                <ScalarProperty Name="description_dk" ColumnName="description_dk" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departments">
+            <EntityTypeMapping TypeName="taModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="pet_description" ColumnName="pet_description" />
+                <ScalarProperty Name="pets" ColumnName="pets" />
+                <ScalarProperty Name="description_en" ColumnName="description_en" />
+                <ScalarProperty Name="description_dk" ColumnName="description_dk" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -278,7 +416,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
@@ -303,6 +441,12 @@
         <AssociationConnector Association="taModel.FK__tekst__side_id__0EA330E9" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="2.4901432291666667" />
           <ConnectorPoint PointX="5.25" PointY="2.4901432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="taModel.bolig" Width="1.5" PointX="7.625" PointY="5" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="taModel.department" Width="1.5" PointX="5.375" PointY="6.125" Height="2.3648893229166674" />
+        <AssociationConnector Association="taModel.FK__bolig__departmen__398D8EEE" >
+          <ConnectorPoint PointX="6.875" PointY="7.3074446614583337" />
+          <ConnectorPoint PointX="7.625" PointY="7.3074446614583337" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

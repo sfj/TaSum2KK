@@ -15,6 +15,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         CreateMenu();
 
+        var testers = from test in DB.departments select test;
+
         if (IsPostBack)
         {
             if (LoginTable.Visible == true)
