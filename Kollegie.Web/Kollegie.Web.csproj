@@ -117,14 +117,14 @@
     <Content Include="Controls\LoginControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
     <Content Include="Controls\NewsRenderControl.ascx" />
-    <Content Include="fed.png" />
+    <Content Include="img\fed.png" />
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginError.aspx" />
     <Content Include="SQL_scripts\MenuCreate.sql" />
     <Content Include="styles.css" />
     <Content Include="Tekstside.aspx" />
-    <Content Include="titlebanner.png" />
+    <Content Include="img\titlebanner.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
