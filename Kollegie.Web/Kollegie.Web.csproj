@@ -120,6 +120,8 @@
     <Content Include="img\fed.png" />
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="img\kursiv.png" />
+    <Content Include="img\underline.png" />
     <Content Include="LoginError.aspx" />
     <Content Include="SQL_scripts\MenuCreate.sql" />
     <Content Include="styles.css" />
