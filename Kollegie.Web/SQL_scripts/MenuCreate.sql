@@ -35,6 +35,7 @@ side_id int foreign key references menu(id)
 );
 
 insert into tekst values('test tekst er bedst tekst', '', 4);
+update tekst set text_dk = 'test tekst er bedst tekst' where id=4;
 
 insert into users values('tara', 'pinkiepie', 1)
 
