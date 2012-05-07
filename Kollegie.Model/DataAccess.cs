@@ -21,14 +21,14 @@ public class DataAccess
         get { return db; }
     }
 
-	public DataAccess()
+	public DataAccess(string mappath)
 	{
         string constring;
 
         string filename = "_dbcon.config";
 
-        string file_path = File.Exists(filename) ? filename : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), filename);
 
+        string file_path = File.Exists(mappath + "\\" + filename) ? filename : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), filename);
         TextReader tr = new StreamReader(file_path);
 
         constring = tr.ReadLine();
@@ -40,13 +40,13 @@ public class DataAccess
         db = new Entities(constring);
 	}
 
-    public static DataAccess getDataAccess()
+    public static DataAccess getDataAccess(string mappath)
     {
         if (uniqueInstance == null)
         {
             lock(lockObj) 
             {
-                uniqueInstance = uniqueInstance == null ? new DataAccess() : uniqueInstance;
+                uniqueInstance = uniqueInstance == null ? new DataAccess(mappath) : uniqueInstance;
             }
             
         }

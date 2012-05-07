@@ -10,12 +10,12 @@ using Kollegie.Web.Controls;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
-    private Entities DB = DataAccess.getDataAccess().DB;
+    private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         CreateMenu();
-        
+        HttpContext.Current.Server.MapPath("dbcon");
         LoginControl OControl = (LoginControl)LoadControl("~/Controls/LoginControl.ascx");
         Login.Controls.Add(OControl);        
     }
