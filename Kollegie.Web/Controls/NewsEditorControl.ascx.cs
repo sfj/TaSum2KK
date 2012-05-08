@@ -6,11 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Kollegie.Model;
 using System.Diagnostics;
+using Kollegie.Web;
 
 public partial class NewsEditorControl : UserControl
 {
     public nyhed Text { get; set; }
-    private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
+    private Entities DB = Global.DB;
 
     protected override void OnLoad(EventArgs e)
     {

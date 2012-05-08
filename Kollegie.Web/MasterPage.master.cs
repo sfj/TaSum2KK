@@ -7,15 +7,15 @@ using System.Web.UI.WebControls;
 using Kollegie.Model;
 using System.Web.Security;
 using Kollegie.Web.Controls;
+using Kollegie.Web;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
-    private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
+    private Entities DB = Global.DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {
         CreateMenu();
-        HttpContext.Current.Server.MapPath("dbcon");
         LoginControl OControl = (LoginControl)LoadControl("~/Controls/LoginControl.ascx");
         Login.Controls.Add(OControl);        
     }

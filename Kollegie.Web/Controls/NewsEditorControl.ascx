@@ -12,7 +12,7 @@
     </td>
 </tr>
 <tr>
-    <td colspan="2" class="broedtekst_container">
+    <td colspan="3" class="broedtekst_container">
         <textarea class="editing_box" rows="7" cols="80" id="NewsEditor" runat="server"></textarea>
     </td>
 </tr>
