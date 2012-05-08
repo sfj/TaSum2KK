@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Kollegie.Model;
+using Kollegie.Web;
 
 public partial class rosbolig : System.Web.UI.Page
 {
-    private Entities DB = DataAccess.getDataAccess().DB;
+    private Entities DB = Global.DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -155,7 +156,7 @@ public partial class rosbolig : System.Web.UI.Page
 
         foreach (var t in temp)
         {
-            page += "<option value=\"" + t.id + " " + ((t.id == department && department != null) ? "selected=\"selected\"" : "") + "\">" + t.name + "</option>";
+            page += "<option value=\"" + t.id + "\" " + ((t.id == department && department != null) ? "selected=\"selected\"" : "") + " />" + t.name + "</option>";
         }
 
         page += "</select><br /><br />";
@@ -190,7 +191,7 @@ public partial class rosbolig : System.Web.UI.Page
 
         page += "Beskrivel(Engelsk):<br /><textarea name=\"description_en\"></textarea><br />";
 
-        page += "<input type=\"submit\" />";
+        page += "<asp:Button runat=\"server\" id=\"derp\" Text=\"" + ((index == 0) ? "Opret" : "Rediger") + "\" OnClick=\"SubmitButton_Click\" CssClass=\"button\" />";
 
         RosBolig.Controls.Add(new Literal() { Text = page });
     }
