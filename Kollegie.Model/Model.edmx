@@ -4,28 +4,28 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="taModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="taModelStoreContainer">
-          <EntitySet Name="bolig" EntityType="taModel.Store.bolig" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="department" EntityType="taModel.Store.department" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="menu" EntityType="taModel.Store.menu" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="nyhed" EntityType="taModel.Store.nyhed" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="skabelon" EntityType="taModel.Store.skabelon" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tekst" EntityType="taModel.Store.tekst" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="users" EntityType="taModel.Store.users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__bolig__departmen__398D8EEE" Association="taModel.Store.FK__bolig__departmen__398D8EEE">
+      <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="bolig" EntityType="Model.Store.bolig" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="department" EntityType="Model.Store.department" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="menu" EntityType="Model.Store.menu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="nyhed" EntityType="Model.Store.nyhed" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="skabelon" EntityType="Model.Store.skabelon" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tekst" EntityType="Model.Store.tekst" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="users" EntityType="Model.Store.users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__bolig__departmen__398D8EEE" Association="Model.Store.FK__bolig__departmen__398D8EEE">
             <End Role="department" EntitySet="department" />
             <End Role="bolig" EntitySet="bolig" />
           </AssociationSet>
-          <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="taModel.Store.FK__menu__page_type__0519C6AF">
+          <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="Model.Store.FK__menu__page_type__0519C6AF">
             <End Role="skabelon" EntitySet="skabelon" />
             <End Role="menu" EntitySet="menu" />
           </AssociationSet>
-          <AssociationSet Name="FK__menu__parent__060DEAE8" Association="taModel.Store.FK__menu__parent__060DEAE8">
+          <AssociationSet Name="FK__menu__parent__060DEAE8" Association="Model.Store.FK__menu__parent__060DEAE8">
             <End Role="menu" EntitySet="menu" />
             <End Role="menu1" EntitySet="menu" />
           </AssociationSet>
-          <AssociationSet Name="FK__tekst__side_id__0EA330E9" Association="taModel.Store.FK__tekst__side_id__0EA330E9">
+          <AssociationSet Name="FK__tekst__side_id__0EA330E9" Association="Model.Store.FK__tekst__side_id__0EA330E9">
             <End Role="menu" EntitySet="menu" />
             <End Role="tekst" EntitySet="tekst" />
           </AssociationSet>
@@ -85,7 +85,7 @@
           <Property Name="headline_en" Type="varchar" MaxLength="255" />
           <Property Name="text_en" Type="text" />
           <Property Name="created" Type="date" />
-          <Property Name="shown" Type="bit" />
+          <Property Name="hidden" Type="bit" />
         </EntityType>
         <EntityType Name="skabelon">
           <Key>
@@ -113,8 +113,8 @@
           <Property Name="userlevel" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__bolig__departmen__398D8EEE">
-          <End Role="department" Type="taModel.Store.department" Multiplicity="0..1" />
-          <End Role="bolig" Type="taModel.Store.bolig" Multiplicity="*" />
+          <End Role="department" Type="Model.Store.department" Multiplicity="0..1" />
+          <End Role="bolig" Type="Model.Store.bolig" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -125,8 +125,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__menu__page_type__0519C6AF">
-          <End Role="skabelon" Type="taModel.Store.skabelon" Multiplicity="0..1" />
-          <End Role="menu" Type="taModel.Store.menu" Multiplicity="*" />
+          <End Role="skabelon" Type="Model.Store.skabelon" Multiplicity="0..1" />
+          <End Role="menu" Type="Model.Store.menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="skabelon">
               <PropertyRef Name="id" />
@@ -137,8 +137,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__menu__parent__060DEAE8">
-          <End Role="menu" Type="taModel.Store.menu" Multiplicity="0..1" />
-          <End Role="menu1" Type="taModel.Store.menu" Multiplicity="*" />
+          <End Role="menu" Type="Model.Store.menu" Multiplicity="0..1" />
+          <End Role="menu1" Type="Model.Store.menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="menu">
               <PropertyRef Name="id" />
@@ -149,8 +149,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__tekst__side_id__0EA330E9">
-          <End Role="menu" Type="taModel.Store.menu" Multiplicity="0..1" />
-          <End Role="tekst" Type="taModel.Store.tekst" Multiplicity="*" />
+          <End Role="menu" Type="Model.Store.menu" Multiplicity="0..1" />
+          <End Role="tekst" Type="Model.Store.tekst" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="menu">
               <PropertyRef Name="id" />
@@ -160,35 +160,71 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="taModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="menus" EntityType="taModel.menu" />
-          <EntitySet Name="nyheds" EntityType="taModel.nyhed" />
-          <EntitySet Name="skabelons" EntityType="taModel.skabelon" />
-          <EntitySet Name="teksts" EntityType="taModel.tekst" />
-          <EntitySet Name="users" EntityType="taModel.user" />
-          <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="taModel.FK__menu__page_type__0519C6AF">
-            <End Role="skabelon" EntitySet="skabelons" />
-            <End Role="menu" EntitySet="menus" />
-          </AssociationSet>
-          <AssociationSet Name="FK__menu__parent__060DEAE8" Association="taModel.FK__menu__parent__060DEAE8">
-            <End Role="menu" EntitySet="menus" />
-            <End Role="menu1" EntitySet="menus" />
-          </AssociationSet>
-          <AssociationSet Name="FK__tekst__side_id__0EA330E9" Association="taModel.FK__tekst__side_id__0EA330E9">
-            <End Role="menu" EntitySet="menus" />
-            <End Role="tekst" EntitySet="teksts" />
-          </AssociationSet>
-          <EntitySet Name="boligs" EntityType="taModel.bolig" />
-          <EntitySet Name="departments" EntityType="taModel.department" />
-          <AssociationSet Name="FK__bolig__departmen__398D8EEE" Association="taModel.FK__bolig__departmen__398D8EEE">
+          <EntitySet Name="boligs" EntityType="Model.bolig" />
+          <EntitySet Name="departments" EntityType="Model.department" />
+          <EntitySet Name="menus" EntityType="Model.menu" />
+          <EntitySet Name="nyheds" EntityType="Model.nyhed" />
+          <EntitySet Name="skabelons" EntityType="Model.skabelon" />
+          <EntitySet Name="teksts" EntityType="Model.tekst" />
+          <EntitySet Name="users" EntityType="Model.user" />
+          <AssociationSet Name="FK__bolig__departmen__398D8EEE" Association="Model.FK__bolig__departmen__398D8EEE">
             <End Role="department" EntitySet="departments" />
             <End Role="bolig" EntitySet="boligs" />
           </AssociationSet>
+          <AssociationSet Name="FK__menu__page_type__0519C6AF" Association="Model.FK__menu__page_type__0519C6AF">
+            <End Role="skabelon" EntitySet="skabelons" />
+            <End Role="menu" EntitySet="menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__menu__parent__060DEAE8" Association="Model.FK__menu__parent__060DEAE8">
+            <End Role="menu" EntitySet="menus" />
+            <End Role="menu1" EntitySet="menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tekst__side_id__0EA330E9" Association="Model.FK__tekst__side_id__0EA330E9">
+            <End Role="menu" EntitySet="menus" />
+            <End Role="tekst" EntitySet="teksts" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="bolig">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="department" Type="Int32" />
+          <Property Name="description_dk" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="description_en" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="area" Type="Int32" />
+          <Property Name="surfacearea" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="persons" Type="Int32" />
+          <Property Name="children" Type="Int32" />
+          <Property Name="cat_amount" Type="Int32" />
+          <Property Name="dog_amount" Type="Int32" />
+          <Property Name="small_pets_amount" Type="Int32" />
+          <Property Name="bath" Type="Int32" />
+          <Property Name="kitchen" Type="Int32" />
+          <Property Name="rooms" Type="Int32" />
+          <Property Name="monthly_price" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="ac_expenses" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="deposit" Type="Decimal" Precision="8" Scale="2" />
+          <NavigationProperty Name="department1" Relationship="Model.FK__bolig__departmen__398D8EEE" FromRole="bolig" ToRole="department" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="description_dk" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="description_en" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="pets" Type="Int32" />
+          <Property Name="pet_description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="boligs" Relationship="Model.FK__bolig__departmen__398D8EEE" FromRole="department" ToRole="bolig" />
+        </EntityType>
         <EntityType Name="menu">
           <Key>
             <PropertyRef Name="id" />
@@ -200,10 +236,10 @@
           <Property Name="level" Type="Int32" />
           <Property Name="sort" Type="Int32" />
           <Property Name="parent" Type="Int32" />
-          <NavigationProperty Name="skabelon" Relationship="taModel.FK__menu__page_type__0519C6AF" FromRole="menu" ToRole="skabelon" />
-          <NavigationProperty Name="menu1" Relationship="taModel.FK__menu__parent__060DEAE8" FromRole="menu" ToRole="menu1" />
-          <NavigationProperty Name="menu2" Relationship="taModel.FK__menu__parent__060DEAE8" FromRole="menu1" ToRole="menu" />
-          <NavigationProperty Name="teksts" Relationship="taModel.FK__tekst__side_id__0EA330E9" FromRole="menu" ToRole="tekst" />
+          <NavigationProperty Name="skabelon" Relationship="Model.FK__menu__page_type__0519C6AF" FromRole="menu" ToRole="skabelon" />
+          <NavigationProperty Name="menu1" Relationship="Model.FK__menu__parent__060DEAE8" FromRole="menu" ToRole="menu1" />
+          <NavigationProperty Name="menu2" Relationship="Model.FK__menu__parent__060DEAE8" FromRole="menu1" ToRole="menu" />
+          <NavigationProperty Name="teksts" Relationship="Model.FK__tekst__side_id__0EA330E9" FromRole="menu" ToRole="tekst" />
         </EntityType>
         <EntityType Name="nyhed">
           <Key>
@@ -215,7 +251,7 @@
           <Property Name="headline_en" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="text_en" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="created" Type="DateTime" />
-          <Property Name="shown" Type="Boolean" />
+          <Property Name="hidden" Type="Boolean" />
         </EntityType>
         <EntityType Name="skabelon">
           <Key>
@@ -223,7 +259,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="filename" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="menus" Relationship="taModel.FK__menu__page_type__0519C6AF" FromRole="skabelon" ToRole="menu" />
+          <NavigationProperty Name="menus" Relationship="Model.FK__menu__page_type__0519C6AF" FromRole="skabelon" ToRole="menu" />
         </EntityType>
         <EntityType Name="tekst">
           <Key>
@@ -233,7 +269,7 @@
           <Property Name="text_dk" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="text_en" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="side_id" Type="Int32" />
-          <NavigationProperty Name="menu" Relationship="taModel.FK__tekst__side_id__0EA330E9" FromRole="tekst" ToRole="menu" />
+          <NavigationProperty Name="menu" Relationship="Model.FK__tekst__side_id__0EA330E9" FromRole="tekst" ToRole="menu" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -244,9 +280,21 @@
           <Property Name="password" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="userlevel" Type="Int32" Nullable="false" />
         </EntityType>
+        <Association Name="FK__bolig__departmen__398D8EEE">
+          <End Role="department" Type="Model.department" Multiplicity="0..1" />
+          <End Role="bolig" Type="Model.bolig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="bolig">
+              <PropertyRef Name="department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__menu__page_type__0519C6AF">
-          <End Role="skabelon" Type="taModel.skabelon" Multiplicity="0..1" />
-          <End Role="menu" Type="taModel.menu" Multiplicity="*" />
+          <End Role="skabelon" Type="Model.skabelon" Multiplicity="0..1" />
+          <End Role="menu" Type="Model.menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="skabelon">
               <PropertyRef Name="id" />
@@ -257,8 +305,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__menu__parent__060DEAE8">
-          <End Role="menu" Type="taModel.menu" Multiplicity="0..1" />
-          <End Role="menu1" Type="taModel.menu" Multiplicity="*" />
+          <End Role="menu" Type="Model.menu" Multiplicity="0..1" />
+          <End Role="menu1" Type="Model.menu" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="menu">
               <PropertyRef Name="id" />
@@ -269,8 +317,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__tekst__side_id__0EA330E9">
-          <End Role="menu" Type="taModel.menu" Multiplicity="0..1" />
-          <End Role="tekst" Type="taModel.tekst" Multiplicity="*" />
+          <End Role="menu" Type="Model.menu" Multiplicity="0..1" />
+          <End Role="tekst" Type="Model.tekst" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="menu">
               <PropertyRef Name="id" />
@@ -280,60 +328,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="bolig">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="department" />
-          <Property Type="String" Name="description_dk" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="area" />
-          <Property Type="Decimal" Name="surfacearea" Precision="8" Scale="2" />
-          <Property Type="Int32" Name="persons" />
-          <Property Type="Int32" Name="children" />
-          <Property Type="Int32" Name="cat_amount" />
-          <Property Type="Int32" Name="dog_amount" />
-          <Property Type="Int32" Name="small_pets_amount" />
-          <Property Type="Int32" Name="bath" />
-          <Property Type="Int32" Name="kitchen" />
-          <Property Type="Int32" Name="rooms" />
-          <Property Type="Decimal" Name="monthly_price" Precision="8" Scale="2" />
-          <Property Type="Decimal" Name="ac_expenses" Precision="8" Scale="2" />
-          <Property Type="Decimal" Name="deposit" Precision="8" Scale="2" />
-          <NavigationProperty Name="department1" Relationship="taModel.FK__bolig__departmen__398D8EEE" FromRole="bolig" ToRole="department" />
-        </EntityType>
-        <EntityType Name="department">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="name" MaxLength="256" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="description_dk" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="description_en" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="pets" />
-          <Property Type="String" Name="pet_description" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="boligs" Relationship="taModel.FK__bolig__departmen__398D8EEE" FromRole="department" ToRole="bolig" />
-        </EntityType>
-        <Association Name="FK__bolig__departmen__398D8EEE">
-          <End Type="taModel.department" Role="department" Multiplicity="0..1" />
-          <End Type="taModel.bolig" Role="bolig" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="department">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="bolig">
-              <PropertyRef Name="department" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="taModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="menus"><EntityTypeMapping TypeName="taModel.menu"><MappingFragment StoreEntitySet="menu">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="boligs"><EntityTypeMapping TypeName="Model.bolig"><MappingFragment StoreEntitySet="bolig">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="department" ColumnName="department" />
+            <ScalarProperty Name="description_dk" ColumnName="description_dk" />
+            <ScalarProperty Name="description_en" ColumnName="description_en" />
+            <ScalarProperty Name="area" ColumnName="area" />
+            <ScalarProperty Name="surfacearea" ColumnName="surfacearea" />
+            <ScalarProperty Name="persons" ColumnName="persons" />
+            <ScalarProperty Name="children" ColumnName="children" />
+            <ScalarProperty Name="cat_amount" ColumnName="cat_amount" />
+            <ScalarProperty Name="dog_amount" ColumnName="dog_amount" />
+            <ScalarProperty Name="small_pets_amount" ColumnName="small_pets_amount" />
+            <ScalarProperty Name="bath" ColumnName="bath" />
+            <ScalarProperty Name="kitchen" ColumnName="kitchen" />
+            <ScalarProperty Name="rooms" ColumnName="rooms" />
+            <ScalarProperty Name="monthly_price" ColumnName="monthly_price" />
+            <ScalarProperty Name="ac_expenses" ColumnName="ac_expenses" />
+            <ScalarProperty Name="deposit" ColumnName="deposit" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="Model.department"><MappingFragment StoreEntitySet="department">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="description_dk" ColumnName="description_dk" />
+            <ScalarProperty Name="description_en" ColumnName="description_en" />
+            <ScalarProperty Name="pets" ColumnName="pets" />
+            <ScalarProperty Name="pet_description" ColumnName="pet_description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="menus"><EntityTypeMapping TypeName="Model.menu"><MappingFragment StoreEntitySet="menu">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="text_dk" ColumnName="text_dk" />
             <ScalarProperty Name="text_en" ColumnName="text_en" />
@@ -342,66 +370,31 @@
             <ScalarProperty Name="sort" ColumnName="sort" />
             <ScalarProperty Name="parent" ColumnName="parent" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="nyheds"><EntityTypeMapping TypeName="taModel.nyhed"><MappingFragment StoreEntitySet="nyhed">
+          <EntitySetMapping Name="nyheds"><EntityTypeMapping TypeName="Model.nyhed"><MappingFragment StoreEntitySet="nyhed">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="headline_dk" ColumnName="headline_dk" />
             <ScalarProperty Name="text_dk" ColumnName="text_dk" />
             <ScalarProperty Name="headline_en" ColumnName="headline_en" />
             <ScalarProperty Name="text_en" ColumnName="text_en" />
             <ScalarProperty Name="created" ColumnName="created" />
-            <ScalarProperty Name="shown" ColumnName="shown" />
+            <ScalarProperty Name="hidden" ColumnName="hidden" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="skabelons"><EntityTypeMapping TypeName="taModel.skabelon"><MappingFragment StoreEntitySet="skabelon">
+          <EntitySetMapping Name="skabelons"><EntityTypeMapping TypeName="Model.skabelon"><MappingFragment StoreEntitySet="skabelon">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="filename" ColumnName="filename" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="teksts"><EntityTypeMapping TypeName="taModel.tekst"><MappingFragment StoreEntitySet="tekst">
+          <EntitySetMapping Name="teksts"><EntityTypeMapping TypeName="Model.tekst"><MappingFragment StoreEntitySet="tekst">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="text_dk" ColumnName="text_dk" />
             <ScalarProperty Name="text_en" ColumnName="text_en" />
             <ScalarProperty Name="side_id" ColumnName="side_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="users"><EntityTypeMapping TypeName="taModel.user"><MappingFragment StoreEntitySet="users">
+          <EntitySetMapping Name="users"><EntityTypeMapping TypeName="Model.user"><MappingFragment StoreEntitySet="users">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="username" ColumnName="username" />
             <ScalarProperty Name="password" ColumnName="password" />
             <ScalarProperty Name="userlevel" ColumnName="userlevel" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="boligs">
-            <EntityTypeMapping TypeName="taModel.bolig">
-              <MappingFragment StoreEntitySet="bolig">
-                <ScalarProperty Name="deposit" ColumnName="deposit" />
-                <ScalarProperty Name="ac_expenses" ColumnName="ac_expenses" />
-                <ScalarProperty Name="monthly_price" ColumnName="monthly_price" />
-                <ScalarProperty Name="rooms" ColumnName="rooms" />
-                <ScalarProperty Name="kitchen" ColumnName="kitchen" />
-                <ScalarProperty Name="bath" ColumnName="bath" />
-                <ScalarProperty Name="small_pets_amount" ColumnName="small_pets_amount" />
-                <ScalarProperty Name="dog_amount" ColumnName="dog_amount" />
-                <ScalarProperty Name="cat_amount" ColumnName="cat_amount" />
-                <ScalarProperty Name="children" ColumnName="children" />
-                <ScalarProperty Name="persons" ColumnName="persons" />
-                <ScalarProperty Name="surfacearea" ColumnName="surfacearea" />
-                <ScalarProperty Name="area" ColumnName="area" />
-                <ScalarProperty Name="description_en" ColumnName="description_en" />
-                <ScalarProperty Name="description_dk" ColumnName="description_dk" />
-                <ScalarProperty Name="department" ColumnName="department" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="departments">
-            <EntityTypeMapping TypeName="taModel.department">
-              <MappingFragment StoreEntitySet="department">
-                <ScalarProperty Name="pet_description" ColumnName="pet_description" />
-                <ScalarProperty Name="pets" ColumnName="pets" />
-                <ScalarProperty Name="description_en" ColumnName="description_en" />
-                <ScalarProperty Name="description_dk" ColumnName="description_dk" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -416,37 +409,37 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Model">
-        <EntityTypeShape EntityType="taModel.menu" Width="1.5" PointX="3" PointY="1" Height="3.1340950520833331" IsExpanded="true" />
-        <EntityTypeShape EntityType="taModel.nyhed" Width="1.5" PointX="0.75" PointY="5.75" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="taModel.skabelon" Width="1.5" PointX="0.75" PointY="1.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="taModel.tekst" Width="1.5" PointX="5.25" PointY="1.5" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="taModel.user" Width="1.5" PointX="2.75" PointY="5.75" Height="1.7879850260416674" IsExpanded="true" />
-        <AssociationConnector Association="taModel.FK__menu__page_type__0519C6AF" ManuallyRouted="false">
+        <EntityTypeShape EntityType="Model.bolig" Width="1.5" PointX="3" PointY="6" Height="4.480205078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.department" Width="1.5" PointX="0.75" PointY="7.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.menu" Width="1.5" PointX="3" PointY="1" Height="3.1340950520833313" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.nyhed" Width="1.5" PointX="5.75" PointY="4.75" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.skabelon" Width="1.5" PointX="0.75" PointY="1.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tekst" Width="1.5" PointX="5.25" PointY="1.5" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.user" Width="1.5" PointX="7.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__bolig__departmen__398D8EEE" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.3074446614583337" />
+          <ConnectorPoint PointX="3" PointY="8.3074446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model.FK__menu__page_type__0519C6AF" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.547841796875" />
           <ConnectorPoint PointX="3" PointY="2.547841796875" />
         </AssociationConnector>
-        <AssociationConnector Association="taModel.FK__menu__parent__060DEAE8" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.5319230769230767" PointY="4.1340950520833335" />
-          <ConnectorPoint PointX="3.5319230769230767" PointY="4.3840950520833335" />
-          <ConnectorPoint PointX="3.9784615384615383" PointY="4.3840950520833335" />
-          <ConnectorPoint PointX="3.9784615384615383" PointY="4.1340950520833335" />
+        <AssociationConnector Association="Model.FK__menu__parent__060DEAE8" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.5319230769230767" PointY="4.1340950520833317" />
+          <ConnectorPoint PointX="3.5319230769230767" PointY="4.3840950520833317" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="4.3840950520833317" />
+          <ConnectorPoint PointX="3.9784615384615383" PointY="4.1340950520833317" />
         </AssociationConnector>
-        <AssociationConnector Association="taModel.FK__tekst__side_id__0EA330E9" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="2.4901432291666667" />
-          <ConnectorPoint PointX="5.25" PointY="2.4901432291666667" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="taModel.bolig" Width="1.5" PointX="7.625" PointY="5" Height="4.4802050781250031" />
-        <EntityTypeShape EntityType="taModel.department" Width="1.5" PointX="5.375" PointY="6.125" Height="2.3648893229166674" />
-        <AssociationConnector Association="taModel.FK__bolig__departmen__398D8EEE" >
-          <ConnectorPoint PointX="6.875" PointY="7.3074446614583337" />
-          <ConnectorPoint PointX="7.625" PointY="7.3074446614583337" />
+        <AssociationConnector Association="Model.FK__tekst__side_id__0EA330E9" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.4901432291666659" />
+          <ConnectorPoint PointX="5.25" PointY="2.4901432291666659" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

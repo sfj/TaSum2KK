@@ -18,10 +18,10 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("taModel", "FK__menu__page_type__0519C6AF", "skabelon", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.skabelon), "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.menu), true)]
-[assembly: EdmRelationshipAttribute("taModel", "FK__menu__parent__060DEAE8", "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.menu), "menu1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.menu), true)]
-[assembly: EdmRelationshipAttribute("taModel", "FK__tekst__side_id__0EA330E9", "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.menu), "tekst", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.tekst), true)]
-[assembly: EdmRelationshipAttribute("taModel", "FK__bolig__departmen__398D8EEE", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.department), "bolig", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.bolig), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK__bolig__departmen__398D8EEE", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.department), "bolig", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.bolig), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK__menu__page_type__0519C6AF", "skabelon", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.skabelon), "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.menu), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK__menu__parent__060DEAE8", "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.menu), "menu1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.menu), true)]
+[assembly: EdmRelationshipAttribute("Model", "FK__tekst__side_id__0EA330E9", "menu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Kollegie.Model.menu), "tekst", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Kollegie.Model.tekst), true)]
 
 #endregion
 
@@ -72,6 +72,38 @@ namespace Kollegie.Model
         #endregion
     
         #region ObjectSet Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<bolig> boligs
+        {
+            get
+            {
+                if ((_boligs == null))
+                {
+                    _boligs = base.CreateObjectSet<bolig>("boligs");
+                }
+                return _boligs;
+            }
+        }
+        private ObjectSet<bolig> _boligs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<department> departments
+        {
+            get
+            {
+                if ((_departments == null))
+                {
+                    _departments = base.CreateObjectSet<department>("departments");
+                }
+                return _departments;
+            }
+        }
+        private ObjectSet<department> _departments;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -152,41 +184,25 @@ namespace Kollegie.Model
             }
         }
         private ObjectSet<user> _users;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<bolig> boligs
-        {
-            get
-            {
-                if ((_boligs == null))
-                {
-                    _boligs = base.CreateObjectSet<bolig>("boligs");
-                }
-                return _boligs;
-            }
-        }
-        private ObjectSet<bolig> _boligs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<department> departments
-        {
-            get
-            {
-                if ((_departments == null))
-                {
-                    _departments = base.CreateObjectSet<department>("departments");
-                }
-                return _departments;
-            }
-        }
-        private ObjectSet<department> _departments;
 
         #endregion
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the boligs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToboligs(bolig bolig)
+        {
+            base.AddObject("boligs", bolig);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the departments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTodepartments(department department)
+        {
+            base.AddObject("departments", department);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the menus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -227,22 +243,6 @@ namespace Kollegie.Model
         {
             base.AddObject("users", user);
         }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the boligs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToboligs(bolig bolig)
-        {
-            base.AddObject("boligs", bolig);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the departments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTodepartments(department department)
-        {
-            base.AddObject("departments", department);
-        }
 
         #endregion
     }
@@ -255,7 +255,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="bolig")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="bolig")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class bolig : EntityObject
@@ -697,16 +697,16 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__bolig__departmen__398D8EEE", "department")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__bolig__departmen__398D8EEE", "department")]
         public department department1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("taModel.FK__bolig__departmen__398D8EEE", "department").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("Model.FK__bolig__departmen__398D8EEE", "department").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("taModel.FK__bolig__departmen__398D8EEE", "department").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("Model.FK__bolig__departmen__398D8EEE", "department").Value = value;
             }
         }
         /// <summary>
@@ -718,13 +718,13 @@ namespace Kollegie.Model
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("taModel.FK__bolig__departmen__398D8EEE", "department");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("Model.FK__bolig__departmen__398D8EEE", "department");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<department>("taModel.FK__bolig__departmen__398D8EEE", "department", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<department>("Model.FK__bolig__departmen__398D8EEE", "department", value);
                 }
             }
         }
@@ -735,7 +735,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="department")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="department")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class department : EntityObject
@@ -913,18 +913,18 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__bolig__departmen__398D8EEE", "bolig")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__bolig__departmen__398D8EEE", "bolig")]
         public EntityCollection<bolig> boligs
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<bolig>("taModel.FK__bolig__departmen__398D8EEE", "bolig");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<bolig>("Model.FK__bolig__departmen__398D8EEE", "bolig");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<bolig>("taModel.FK__bolig__departmen__398D8EEE", "bolig", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<bolig>("Model.FK__bolig__departmen__398D8EEE", "bolig", value);
                 }
             }
         }
@@ -935,7 +935,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="menu")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="menu")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class menu : EntityObject
@@ -1137,16 +1137,16 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__menu__page_type__0519C6AF", "skabelon")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__menu__page_type__0519C6AF", "skabelon")]
         public skabelon skabelon
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<skabelon>("taModel.FK__menu__page_type__0519C6AF", "skabelon").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<skabelon>("Model.FK__menu__page_type__0519C6AF", "skabelon").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<skabelon>("taModel.FK__menu__page_type__0519C6AF", "skabelon").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<skabelon>("Model.FK__menu__page_type__0519C6AF", "skabelon").Value = value;
             }
         }
         /// <summary>
@@ -1158,13 +1158,13 @@ namespace Kollegie.Model
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<skabelon>("taModel.FK__menu__page_type__0519C6AF", "skabelon");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<skabelon>("Model.FK__menu__page_type__0519C6AF", "skabelon");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<skabelon>("taModel.FK__menu__page_type__0519C6AF", "skabelon", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<skabelon>("Model.FK__menu__page_type__0519C6AF", "skabelon", value);
                 }
             }
         }
@@ -1175,18 +1175,18 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__menu__parent__060DEAE8", "menu1")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__menu__parent__060DEAE8", "menu1")]
         public EntityCollection<menu> menu1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<menu>("taModel.FK__menu__parent__060DEAE8", "menu1");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<menu>("Model.FK__menu__parent__060DEAE8", "menu1");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<menu>("taModel.FK__menu__parent__060DEAE8", "menu1", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<menu>("Model.FK__menu__parent__060DEAE8", "menu1", value);
                 }
             }
         }
@@ -1197,16 +1197,16 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__menu__parent__060DEAE8", "menu")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__menu__parent__060DEAE8", "menu")]
         public menu menu2
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("taModel.FK__menu__parent__060DEAE8", "menu").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("Model.FK__menu__parent__060DEAE8", "menu").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("taModel.FK__menu__parent__060DEAE8", "menu").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("Model.FK__menu__parent__060DEAE8", "menu").Value = value;
             }
         }
         /// <summary>
@@ -1218,13 +1218,13 @@ namespace Kollegie.Model
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("taModel.FK__menu__parent__060DEAE8", "menu");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("Model.FK__menu__parent__060DEAE8", "menu");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<menu>("taModel.FK__menu__parent__060DEAE8", "menu", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<menu>("Model.FK__menu__parent__060DEAE8", "menu", value);
                 }
             }
         }
@@ -1235,18 +1235,18 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__tekst__side_id__0EA330E9", "tekst")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__tekst__side_id__0EA330E9", "tekst")]
         public EntityCollection<tekst> teksts
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tekst>("taModel.FK__tekst__side_id__0EA330E9", "tekst");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tekst>("Model.FK__tekst__side_id__0EA330E9", "tekst");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tekst>("taModel.FK__tekst__side_id__0EA330E9", "tekst", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tekst>("Model.FK__tekst__side_id__0EA330E9", "tekst", value);
                 }
             }
         }
@@ -1257,7 +1257,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="nyhed")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="nyhed")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class nyhed : EntityObject
@@ -1430,24 +1430,24 @@ namespace Kollegie.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> shown
+        public Nullable<global::System.Boolean> hidden
         {
             get
             {
-                return _shown;
+                return _hidden;
             }
             set
             {
-                OnshownChanging(value);
-                ReportPropertyChanging("shown");
-                _shown = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("shown");
-                OnshownChanged();
+                OnhiddenChanging(value);
+                ReportPropertyChanging("hidden");
+                _hidden = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("hidden");
+                OnhiddenChanged();
             }
         }
-        private Nullable<global::System.Boolean> _shown;
-        partial void OnshownChanging(Nullable<global::System.Boolean> value);
-        partial void OnshownChanged();
+        private Nullable<global::System.Boolean> _hidden;
+        partial void OnhiddenChanging(Nullable<global::System.Boolean> value);
+        partial void OnhiddenChanged();
 
         #endregion
     
@@ -1456,7 +1456,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="skabelon")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="skabelon")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class skabelon : EntityObject
@@ -1540,18 +1540,18 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__menu__page_type__0519C6AF", "menu")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__menu__page_type__0519C6AF", "menu")]
         public EntityCollection<menu> menus
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<menu>("taModel.FK__menu__page_type__0519C6AF", "menu");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<menu>("Model.FK__menu__page_type__0519C6AF", "menu");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<menu>("taModel.FK__menu__page_type__0519C6AF", "menu", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<menu>("Model.FK__menu__page_type__0519C6AF", "menu", value);
                 }
             }
         }
@@ -1562,7 +1562,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="tekst")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="tekst")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class tekst : EntityObject
@@ -1692,16 +1692,16 @@ namespace Kollegie.Model
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("taModel", "FK__tekst__side_id__0EA330E9", "menu")]
+        [EdmRelationshipNavigationPropertyAttribute("Model", "FK__tekst__side_id__0EA330E9", "menu")]
         public menu menu
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("taModel.FK__tekst__side_id__0EA330E9", "menu").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("Model.FK__tekst__side_id__0EA330E9", "menu").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("taModel.FK__tekst__side_id__0EA330E9", "menu").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("Model.FK__tekst__side_id__0EA330E9", "menu").Value = value;
             }
         }
         /// <summary>
@@ -1713,13 +1713,13 @@ namespace Kollegie.Model
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("taModel.FK__tekst__side_id__0EA330E9", "menu");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<menu>("Model.FK__tekst__side_id__0EA330E9", "menu");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<menu>("taModel.FK__tekst__side_id__0EA330E9", "menu", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<menu>("Model.FK__tekst__side_id__0EA330E9", "menu", value);
                 }
             }
         }
@@ -1730,7 +1730,7 @@ namespace Kollegie.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="taModel", Name="user")]
+    [EdmEntityTypeAttribute(NamespaceName="Model", Name="user")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class user : EntityObject

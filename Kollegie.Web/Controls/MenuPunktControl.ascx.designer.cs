@@ -10,42 +10,42 @@
 namespace Kollegie.Web.Controls {
     
     
-    public partial class RenderControl {
+    public partial class MenuPunktControl {
         
         /// <summary>
-        /// overskrift control.
+        /// mp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl overskrift;
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell mp;
         
         /// <summary>
-        /// dato control.
+        /// Link control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dato;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Link;
         
         /// <summary>
-        /// EditButton control.
+        /// dd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditButton;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dd;
         
         /// <summary>
-        /// broedtekst control.
+        /// sub control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl broedtekst;
+        protected global::System.Web.UI.WebControls.PlaceHolder sub;
     }
 }

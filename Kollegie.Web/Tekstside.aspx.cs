@@ -7,9 +7,10 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.IO;
 using Kollegie.Model;
+using Kollegie.Web;
 
 public partial class Tekstside : System.Web.UI.Page {
-    private Entities DB = DataAccess.getDataAccess().DB;
+    private Entities DB = Global.DB;
 
 	protected void Page_Load(object sender, EventArgs e) {
 		if (Request.QueryString.Count < 1) {

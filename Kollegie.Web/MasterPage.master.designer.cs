@@ -39,49 +39,13 @@ public partial class MasterPage {
     protected global::System.Web.UI.WebControls.PlaceHolder Menu;
     
     /// <summary>
-    /// LoginTable control.
+    /// Login control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlTable LoginTable;
-    
-    /// <summary>
-    /// userlogin control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox userlogin;
-    
-    /// <summary>
-    /// userpass control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.TextBox userpass;
-    
-    /// <summary>
-    /// loginbutton control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Button loginbutton;
-    
-    /// <summary>
-    /// LoggedIn control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.PlaceHolder LoggedIn;
+    protected global::System.Web.UI.WebControls.PlaceHolder Login;
     
     /// <summary>
     /// ContentPlaceHolder1 control.

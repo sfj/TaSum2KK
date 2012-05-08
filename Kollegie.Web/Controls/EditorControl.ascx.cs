@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Kollegie.Model;
 using System.Diagnostics;
+using Kollegie.Web;
 
 public partial class EditorControl : UserControl {
 	public tekst Text { get; set; }
-    private Entities DB = DataAccess.getDataAccess().DB;
+    private Entities DB = Global.DB;
 
 	protected override void OnLoad(EventArgs e) {
 		Page.ClientScript.RegisterClientScriptBlock(typeof(EditorControl), "CopyValue", "function CopyValue() { document.getElementById('" + EditorValue.ClientID + "').value = document.getElementById('" + Editor.ClientID + "').innerHTML; }", true);

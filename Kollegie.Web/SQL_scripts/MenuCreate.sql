@@ -33,12 +33,16 @@ text_dk text,
 text_en text,
 side_id int foreign key references menu(id)
 );
-
+insert into tekst values('test tekst er bedst tekst', '', 2);
+insert into tekst values('test tekst er bedst tekst', '', 3);
 insert into tekst values('test tekst er bedst tekst', '', 4);
+insert into tekst values('test tekst er bedst tekst', '', 5);
+insert into tekst values('test tekst er bedst tekst', '', 6);
+update tekst set text_dk = 'test tekst er bedst tekst' where id=2;
 
 insert into users values('tara', 'pinkiepie', 1)
 
-select * from skabelon;
+select * from tekst;
 
 insert into skabelon values('Forside.aspx');
 insert into skabelon values('Tekstside.aspx');
