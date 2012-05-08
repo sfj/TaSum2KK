@@ -34,6 +34,7 @@ text_en text,
 side_id int foreign key references menu(id)
 );
 insert into tekst values('test tekst er bedst tekst', '', 2);
+insert into tekst values('test tekst er bedst tekst', '', 3);
 insert into tekst values('test tekst er bedst tekst', '', 4);
 insert into tekst values('test tekst er bedst tekst', '', 5);
 insert into tekst values('test tekst er bedst tekst', '', 6);
