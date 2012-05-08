@@ -137,27 +137,38 @@ a:hover.dd_menulink
 */
 .overskrift_container
 {
+    width:380px;
+    background-color: #66ccee;
+    padding: 5px;
+}
+.toolbar_container
+{
+    width:380px;
     background-color: #66ccee;
     padding: 5px;
 }
 .dato_container
 {
+    width:80px;
     background-color: #66ccee;
     padding: 5px;
 }
 .overskrift_container_button
 {
+    width:20px;
     background-color: #66ccee;
     padding: 5px;
 }
 .overskrift
 {
+    width:380px;
     font-family: Verdana, Tahoma, Arial, Sans;
     color: #222222;
     font-size: 14px;
 }
 .broedtekst_container
 {
+    width:380px;
     background-color: #eeeeee;
     padding: 5px 5px 5px 5px;
 }

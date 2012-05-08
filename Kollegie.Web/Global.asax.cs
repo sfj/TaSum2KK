@@ -19,7 +19,7 @@ namespace Kollegie.Web {
 				HttpCookie OCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
 				if (OCookie != null) {					
 					FormsAuthenticationTicket OTicket = FormsAuthentication.Decrypt(OCookie.Value);
-					Entities DB = DataAccess.getDataAccess().DB;
+                    Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 					user user = (from u in DB.users where u.username == OTicket.Name select u).SingleOrDefault();
 					if (user != null) {
 						Session["user"] = user;

@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="false" Inherits="EditorControl" Codebehind="EditorControl.ascx.cs" %>
 
 <asp:HiddenField runat="server" ID="EditorValue" />
-<div class="overskrift_container">
+<div class="toolbar_container">
     <img onclick="format_text_new('Bold', 'Button_Bold');" src="img/fed.png" class="format_button" alt="Bold" id="Button_Bold" /> 
     <img onclick="format_text_new('Italic', 'Button_Bold');" src="img/kursiv.png" class="format_button" alt="Italic" id="Button_Italic" /> 
     <img onclick="format_text_new('Underline', 'Button_Bold');" src="img/underline.png" class="format_button" alt="Underline" id="Button_Underline" />

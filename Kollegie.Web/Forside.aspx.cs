@@ -9,7 +9,7 @@ using Kollegie.Web.Controls;
 
 public partial class Forside : System.Web.UI.Page
 {
-    private Entities DB = DataAccess.getDataAccess().DB;
+    private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -34,7 +34,7 @@ public partial class Forside : System.Web.UI.Page
                 OControl.Text = t;
                 NewsContent.Controls.Add(OControl);
             }
-            else
+            else if (CanEditPage() || t.hidden != true)
             {
                 RenderControl OControl = (RenderControl)LoadControl("~/Controls/NewsRenderControl.ascx");
                 OControl.Text = t;                

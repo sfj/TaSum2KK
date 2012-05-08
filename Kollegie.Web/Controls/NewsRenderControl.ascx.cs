@@ -13,7 +13,7 @@ namespace Kollegie.Web.Controls
         public nyhed Text { get; set; }
         public bool canEdit;
 
-        private Entities DB = DataAccess.getDataAccess().DB;
+        private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,6 @@ namespace Kollegie.Web.Controls
             if (canEdit)
             {
                 EditButton.Visible = true;
-                DeleteButton.Visible = true;
             }
             broedtekst.InnerHtml = Text.text_dk;
             dato.InnerHtml = ((DateTime)Text.created).ToShortDateString();
@@ -34,14 +33,6 @@ namespace Kollegie.Web.Controls
 
         protected void EditButtonClick(object sender, EventArgs e)
         {
-            Response.Redirect("Forside.aspx?edit=" + Text.id);
-        }
-
-        protected void DeleteButtonClick(object sender, EventArgs e)
-        {
-            var post = (from p in DB.nyheds where p.id == Text.id select p).SingleOrDefault();
-            DB.DeleteObject(post);
-            DB.SaveChanges();
             Response.Redirect("Forside.aspx?edit=" + Text.id);
         }
     }

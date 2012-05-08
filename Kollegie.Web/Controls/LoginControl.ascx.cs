@@ -11,7 +11,7 @@ namespace Kollegie.Web.Controls
 {
     public partial class LoginControl : System.Web.UI.UserControl
     {
-        private Entities DB = DataAccess.getDataAccess().DB;
+        private Entities DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 
         protected void Page_Load(object sender, EventArgs e)
         {            
