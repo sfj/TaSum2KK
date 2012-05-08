@@ -1,7 +1,7 @@
 ﻿/* 
     Master page 
 */
-#bodytable
+#bodytable, #pagebody
 {
     background-color: #ffffff;
     font-family: Verdana, Tahoma, Arial, Sans;
@@ -9,12 +9,11 @@
     padding: 0px;
     margin: 0px;
     font-size: 11px;
-    
 }
-.maintable 
+.maintable
 {
     width: 970px;
-    background-color: #f8f8f8;    
+    background-color: #f8f8f8;
 }
 .topbar
 {
@@ -22,7 +21,7 @@
 }
 .space1
 {
-    height: 80px;    
+    height: 80px;
 }
 .menubar
 {
@@ -33,23 +32,23 @@
 {
     width: 200px;
 }
-a:link.menu_link, a:active.menu_link, a:visited.menu_link 
-{ 
-    color:#666666; 
-    text-decoration:none; 
+a:link.menu_link, a:active.menu_link, a:visited.menu_link
+{
+    color: #666666;
+    text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size:18px; 
-    line-height:20px; 
-} 
-a:hover.menu_link 
-{ 
-    color:#ff0000; 
-    text-decoration:none;
-    font-family: Verdana, Tahoma, Arial, Sans; 
-    font-size:18px; 
-    line-height:20px; 
-} 
-.dd_div 
+    font-size: 18px;
+    line-height: 20px;
+}
+a:hover.menu_link
+{
+    color: #ff0000;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 18px;
+    line-height: 20px;
+}
+.dd_div
 {
     visibility: hidden;
     padding: 4px 0px 0px 0px;
@@ -59,28 +58,28 @@ a:hover.menu_link
 .dropdown
 {
     background-color: #eeeeee;
-    width: 195px;    
+    width: 195px;
 }
 .dd_menupunkt
 {
     height: 25px;
     padding-left: 5px;
 }
-a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink 
-{ 
-    color:#666666; 
-    text-decoration:none; 
+a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink
+{
+    color: #666666;
+    text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size:18px; 
-    line-height:20px; 
-} 
-a:hover.dd_menulink 
-{ 
-    color:#ff0000; 
-    text-decoration:none; 
+    font-size: 18px;
+    line-height: 20px;
+}
+a:hover.dd_menulink
+{
+    color: #ff0000;
+    text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size:18px; 
-    line-height:20px; 
+    font-size: 18px;
+    line-height: 20px;
 }
 .space2
 {
@@ -88,7 +87,7 @@ a:hover.dd_menulink
 }
 .left
 {
-    width: 550px;   
+    width: 550px;
 }
 .logintext
 {
@@ -185,4 +184,32 @@ a:hover.dd_menulink
 .format_button
 {
     vertical-align: middle;
-} 
+}
+
+.boliger
+{
+    border-left: 1px #999 solid;
+    border-top: 1px #999 solid;
+    width: 100%;
+}
+
+.boliger td
+{
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    padding: 3px;
+    padding-left: 5px;
+}
+
+.boliger td.image {
+    width: 250px;
+}
+
+span.bold {
+    font-weight: bold;
+}
+
+td.housephoto {
+    width: 220px;
+    padding: 0px;
+}

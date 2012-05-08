@@ -53,6 +53,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boliger.aspx.cs">
+      <DependentUpon>Boliger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Boliger.aspx.designer.cs">
+      <DependentUpon>Boliger.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EditorControl.ascx.designer.cs">
       <DependentUpon>EditorControl.ascx</DependentUpon>
     </Compile>
@@ -82,6 +89,13 @@
     <Compile Include="MasterPage.master.designer.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
     </Compile>
+    <Compile Include="rosbolig.aspx.cs">
+      <DependentUpon>rosbolig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rosbolig.aspx.designer.cs">
+      <DependentUpon>rosbolig.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Tekstside.aspx.cs">
       <DependentUpon>Tekstside.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +120,7 @@
     <Compile Include="Tekstside.aspx.designer.cs">
       <DependentUpon>Tekstside.aspx</DependentUpon>
     </Compile>
+    <Content Include="Boliger.aspx" />
     <Content Include="Controls\EditorControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
     <Content Include="Controls\NewsRenderControl.ascx" />
@@ -113,6 +128,7 @@
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />
     <Content Include="LoginError.aspx" />
+    <Content Include="rosbolig.aspx" />
     <Content Include="SQL_scripts\MenuCreate.sql" />
     <Content Include="styles.css" />
     <Content Include="Tekstside.aspx" />
