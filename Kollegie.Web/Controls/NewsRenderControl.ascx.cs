@@ -28,7 +28,8 @@ namespace Kollegie.Web.Controls
             }
             broedtekst.InnerHtml = Text.text_dk;
             dato.InnerHtml = ((DateTime)Text.created).ToShortDateString();
-            overskrift.InnerHtml = Text.headline_dk;
+            overskrift.InnerHtml = (Text.hidden == true) ? "<emph> (Skjult)</emph>" : "";
+            overskrift.InnerHtml += Text.headline_dk;
         }
 
         protected void EditButtonClick(object sender, EventArgs e)
