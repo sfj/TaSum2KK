@@ -12,9 +12,9 @@
 </table>
 <table cellpadding="0" cellspacing="0" runat="server" id="LogoutTable">
     <tr>
-    <td class="left"></td>
-    <td class="logintext"><label runat="server" id="LoginText" /></td>
+    <td class="loggedin_left"></td>
+    <td class="loggedin_logintext"><label runat="server" id="LoginText" /></td>
     <td class="loginbutton"><asp:Button ID="logoutbutton" Text="Logout" runat="server" CssClass="button" OnClick="LogoutButtonClick" /></td>
-    <td class="right"></td>
+    <td class="loggedin_right"></td>
     </tr>
 </table>

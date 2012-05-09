@@ -115,6 +115,18 @@ a:hover.dd_menulink
 {
     width: 40px;
 }
+.loggedin_left 
+{
+    width: 740px;
+}
+.loggedin_logintext 
+{
+    width: 110px;
+}
+.loggedin_right
+{
+    width: 40px;
+}
 .bottombar
 {
     height: 30px;
@@ -205,7 +217,7 @@ a:hover.dd_menulink
 .editing_box
 {
     background-color: <%=color7%>;
-    border: 2px solid <%=color6%>;
+    border: 1px solid <%=color6%>;
     color: <%=color1%>;
     font-size: 14px;
     padding: 5px 5px 5px 5px;
@@ -217,7 +229,9 @@ a:hover.dd_menulink
 {
     vertical-align: middle;
 }
-
+/*
+    Boliger
+*/
 .boliger
 {
     border-left: 1px solid <%=color9%>;
