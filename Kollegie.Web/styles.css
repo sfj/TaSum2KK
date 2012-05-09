@@ -1,19 +1,39 @@
 ﻿/* 
     Master page 
 */
+
+html, body, form, fieldset 
+{ 
+    margin: 0px; padding: 0px; font-size: 11px; font-family: Verdana, Arial, Tahoma, sans-serif; 
+} 
+/* Neutralize styling: Elements with a vertical margin: */ 
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address  
+{
+    margin: 0px; padding: 0px; 
+} 
+img  
+{
+    border:0px; 
+}
 #bodytable, #pagebody
 {
-    background-color: #ffffff;
+    background-color: <%=color0%>;
     font-family: Verdana, Tahoma, Arial, Sans;
-    color: #222222;
+    color: <%=color1%>;
     padding: 0px;
     margin: 0px;
     font-size: 11px;
 }
+
+img
+{
+    border-style:none;
+}
+
 .maintable
 {
     width: 970px;
-    background-color: #f8f8f8;
+    background-color: <%=color2%>;    
 }
 .topbar
 {
@@ -26,28 +46,30 @@
 .menubar
 {
     height: 29px;
-    background-color: #66ccee;
+    background-color: <%=color3%>;
 }
 .menupunkt
 {
     width: 200px;
 }
-a:link.menu_link, a:active.menu_link, a:visited.menu_link
-{
-    color: #666666;
-    text-decoration: none;
+
+a:link.menu_link, a:active.menu_link, a:visited.menu_link 
+{ 
+    color:<%=color4%>; 
+    text-decoration:none; 
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 18px;
-    line-height: 20px;
-}
-a:hover.menu_link
-{
-    color: #ff0000;
-    text-decoration: none;
-    font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 18px;
-    line-height: 20px;
-}
+    font-size:18px; 
+    line-height:20px; 
+} 
+a:hover.menu_link 
+{ 
+    color:<%=color5%>; 
+    text-decoration:none;
+    font-family: Verdana, Tahoma, Arial, Sans; 
+    font-size:18px; 
+    line-height:20px; 
+} 
+
 .dd_div
 {
     visibility: hidden;
@@ -57,26 +79,29 @@ a:hover.menu_link
 }
 .dropdown
 {
-    background-color: #eeeeee;
-    width: 195px;
+
+    background-color: <%=color7%>;
+    width: 195px;    
 }
 .dd_menupunkt
 {
     height: 25px;
     padding-left: 5px;
+    text-align:justify;
 }
-a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink
-{
-    color: #666666;
-    text-decoration: none;
+
+a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink 
+{ 
+    color:<%=color4%>; 
+    text-decoration:none; 
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 18px;
-    line-height: 20px;
-}
-a:hover.dd_menulink
-{
-    color: #ff0000;
-    text-decoration: none;
+    font-size:18px; 
+    line-height:20px; 
+} 
+a:hover.dd_menulink 
+{ 
+    color:<%=color5%>; 
+    text-decoration:none; 
     font-family: Verdana, Tahoma, Arial, Sans;
     font-size: 18px;
     line-height: 20px;
@@ -109,6 +134,18 @@ a:hover.dd_menulink
 {
     width: 40px;
 }
+.loggedin_left 
+{
+    width: 740px;
+}
+.loggedin_logintext 
+{
+    width: 110px;
+}
+.loggedin_right
+{
+    width: 40px;
+}
 .bottombar
 {
     height: 30px;
@@ -116,20 +153,30 @@ a:hover.dd_menulink
 /*
     Faelles CSS
 */
+.inputfield
+{
+    background-color: <%=color0%>;
+    height: 20px;
+    margin-right:3px;
+    border: 1px solid <%=color4%>;
+    color: <%=color4%>;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 12px;  
+}
 .button
 {
-    background-color: #66ccee;
-    height: 26px;
-    border: 2px solid #eeeeee;
-    color: #eeeeee;
+    background-color: <%=color8%>;
+    height: 24px;
+    border: 1px solid <%=color1%>;
+    color: <%=color1%>;
     font-family: Verdana, Tahoma, Arial, Sans;
     font-size: 12px;
     font-weight: bold;
 }
 .button:hover
 {
-    border: 2px solid #dd7755;
-    color: #dd7755;
+    border: 1px solid <%=color5%>;
+    color: <%=color5%>;
 }
 /* 
     Forside 
@@ -137,60 +184,62 @@ a:hover.dd_menulink
 .overskrift_container
 {
     width:380px;
-    background-color: #66ccee;
+    background-color: <%=color8%>;
     padding: 5px;
 }
 .toolbar_container
 {
     width:380px;
-    background-color: #66ccee;
+    background-color: <%=color8%>;
     padding: 5px;
 }
 .dato_container
 {
     width:80px;
-    background-color: #66ccee;
+    background-color: <%=color8%>;
     padding: 5px;
 }
 .overskrift_container_button
 {
     width:20px;
-    background-color: #66ccee;
+    background-color: <%=color8%>;
     padding: 5px;
 }
 .overskrift
 {
     width:380px;
     font-family: Verdana, Tahoma, Arial, Sans;
-    color: #222222;
+    color: <%=color1%>;
     font-size: 14px;
 }
 .broedtekst_container
 {
     width:380px;
-    background-color: #eeeeee;
+    background-color: <%=color7%>;
     padding: 5px 5px 5px 5px;
+    line-height:19px;
+    text-align:justify;
 }
 .broedtekst
 {
     font-family: Verdana, Tahoma, Arial, Sans;
-    color: #222222;
+    color: <%=color1%>;
     font-size: 14px;
 }
 .editing_box_head
 {
-    background-color: #66ccee;
-    border: 2px solid #eeeeee;
-    color: #222222;
+    background-color: <%=color8%>;
+    border: 1px solid <%=color7%>;
+    color: <%=color1%>;
     font-size: 14px;
     padding: 5px 3px 5px 3px;
     height: 13px;
 }
 .editing_box
 {
-    background-color: #eeeeee;
-    border: 2px solid #66ccee;
-    color: #222222;
+    background-color: <%=color7%>;
+    border: 1px solid <%=color6%>;
+    color: <%=color1%>;
     font-size: 14px;
     padding: 5px 5px 5px 5px;
 }
@@ -201,18 +250,28 @@ a:hover.dd_menulink
 {
     vertical-align: middle;
 }
-
+.tekst_container
+{
+    width:380px;
+    background-color: transparent;
+    padding: 5px 5px 5px 0px;
+    line-height:19px;
+    text-align:justify;
+}
+/*
+    Boliger
+*/
 .boliger
 {
-    border-left: 1px #999 solid;
-    border-top: 1px #999 solid;
+    border-left: 1px solid <%=color9%>;
+    border-top: 1px solid <%=color9%>;
     width: 100%;
 }
 
 .boliger td
 {
-    border-bottom: 1px solid #999;
-    border-right: 1px solid #999;
+    border-bottom: 1px solid <%=color9%>;
+    border-right: 1px solid <%=color9%>;
     padding: 3px;
     padding-left: 5px;
 }
