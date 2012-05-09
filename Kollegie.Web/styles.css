@@ -1,6 +1,20 @@
 ﻿/* 
     Master page 
 */
+
+html, body, form, fieldset 
+{ 
+    margin: 0px; padding: 0px; font-size: 11px; font-family: Verdana, Arial, Tahoma, sans-serif; 
+} 
+/* Neutralize styling: Elements with a vertical margin: */ 
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address  
+{
+    margin: 0px; padding: 0px; 
+} 
+img  
+{
+    border:0px; 
+}
 #bodytable, #pagebody
 {
     background-color: <%=color0%>;
@@ -9,9 +23,13 @@
     padding: 0px;
     margin: 0px;
     font-size: 11px;
-    border:0px;
-    text-align:left;
 }
+
+img
+{
+    border-style:none;
+}
+
 .maintable
 {
     width: 970px;
@@ -198,6 +216,7 @@ a:hover.dd_menulink
     width:380px;
     background-color: <%=color7%>;
     padding: 5px 5px 5px 5px;
+    line-height:19px;
 }
 .broedtekst
 {
