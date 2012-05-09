@@ -53,6 +53,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boliger.aspx.cs">
+      <DependentUpon>Boliger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Boliger.aspx.designer.cs">
+      <DependentUpon>Boliger.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EditorControl.ascx.designer.cs">
       <DependentUpon>EditorControl.ascx</DependentUpon>
     </Compile>
@@ -62,6 +69,13 @@
     </Compile>
     <Compile Include="Controls\LoginControl.ascx.designer.cs">
       <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuPunktControl.ascx.cs">
+      <DependentUpon>MenuPunktControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MenuPunktControl.ascx.designer.cs">
+      <DependentUpon>MenuPunktControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\NewsEditorControl.ascx.cs">
       <DependentUpon>NewsEditorControl.ascx</DependentUpon>
@@ -77,6 +91,13 @@
     <Compile Include="Controls\NewsRenderControl.ascx.designer.cs">
       <DependentUpon>NewsRenderControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SubMenuPunktControl.ascx.cs">
+      <DependentUpon>SubMenuPunktControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SubMenuPunktControl.ascx.designer.cs">
+      <DependentUpon>SubMenuPunktControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Forside.aspx.designer.cs">
       <DependentUpon>Forside.aspx</DependentUpon>
     </Compile>
@@ -91,6 +112,12 @@
     </Compile>
     <Compile Include="styles.ashx.cs">
       <DependentUpon>styles.ashx</DependentUpon>
+    <Compile Include="rosbolig.aspx.cs">
+      <DependentUpon>rosbolig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rosbolig.aspx.designer.cs">
+      <DependentUpon>rosbolig.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tekstside.aspx.cs">
       <DependentUpon>Tekstside.aspx</DependentUpon>
@@ -116,16 +143,20 @@
     <Compile Include="Tekstside.aspx.designer.cs">
       <DependentUpon>Tekstside.aspx</DependentUpon>
     </Compile>
+    <Content Include="Boliger.aspx" />
     <Content Include="Controls\EditorControl.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
+    <Content Include="Controls\MenuPunktControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
     <Content Include="Controls\NewsRenderControl.ascx" />
+    <Content Include="Controls\SubMenuPunktControl.ascx" />
     <Content Include="img\fed.png" />
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\kursiv.png" />
     <Content Include="img\underline.png" />
     <Content Include="LoginError.aspx" />
+    <Content Include="rosbolig.aspx" />
     <Content Include="SQL_scripts\MenuCreate.sql" />
     <Content Include="styles.css" />
     <Content Include="Tekstside.aspx" />
