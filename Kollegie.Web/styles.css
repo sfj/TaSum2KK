@@ -229,3 +229,11 @@ td.housephoto {
     width: 220px;
     padding: 0px;
 }
+
+table.oprettable {
+    width: 100%;
+}
+
+table.oprettable td {
+    vertical-align: top;
+}
