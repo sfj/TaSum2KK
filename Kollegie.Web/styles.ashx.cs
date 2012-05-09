@@ -23,6 +23,7 @@ namespace Kollegie.Web {
             css = css.Replace("<%=color6%>", "#66ccee");
             css = css.Replace("<%=color7%>", "#eeeeee");
             css = css.Replace("<%=color8%>", "#b8dff8");
+            css = css.Replace("<%=color9%>", "#999999");
 
             context.Response.Write(css); 
         }
