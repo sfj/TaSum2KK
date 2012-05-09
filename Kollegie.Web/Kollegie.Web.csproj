@@ -112,6 +112,7 @@
     </Compile>
     <Compile Include="styles.ashx.cs">
       <DependentUpon>styles.ashx</DependentUpon>
+    </Compile>
     <Compile Include="rosbolig.aspx.cs">
       <DependentUpon>rosbolig.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
