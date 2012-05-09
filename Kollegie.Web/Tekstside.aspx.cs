@@ -42,7 +42,7 @@ public partial class Tekstside : System.Web.UI.Page {
         ContentPlaceHolder.Controls.Add(new Label() 
         { 
             Text = fetchOneTekstFromDB(PageID()).text_dk,
-            CssClass = "broedtekst_container"
+            CssClass = "tekst_container"
         });
 	}
 

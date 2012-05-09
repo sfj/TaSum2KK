@@ -248,6 +248,13 @@ a:hover.dd_menulink
 {
     vertical-align: middle;
 }
+.tekst_container
+{
+    width:380px;
+    background-color: transparent;
+    padding: 5px 5px 5px 0px;
+    line-height:19px;
+}
 /*
     Boliger
 */
