@@ -4,8 +4,8 @@
     <tr>
         <td class="left"></td>
         <td class="logintext">Login:</td>
-		<td class="loginuser"><asp:TextBox ID="userlogin" runat="server"></asp:TextBox></td>
-		<td class="loginpass"><asp:TextBox ID="userpass" runat="server" TextMode="Password"></asp:TextBox></td>
+		<td class="loginuser"><asp:TextBox ID="userlogin" CssClass="inputfield" runat="server"></asp:TextBox></td>
+		<td class="loginpass"><asp:TextBox ID="userpass" CssClass="inputfield" runat="server" TextMode="Password"></asp:TextBox></td>
 		<td class="loginbutton"><asp:Button ID="loginbutton" Text="Login" runat="server" CssClass="button" /></td>
 		<td class="right"></td>
 	</tr>
