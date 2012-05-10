@@ -91,6 +91,13 @@
     <Compile Include="Controls\NewsRenderControl.ascx.designer.cs">
       <DependentUpon>NewsRenderControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OpretRedigerBoligControl.ascx.cs">
+      <DependentUpon>OpretRedigerBoligControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\OpretRedigerBoligControl.ascx.designer.cs">
+      <DependentUpon>OpretRedigerBoligControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SubMenuPunktControl.ascx.cs">
       <DependentUpon>SubMenuPunktControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +157,7 @@
     <Content Include="Controls\MenuPunktControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
     <Content Include="Controls\NewsRenderControl.ascx" />
+    <Content Include="Controls\OpretRedigerBoligControl.ascx" />
     <Content Include="Controls\SubMenuPunktControl.ascx" />
     <Content Include="img\fed.png" />
     <Content Include="Forside.aspx" />
