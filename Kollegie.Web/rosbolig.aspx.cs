@@ -16,63 +16,72 @@ public partial class rosbolig : System.Web.UI.Page
     {
         try
         {
+
             if (Request.QueryString["opret"] != null && Request.QueryString["opret"].Equals("make"))
             {
-                RenderOpretRediger(-1);
-            }
-            else if (Convert.ToInt32(Request.QueryString["rediger"]) > 0)
-            {
-                RenderOpretRediger(Convert.ToInt32(Request.QueryString["rediger"]));
-            }
-            else if (Convert.ToInt32(Request.QueryString["slet"]) > 0)
-            {
-                RenderSlet();
-            }
-            else if (Convert.ToInt32(Request.QueryString["post"]) > 0 && Convert.ToInt32(Request.QueryString["post"]) <= 3)
-            {
-
-                int? postMethod = (int?)Session["bolig_ros_post"];
-                bolig sessionBolig = (bolig)Session["bolig_ros_index"];
-
-                if (postMethod == null || sessionBolig == null)
+                if (Session["ros_bolig"] == null)
                 {
-                    Response.Redirect("Badrequest.aspx");
+                    Session.Add("ros_bolig", 1);
                 }
                 else
                 {
-                    if (postMethod == 1 || postMethod == 2)
-                    {
-                        sessionBolig.department = Convert.ToInt32(Request.QueryString["department"]);
-                        sessionBolig.ac_expenses = Convert.ToDecimal(Request.QueryString["ac_expenses"]);
-                        sessionBolig.monthly_price = Convert.ToDecimal(Request.QueryString["monthly_price"]);
-                        sessionBolig.deposit = Convert.ToInt32(Request.QueryString["deposit"]);
-                        sessionBolig.rooms = Convert.ToInt32(Request.QueryString["rooms"]);
-                        sessionBolig.persons = Convert.ToInt32(Request.QueryString["persons"]);
-                        sessionBolig.children = Convert.ToInt32(Request.QueryString["children"]);
-                        sessionBolig.dog_amount = Convert.ToInt32(Request.QueryString["dogs"]);
-                        sessionBolig.cat_amount = Convert.ToInt32(Request.QueryString["cats"]);
-                        sessionBolig.small_pets_amount = Convert.ToInt32(Request.QueryString["small_pets"]);
-                        sessionBolig.kitchen = Convert.ToInt32(Request.QueryString["kitchen"]);
-                        sessionBolig.bath = Convert.ToInt32(Request.QueryString["bath"]);
-                        sessionBolig.area = Convert.ToInt32(Request.QueryString["area"]);
-                        sessionBolig.surfacearea = Convert.ToInt32(Request.QueryString["surfacearea"]);
-                        sessionBolig.description_dk = Request.QueryString["surfacearea"];
-                        sessionBolig.description_en = Request.QueryString["surfacearea"];
-
-                        if (postMethod == 1)
-                        {
-                            DB.AddToboligs(sessionBolig);
-                        }
-
-                        DB.SaveChanges();
-
-                    }
-                    else if (postMethod.Value == 3)
-                    {
-                        //Slet bolig
-                    }
+                    Session["ros_bolig"] = 1;
                 }
             }
+            else if (Request.QueryString["rediger"] != null && Convert.ToInt32(Request.QueryString["rediger"]) > 0)
+            {
+                int? rediger = Convert.ToInt32(Request.QueryString["rediger"]);
+
+                if (Session["ros_bolig"] == null)
+                {
+                    Session.Add("ros_bolig", 2);
+                }
+                else
+                {
+                    Session["ros_bolig"] = 2;
+                }
+
+                var temp = from b in DB.boligs where b.id == rediger select b;
+
+                bolig bTemp = temp.First();
+
+                if (Session["bolig"] == null)
+                {
+                    Session.Add("bolig", bTemp);
+                }
+                else
+                {
+                    Session["bolig"] = bTemp;
+                }
+
+            }
+            else if (Request.QueryString["slet"] != null && Convert.ToInt32(Request.QueryString["slet"]) > 0)
+            {
+                int? slet = Convert.ToInt32(Request.QueryString["slet"]);
+
+                if (Session["ros_bolig"] == null)
+                {
+                    Session.Add("ros_bolig", 3);
+                } else
+                {
+                    Session["ros_bolig"] = 3;
+                }
+
+                var temp = from b in DB.boligs where b.id == slet select b;
+
+                bolig bTemp = temp.First();
+
+                if (Session["bolig"] == null)
+                {
+                    Session.Add("bolig", bTemp);
+                }
+                else
+                {
+                    Session["bolig"] = bTemp;
+                }
+            }
+            OpretRedigerBoligControl ORControl = (OpretRedigerBoligControl)LoadControl("~/Controls/OpretRedigerBoligControl.ascx");
+            RosBolig.Controls.Add(ORControl);
         }
         catch (NullReferenceException err)
         {
@@ -82,9 +91,7 @@ public partial class rosbolig : System.Web.UI.Page
 
     private void RenderOpretRediger(int index)
     {
-        OpretRedigerBoligControl ORControl = (OpretRedigerBoligControl)LoadControl("~/Controls/OpretRedigerBoligControl.ascx");
         Session.Add("bolig_ros", index);
-        RosBolig.Controls.Add(ORControl);
     }
 
     private void RenderSlet()

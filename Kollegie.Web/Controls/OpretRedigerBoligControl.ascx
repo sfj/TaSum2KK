@@ -3,16 +3,14 @@
 <table class="oprettable" runat="server" id="OpretRedigerTable">
     <tr>
         <td>
+            Afdeling:<br />
             <select id="departments" name="departments" runat="server">
             </select>
+            <br />
             Område:<br />
             <input type="text" name="area" id="area" runat="server" /><br />
             Kvm:<br />
             <input type="text" name="surfacearea" id="surfacearea" runat="server" /><br />
-            Beskrivel(Dansk):<br />
-            <textarea name="description_dk" runat="server" id="description_dk"></textarea><br />
-            Beskrivel(Engelsk):<br />
-            <textarea name="description_en" id="description_en" runat="server"></textarea><br />
         </td>
         <td>
             Antal værelse:<br />
@@ -43,7 +41,50 @@
     </tr>
     <tr>
         <td colspan="3">
-            <asp:Button runat="server" ID="derp" Text="Gem" OnClick="derp_OnClick" CssClass="button" />
+            Beskrivelse (dansk):<br />
+            <textarea name="description_dk" class="rediger" runat="server" id="description_dk"></textarea><br />
+            Beskrivelse (engelsk):<br />
+            <textarea name="description_en" class="rediger" id="description_en" runat="server"></textarea><br />
         </td>
     </tr>
 </table>
+<table id="SletBoligTable" class="boliger" runat="server">
+    <tr>
+        <td valign="top" class="housephoto">
+            <img src="http://ungdomsboligaarhus.dk/web/512/ktp.nsf/Pics/AFD53532.JPG/$File/AFD53532.JPG?OpenElement"
+                height="180" width="220" />
+        </td>
+        <td width="125">
+            <span class="bold">Pris pr. måned:</span><br />
+            <asp:Label runat="server" ID="MonthlyPriceLabel" />
+            kr<br />
+            <br />
+            <span class="bold">A/C udgifter:</span><br />
+            <asp:Label runat="server" ID="ACExpensesLabel" />
+            kr<br />
+            <br />
+            <span class="bold">Samlet:</span><br />
+            <asp:Label runat="server" ID="TotalLabel" />
+            kr<br />
+            <br />
+            <span class="bold">Depositum:</span><br />
+            <asp:Label runat="server" ID="DepositLabel" />
+            kr<br />
+            <br />
+            <span class="bold">Ventetid:</span><br />
+            <asp:Label runat="server" ID="DerpLabel" /><br />
+            <br />
+        </td>
+        <td valign="top">
+            <asp:Label runat="server" ID="DescriptionLabel" /><br />
+            <br />
+            <span class="bold">Afdeling:</span><br />
+            <asp:Label runat="server" ID="DepartmentLabel" />
+        </td>
+        <td valign="top">
+            Område:<br />
+            <asp:Label runat="server" ID="AreaLabel" />
+        </td>
+    </tr>
+</table>
+<asp:Button runat="server" ID="derp" Text="Gem" OnClick="derp_OnClick" CssClass="button" />

@@ -14,7 +14,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" align="right"><a href="rosbolig.aspx?opret=1">Opret bolig</a></td>
+            <td colspan="4" align="right"><a href="rosbolig.aspx?opret=make">Opret bolig</a></td>
         </tr>
         <asp:PlaceHolder ID="BoligContent" runat="server"></asp:PlaceHolder>
         <tr>
