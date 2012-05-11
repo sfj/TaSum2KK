@@ -30,7 +30,7 @@ namespace Kollegie.Web.Controls
             if (Session["user"] != null)
             {
                 LoginTable.Visible = false;
-                LoginText.InnerText = "Velkommen " + ((user) Session["user"]).username;
+                LoginText.InnerText = (((string)Session["lang"]) == "da" ? "Velkommen " : "Welcome ") + ((user) Session["user"]).username;
                 LogoutTable.Visible = true;
             }
             else

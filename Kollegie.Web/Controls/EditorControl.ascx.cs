@@ -17,8 +17,8 @@ public partial class EditorControl : UserControl {
 		SubmitButton.OnClientClick = "CopyValue();";
 	}
 
-	protected override void OnPreRender(EventArgs e) {		
-		Editor.InnerHtml = Text.text_dk;
+	protected override void OnPreRender(EventArgs e) {
+        Editor.InnerHtml = Text.text_dk;
 	}
 
 	protected void SubmitButton_Click(object sender, EventArgs e) {		

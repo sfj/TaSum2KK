@@ -26,10 +26,10 @@ namespace Kollegie.Web.Controls
             {
                 EditButton.Visible = true;
             }
-            broedtekst.InnerHtml = Text.text_dk;
+            broedtekst.InnerHtml = ((string)Session["lang"]) == "da" ? Text.text_dk : Text.text_en;
             dato.InnerHtml = ((DateTime)Text.created).ToShortDateString();
             overskrift.InnerHtml = (Text.hidden == true) ? "<em>(Skjult)</em> " : "";
-            overskrift.InnerHtml += Text.headline_dk;
+            overskrift.InnerHtml += ((string)Session["lang"]) == "da" ? Text.headline_dk : Text.headline_en;
         }
 
         protected void EditButtonClick(object sender, EventArgs e)

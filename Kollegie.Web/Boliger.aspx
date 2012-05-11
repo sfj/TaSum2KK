@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Boliger" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
     CodeBehind="Boliger.aspx.cs" Inherits="Boliger" %>
 
+    
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,7 +14,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" align="right"><a href="rosbolig.aspx?opret=1">Opret bolig</a></td>
+            <td colspan="4" align="right"><a href="rosbolig.aspx?opret=make">Opret bolig</a></td>
         </tr>
         <asp:PlaceHolder ID="BoligContent" runat="server"></asp:PlaceHolder>
         <tr>

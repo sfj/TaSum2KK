@@ -40,8 +40,8 @@ public partial class Tekstside : System.Web.UI.Page {
 
 	private void VisTekst() {
         ContentPlaceHolder.Controls.Add(new Label() 
-        { 
-            Text = fetchOneTekstFromDB(PageID()).text_dk,
+        {
+            Text = ((string)Session["lang"]) == "da" ? fetchOneTekstFromDB(PageID()).text_dk : fetchOneTekstFromDB(PageID()).text_en,
             CssClass = "tekst_container"
         });
 	}
