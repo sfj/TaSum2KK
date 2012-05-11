@@ -12,7 +12,7 @@ using Kollegie.Web;
 public partial class MasterPage : System.Web.UI.MasterPage
 {
     private Entities DB = Global.DB;
-
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         CreateMenu();
