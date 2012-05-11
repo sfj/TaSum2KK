@@ -36,18 +36,13 @@ namespace Kollegie.Web.Controls
                 bolig temp = query.First();
                 Session.Add("bolig", temp);
 
-                ac_expenses.Value = temp.ac_expenses.ToString();
-                area.Value = temp.area.ToString();
                 bath.Checked = temp.bath == 1;
                 cats.Value = temp.cat_amount.ToString();
                 children.Checked = temp.children == 1;
-                deposit.Value = temp.deposit.ToString();
                 description_dk.Value = temp.description_dk;
-                description_en.Value = temp.description_en;
                 dogs.Value = temp.dog_amount.ToString();
                 kitchen.Checked = temp.kitchen == 1;
                 monthly_price.Value = temp.monthly_price.ToString();
-                persons.Value = temp.persons.ToString();
                 rooms.Value = temp.rooms.ToString();
                 small_pets.Value = temp.small_pets_amount.ToString();
                 surfacearea.Value = temp.surfacearea.ToString();
@@ -66,19 +61,14 @@ namespace Kollegie.Web.Controls
                 DB.AddToboligs(b);
             }
 
-            b.ac_expenses = Convert.ToDecimal(ac_expenses.Value);
-            b.area = Convert.ToInt32(area.Value);
             b.bath = (bath.Checked) ? 1 : 0;
             b.cat_amount = Convert.ToInt32(cats.Value);
             b.children = (children.Checked) ? 1 : 0;
             b.department = (from temp in DB.departments where departments.Value == temp.name select temp).First().id;
-            b.deposit = Convert.ToDecimal(deposit.Value);
             b.description_dk = description_dk.Value;
-            b.description_en = description_en.Value;
             b.dog_amount = Convert.ToInt32(dogs.Value);
             b.kitchen = (kitchen.Checked) ? 1 : 0;
             b.monthly_price = Convert.ToDecimal(monthly_price.Value);
-            b.persons = Convert.ToInt32(persons.Value);
             b.rooms = Convert.ToInt32(rooms.Value);
             b.small_pets_amount = Convert.ToInt32(small_pets.Value);
             b.surfacearea = Convert.ToDecimal(surfacearea.Value);
