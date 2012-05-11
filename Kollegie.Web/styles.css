@@ -1,18 +1,28 @@
+﻿
+/*General styles - is derp */
 
- /*General styles - is derp */
+html, body, form, fieldset
+{
+    margin: 0px;
+    padding: 0px;
+    font-size: 11px;
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+}
+/* Neutralize styling: Elements with a vertical margin: */
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address
+{
+    margin: 0px;
+    padding: 0px;
+}
 
-html, body, form, fieldset 
-{ 
-    margin: 0px; padding: 0px; font-size: 11px; font-family: Verdana, Arial, Tahoma, sans-serif; 
-} 
-/* Neutralize styling: Elements with a vertical margin: */ 
-h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address  
+td
 {
-    margin: 0px; padding: 0px; 
-} 
-img  
+    vertical-align: top;
+}
+
+img
 {
-    border:0px; 
+    border: 0px;
 }
 #bodytable, #pagebody
 {
@@ -26,13 +36,13 @@ img
 
 img
 {
-    border-style:none;
+    border-style: none;
 }
 
 .maintable
 {
     width: 970px;
-    background-color: <%=color2%>;    
+    background-color: <%=color2%>;
 }
 .topbar
 {
@@ -52,22 +62,22 @@ img
     width: 200px;
 }
 
-a:link.menu_link, a:active.menu_link, a:visited.menu_link 
-{ 
-    color:<%=color4%>; 
-    text-decoration:none; 
+a:link.menu_link, a:active.menu_link, a:visited.menu_link
+{
+    color: <%=color4%>;
+    text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size:18px; 
-    line-height:20px; 
-} 
-a:hover.menu_link 
-{ 
-    color:<%=color5%>; 
-    text-decoration:none;
-    font-family: Verdana, Tahoma, Arial, Sans; 
-    font-size:18px; 
-    line-height:20px; 
-} 
+    font-size: 18px;
+    line-height: 20px;
+}
+a:hover.menu_link
+{
+    color: <%=color5%>;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 18px;
+    line-height: 20px;
+}
 
 .dd_div
 {
@@ -78,29 +88,28 @@ a:hover.menu_link
 }
 .dropdown
 {
-
     background-color: <%=color7%>;
-    width: 195px;    
+    width: 195px;
 }
 .dd_menupunkt
 {
     height: 25px;
     padding-left: 5px;
-    text-align:justify;
+    text-align: justify;
 }
 
-a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink 
-{ 
-    color:<%=color4%>; 
-    text-decoration:none; 
+a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink
+{
+    color: <%=color4%>;
+    text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size:18px; 
-    line-height:20px; 
-} 
-a:hover.dd_menulink 
-{ 
-    color:<%=color5%>; 
-    text-decoration:none; 
+    font-size: 18px;
+    line-height: 20px;
+}
+a:hover.dd_menulink
+{
+    color: <%=color5%>;
+    text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
     font-size: 18px;
     line-height: 20px;
@@ -133,11 +142,11 @@ a:hover.dd_menulink
 {
     width: 40px;
 }
-.loggedin_left 
+.loggedin_left
 {
     width: 740px;
 }
-.loggedin_logintext 
+.loggedin_logintext
 {
     width: 110px;
 }
@@ -156,11 +165,11 @@ a:hover.dd_menulink
 {
     background-color: <%=color0%>;
     height: 20px;
-    margin-right:3px;
+    margin-right: 3px;
     border: 1px solid <%=color4%>;
     color: <%=color4%>;
     font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 12px;  
+    font-size: 12px;
 }
 .button
 {
@@ -182,42 +191,42 @@ a:hover.dd_menulink
 */
 .overskrift_container
 {
-    width:380px;
+    width: 380px;
     background-color: <%=color8%>;
     padding: 5px;
 }
 .toolbar_container
 {
-    width:380px;
+    width: 380px;
     background-color: <%=color8%>;
     padding: 5px;
 }
 .dato_container
 {
-    width:80px;
+    width: 80px;
     background-color: <%=color8%>;
     padding: 5px;
 }
 .overskrift_container_button
 {
-    width:20px;
+    width: 20px;
     background-color: <%=color8%>;
     padding: 5px;
 }
 .overskrift
 {
-    width:380px;
+    width: 380px;
     font-family: Verdana, Tahoma, Arial, Sans;
     color: <%=color1%>;
     font-size: 14px;
 }
 .broedtekst_container
 {
-    width:380px;
+    width: 380px;
     background-color: <%=color7%>;
     padding: 5px 5px 5px 5px;
-    line-height:19px;
-    text-align:justify;
+    line-height: 19px;
+    text-align: justify;
 }
 .broedtekst
 {
@@ -251,11 +260,11 @@ a:hover.dd_menulink
 }
 .tekst_container
 {
-    width:380px;
+    width: 380px;
     background-color: transparent;
     padding: 5px 5px 5px 0px;
-    line-height:19px;
-    text-align:justify;
+    line-height: 19px;
+    text-align: justify;
 }
 /*
     Boliger
@@ -275,23 +284,57 @@ a:hover.dd_menulink
     padding-left: 5px;
 }
 
-.boliger td.image {
+.boliger td.image
+{
     width: 250px;
 }
 
-span.bold {
+span.bold
+{
     font-weight: bold;
 }
 
-td.housephoto {
+td.housephoto
+{
     width: 220px;
     padding: 0px;
 }
 
-table.oprettable {
+table.oprettable
+{
     width: 100%;
+    text-align: left;
 }
 
-table.oprettable td {
-    vertical-align: top;
+table.oprettable select {
+    background-color: <%=color0%>;
+    width: 160px;
+    height: 20px;
+    margin-right: 3px;
+    border: 1px solid <%=color4%>;
+    color: <%=color4%>;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 12px;
+}
+
+table.oprettable input[type="text"] {
+    background-color: <%=color0%>;
+    width: 160px;
+    height: 20px;
+    margin-right: 3px;
+    border: 1px solid <%=color4%>;
+    color: <%=color4%>;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 12px;
+}
+
+textarea.rediger {
+    background-color: <%=color0%>;
+    margin-right: 3px;
+    border: 1px solid <%=color4%>;
+    color: <%=color4%>;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 12px;
+    width: 600px;
+    height: 200px;
 }
