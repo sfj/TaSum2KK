@@ -16,6 +16,16 @@ public partial class Boliger : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         var temp = from t in DB.boligs select t;
+        //where
+        //pris < ?
+        //kat >= ?, kat = 0
+        //hund >= ? hund = 0
+        //andre dyr >= ? andre dyr = 0
+        //børn 0 || 1
+        //eget bad 0 || 1
+        //eget køkken 0 || 1
+        //antal vær >= ?
+        //fritekst LIKE %?%
 
         foreach (var t in temp)
         {
