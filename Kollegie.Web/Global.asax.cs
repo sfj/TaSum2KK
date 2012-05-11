@@ -22,7 +22,19 @@ namespace Kollegie.Web {
              DB = DataAccess.getDataAccess(HttpContext.Current.Server.MapPath(null)).DB;
 		}
 
-		protected void Session_Start(object sender, EventArgs e) {               
+		protected void Session_Start(object sender, EventArgs e) {
+            HttpCookie langPref = Request.Cookies["Preferences"];
+            if (langPref != null)
+            {
+                Session["lang"] = langPref["lang"];
+            }
+            else
+            {
+                langPref = new HttpCookie("Preferences");
+                langPref["lang"] = "da";
+                langPref.Expires = DateTime.Now.AddYears(5);
+                Response.Cookies.Add(langPref);
+            }
             if (User.Identity.IsAuthenticated && Session["user"] == null) {				
 				HttpCookie OCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
 				if (OCookie != null) {					

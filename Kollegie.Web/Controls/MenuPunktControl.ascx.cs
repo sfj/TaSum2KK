@@ -30,7 +30,7 @@ namespace Kollegie.Web.Controls
             mp.Attributes.Add("onMouseOver", "justshow(\'" + dd.ClientID + "\');");
             mp.Attributes.Add("onMouseOut", "justhide(\'" + dd.ClientID + "\');");
 
-            Link.InnerText = punkt.text_dk;
+            Link.InnerText = ((string)Session["lang"]) == "da" ? punkt.text_dk : punkt.text_en;
             Link.HRef = "~/" + punkt.skabelon.filename + "?id=" + punkt.id;
         }
     }

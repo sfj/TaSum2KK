@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< HEAD
 /*General styles - is derp */
 
 html, body, form, fieldset
@@ -14,6 +15,9 @@ h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address
     margin: 0px;
     padding: 0px;
 }
+=======
+/*General styles */
+>>>>>>> af0e032f768d7905daa861eb64fe66250b8060be
 
 td
 {
