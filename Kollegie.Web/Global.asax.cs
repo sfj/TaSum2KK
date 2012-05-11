@@ -26,7 +26,7 @@ namespace Kollegie.Web {
             HttpCookie langPref = Request.Cookies["Preferences"];
             if (langPref != null)
             {
-                Session["lang"] = langPref["lang"];
+                Session["lang"] = langPref["lang"] ?? "da";
             }
             else
             {
