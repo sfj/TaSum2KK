@@ -31,13 +31,13 @@ namespace Kollegie.Web.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlSelect departments;
         
         /// <summary>
-        /// area control.
+        /// Select1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText area;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Select1;
         
         /// <summary>
         /// surfacearea control.
@@ -49,6 +49,15 @@ namespace Kollegie.Web.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputText surfacearea;
         
         /// <summary>
+        /// description_dk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_dk;
+        
+        /// <summary>
         /// rooms control.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace Kollegie.Web.Controls {
         protected global::System.Web.UI.HtmlControls.HtmlInputText rooms;
         
         /// <summary>
-        /// persons control.
+        /// Select2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText persons;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect Select2;
         
         /// <summary>
         /// children control.
@@ -128,123 +137,6 @@ namespace Kollegie.Web.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText monthly_price;
-        
-        /// <summary>
-        /// ac_expenses control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText ac_expenses;
-        
-        /// <summary>
-        /// deposit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText deposit;
-        
-        /// <summary>
-        /// description_dk control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_dk;
-        
-        /// <summary>
-        /// description_en control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_en;
-        
-        /// <summary>
-        /// SletBoligTable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTable SletBoligTable;
-        
-        /// <summary>
-        /// MonthlyPriceLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MonthlyPriceLabel;
-        
-        /// <summary>
-        /// ACExpensesLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ACExpensesLabel;
-        
-        /// <summary>
-        /// TotalLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalLabel;
-        
-        /// <summary>
-        /// DepositLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DepositLabel;
-        
-        /// <summary>
-        /// DerpLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DerpLabel;
-        
-        /// <summary>
-        /// DescriptionLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DescriptionLabel;
-        
-        /// <summary>
-        /// DepartmentLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DepartmentLabel;
-        
-        /// <summary>
-        /// AreaLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AreaLabel;
         
         /// <summary>
         /// derp control.

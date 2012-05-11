@@ -27,6 +27,21 @@ public partial class Boliger : System.Web.UI.Page
         //antal vær >= ?
         //fritekst LIKE %?%
 
+        if (((string)Session["lang"]) == "da")
+        {
+            sortby.Text = "Sorter efter:";
+            price.Text = "Pris";
+            waittime.Text = "Ventetid";
+            department.Text = "Afdeling";
+        }
+        else
+        {
+            sortby.Text = "Sort by:";
+            price.Text = "Price";
+            waittime.Text = "Wait time";
+            department.Text = "Department";
+        }
+
         foreach (var t in temp)
         {
             if(((string)Session["lang"]) == "da") 

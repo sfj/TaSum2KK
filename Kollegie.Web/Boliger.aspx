@@ -9,8 +9,8 @@
     <table class="boliger" cellpadding="0" cellspacing="0">
         <tr>
             <td colspan="4" align="right">
-                Sorter efter: &nbsp; <a href="#">Pris</a> &nbsp; <a href="#">Ventetid</a> &nbsp;
-                <a href="#">Afdeling</a> &nbsp; &nbsp; &nbsp;
+                <asp:Label runat="server" ID="sortby" /> &nbsp; <a href="#"><asp:Label runat="server" ID="price" /></a> &nbsp; <a href="#"><asp:Label runat="server" ID="waittime" /></a> &nbsp;
+                <a href="#"><asp:Label runat="server" ID="department" /></a> &nbsp; &nbsp; &nbsp;
             </td>
         </tr>
         <tr>

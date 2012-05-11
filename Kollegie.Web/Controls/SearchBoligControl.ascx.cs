@@ -34,7 +34,7 @@ namespace Kollegie.Web.Controls
             {
                 var query = from b in DB.boligs where method == b.id select b;
                 bolig temp = query.First();
-                Session.Add("bolig", temp);
+                Session.Add("bolig", temp); 
 
                 ac_expenses.Value = temp.ac_expenses.ToString();
                 area.Value = temp.area.ToString();
