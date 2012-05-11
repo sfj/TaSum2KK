@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpretRedigerBoligControl.ascx.cs"
     Inherits="Kollegie.Web.Controls.OpretRedigerBoligControl" %>
-<table class="oprettable" runat="server" id="OpretRedigerTable">
+<table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
             Afdeling:<br />
