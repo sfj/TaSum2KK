@@ -60,6 +60,12 @@
     <Compile Include="Boliger.aspx.designer.cs">
       <DependentUpon>Boliger.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LangSelect.ascx.cs">
+      <DependentUpon>LangSelect.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LangSelect.ascx.designer.cs">
+      <DependentUpon>LangSelect.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SearchBoligControl.ascx.cs">
       <DependentUpon>SearchBoligControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,6 +165,7 @@
       <DependentUpon>Tekstside.aspx</DependentUpon>
     </Compile>
     <Content Include="Boliger.aspx" />
+    <Content Include="Controls\LangSelect.ascx" />
     <Content Include="Controls\SearchBoligControl.ascx" />
     <Content Include="Controls\EditorControl.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
