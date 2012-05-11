@@ -3,7 +3,7 @@
 <table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
-            Afdeling:<br />lolololol
+            Afdeling:<br />
             <select id="departments" name="departments" runat="server">
             </select>
             <br />
