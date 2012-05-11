@@ -33,5 +33,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             mpc.punkt = p;
             Menu.Controls.Add(mpc);
         }
+        LangSelect ls = (LangSelect)LoadControl("~/Controls/LangSelect.ascx");
+        Menu.Controls.Add(ls);
     }
 }

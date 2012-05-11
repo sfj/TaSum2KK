@@ -20,7 +20,7 @@ namespace Kollegie.Web.Controls
         protected override void OnPreRender(EventArgs e)
         {
             base.OnPreRender(e);
-            sublink.InnerText = punkt.text_dk;
+            sublink.InnerText = ((string)Session["lang"]) == "da" ? punkt.text_dk : punkt.text_en;
             sublink.HRef = "~/" + punkt.skabelon.filename + "?id=" + punkt.id;
         }
         

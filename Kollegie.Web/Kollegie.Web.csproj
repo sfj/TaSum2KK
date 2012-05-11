@@ -63,6 +63,13 @@
     <Compile Include="Controls\EditorControl.ascx.designer.cs">
       <DependentUpon>EditorControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LangSelect.ascx.cs">
+      <DependentUpon>LangSelect.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LangSelect.ascx.designer.cs">
+      <DependentUpon>LangSelect.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LoginControl.ascx.cs">
       <DependentUpon>LoginControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +160,7 @@
     </Compile>
     <Content Include="Boliger.aspx" />
     <Content Include="Controls\EditorControl.ascx" />
+    <Content Include="Controls\LangSelect.ascx" />
     <Content Include="Controls\LoginControl.ascx" />
     <Content Include="Controls\MenuPunktControl.ascx" />
     <Content Include="Controls\NewsEditorControl.ascx" />
