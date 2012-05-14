@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Ungdomsboligaarhus.dk</title>
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="~/img/favicon.ico"/>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="/styles.ashx?p=/styles.css" type="text/css" />
@@ -40,7 +41,9 @@
         
 					</asp:ContentPlaceHolder>
 			</td></tr>
-			<tr><td class="bottombar"></td></tr>   
+			<tr><td class="bottombar">
+                Nordhavnsgade 1, 1.th. 8000 Århus C - Tlf. 86 13 21 66 - Fax 86 13 21 80 - email: <a href="mailto:info@ungdomsboligaarhus.dk">info@ungdomsboligaarhus.dk</a> - <a href="http://www.kollegiekontoret.dk/">www.kollegiekontoret.dk</a>
+            </td></tr>   
 			</table>
 			</center>
 	 </form>
