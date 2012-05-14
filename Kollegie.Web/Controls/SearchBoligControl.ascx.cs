@@ -36,14 +36,11 @@ namespace Kollegie.Web.Controls
                 bolig temp = query.First();
                 Session.Add("bolig", temp);
 
-                ac_expenses.Value = temp.ac_expenses.ToString();
                 area.Value = temp.area.ToString();
                 bath.Checked = temp.bath == 1;
                 cats.Value = temp.cat_amount.ToString();
                 children.Checked = temp.children == 1;
-                deposit.Value = temp.deposit.ToString();
                 description_dk.Value = temp.description_dk;
-                description_en.Value = temp.description_en;
                 dogs.Value = temp.dog_amount.ToString();
                 kitchen.Checked = temp.kitchen == 1;
                 monthly_price.Value = temp.monthly_price.ToString();
