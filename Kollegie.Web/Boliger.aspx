@@ -13,9 +13,7 @@
                 <a href="#">Afdeling</a> &nbsp; &nbsp; &nbsp;
             </td>
         </tr>
-        <tr>
-            <td colspan="4" align="right"><a href="rosbolig.aspx?opret=make">Opret bolig</a></td>
-        </tr>
+        <asp:PlaceHolder runat="server" ID="OpretTableRow"></asp:PlaceHolder>
         <asp:PlaceHolder ID="BoligContent" runat="server"></asp:PlaceHolder>
         <tr>
             <td colspan="4" align="right">
