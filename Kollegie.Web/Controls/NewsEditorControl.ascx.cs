@@ -38,15 +38,15 @@ public partial class NewsEditorControl : UserControl
     protected void SubmitButtonClick(object sender, EventArgs e)
     {
         nyhed ny = GetNyhed();
-        if (((string)Session["lang"]) == "da")
-        {
-            ny.text_dk = NewsEditor.Value;
-            ny.headline_dk = NewsEditorHead.Value;
-        }
-        else if ((String)Session["lang"] == "en")
+        if ((String)Session["lang"] == "en")
         {
             ny.text_en = NewsEditor.Value;
-            ny.headline_en = NewsEditor.Value;
+            ny.headline_en = NewsEditorHead.Value;
+        }
+        else
+        {
+            ny.text_dk = NewsEditor.Value;
+            ny.headline_dk = NewsEditor.Value;
         }
         DB.SaveChanges();
         Text = ny;

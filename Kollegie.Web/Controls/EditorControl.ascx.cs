@@ -18,12 +18,19 @@ public partial class EditorControl : UserControl {
 	}
 
 	protected override void OnPreRender(EventArgs e) {
-        Editor.InnerHtml = Text.text_dk;
+        Editor.InnerHtml = ((String) Session["lang"] == "da") ? Text.text_dk : Text.text_en;
 	}
 
 	protected void SubmitButton_Click(object sender, EventArgs e) {		
 		tekst po = (from t in DB.teksts where t.side_id == Text.side_id && t.id == Text.id select t).SingleOrDefault();		
-		po.text_dk = EditorValue.Value;
+		if ((String) Session["lang"] == "en")
+		{
+		   po.text_en = EditorValue.Value;  
+		} 
+        else
+		{
+		    po.text_dk = EditorValue.Value;
+		}
 		DB.SaveChanges();
 		Text = po;
 	}
