@@ -36,6 +36,7 @@
 \end{titlepage}
 
 \begin{abstract}
+\thispagestyle{empty}
 Forord
 \end{abstract}
 
@@ -70,7 +71,7 @@ I princippet kunne en formel styregruppe etableres med kontaktpersonerne fra kol
 \subsubsection{Ressourcer}
 Uden tildelte økonomiske midler må vi anvende de gratis værktøjer vi kan få fat i, heldigvis er udbudet af gratis værktøjer ganske omfattende. Vi har opsat infrastruktur i form af dokumentstyring og versionskontrol, og vi har de nødvendige udviklingsværktøjer til rådighed.
 Til versionsstyring og generel filudveksling har vi valgt at bruge Git. Det er ikke hele teamet der har erfaring med dette værktøj, men grundet dårlige erfaringer med konkurrerende værktøjer ser det ud som om det er det bedste bud.
-Til rapporten faldt valget på \LaTeX og Google docs. Google docs fungerer godt når flere skal rette i et dokument på samme tid og \LaTeX er et fremra
+Til rapporten faldt valget på \LaTeX og Google docs. Google docs fungerer godt når flere skal rette i et dokument på samme tid og \LaTeX er uden sammenligning den bedste måde at håndtere skriftlige dokumenter over en vis størrelse.
 
 \subsubsection{Interessenter}
 Vi vurderer, at der på projektet findes følgende relevante og klart definerede interessenter:
@@ -277,6 +278,8 @@ TRAP-testen skal ikke ses som endegyldige fakta, men mere skal bruges som en tes
 
 For at kunne forudse mulige problemområder og finde de områder hvor vi kan udnytte teamets stærke sider til fulde, har vi valgt at lave en TURBO-analyse.
 
+\noindent
+
 \begin{tabular}{| p{3cm} | p{3cm} | p{3cm} | p{5cm} |}
 
 \hline
@@ -301,7 +304,9 @@ Sammenfatning & \multicolumn{3}{| p {11cm} |}{ Vi starter umiddelbart udviklings
 
 \subsection{Risikoanalyse}
 
-Herunder har vi forsøgt at opstille de risikofaktorer, som omstændighederne for projektet ligger under for. Risikofaktorerne omhandler interessenterne, omgivelserne og processen. På denne måde kan vi foregribe eventuelle problemer og forhåbentligt afværge dem.
+Herunder har vi forsøgt at opstille de risikofaktorer, som omstændighederne for projektet ligger under for. Risikofaktorerne omhandler interessenterne, omgivelserne og processen. På denne måde kan vi foregribe eventuelle problemer og forhåbentligt afværge dem. \newline
+\vspace{1cm}
+\noindent
 
 \begin{tabular}{| p {5cm} | p{2cm} | p{2cm} | p{2cm} | p{4cm} |}
 
@@ -456,7 +461,9 @@ Pair programming og sit together, fra XP, har også været praktikker, som har f
 
 Desuden har vi gennem hele projektet har vi benyttet os af slack, som er endnu en af XP’s praktikker, og det har medført at der har været en god koncentration om opgaven når vi har arbejdet aktivt på projektet. Slack har været i form af sociale aktiviteter i gruppen, som har holdt humør og energi oppe.
 
-\subsection{Sprint planning meeting: 1. sprint}
+\subsection{1. sprint}
+
+\subsubsection{Sprint planning meeting}
 
 \begin{tabular}{| l | l |}
 
@@ -465,7 +472,9 @@ Sprint længde & 1\nicefrac{1}{2} uge \\ \hline
 Arbejdsdage i dette sprint & 7 dage \\
 \hline
 \end{tabular}
-
+\newline
+\vspace{1cm}
+\noindent
 \begin{tabular}{| p{4cm} | p{4cm} | p{4cm} | p{4cm} |}
 \hline
 Team medlem & Total antal tilgængelige dage & Tilgængelige timer per dag & Total antal timer \\ \hline
@@ -476,6 +485,7 @@ Jannie & 5 & 6 & 30 \\ \hline
 Erik & 5 & 6 & 30 \\
 \hline
 \end{tabular}
+\newline
 
 Vi startede første sprint med at estimere vores velocity, som er fastsat til omkring 12 units per dag. Vi er kommet frem til at der er 186 timer tilgængelig til sprintet, og har vurderet at for at overhovedet at kunne løse story 5 på 80u skal den passe ind her. Da story 4 er en byggesten til story 5 og til sammenligning ubetydelig lille, ender sprint 1 på at omfatte 82u eller 95 pair programming timer. For at få det til at passe sammen kan al programmering dog ikke være i par.
 
@@ -495,7 +505,8 @@ Sidste dag i sprintet blev der lagt en prøve version af sitet på nettet og der
 
 Efter mødet satte teamet sig ned og snakkede om hvordan sprintet var forløbet. Det foregik ved at bruge en tavle med to spalter, hhv. “what works” og “what could be improved”. På den positive side fandt vi ud af, at vi havde nået vores mål, at scrum board og backlogs samt gruppe programmering/sit together fungerede godt. Jf. burn down chartet havde sprintet en hård start, hvilket kan skyldes nye arbejdsmetoder samt generelle opstartsproblemer, men efter tilvænningsperioden blev gruppen mere effektiv. Det at bruge scrum værktøjer som boards og backlogs gjorde det meget nemmere at koordinere arbejdet og det gav en positiv følelse at kunne følge sprintets fremskridt hele tiden. Modsat fandt vi ud af, at vi ikke har været gode til at holde standup meetings. Det vil vi førsøge at forbedre i næste sprint. Desuden kunne vi ikke undgå at komme ind på at omgivelserne ikke er optimale, og at problemer med skolens internet har været en stor hindring for vores arbejde.
 
-\subsection{Sprint planning meeting: 2. sprint}
+\subsection{2. sprint}
+\subsubsection{Sprint planning meeting}
 
 \begin{tabular}{| l | l |}
 
@@ -504,7 +515,9 @@ Sprint længde & 1 uge \\ \hline
 Arbejdsdage i dette sprint & 4 dage \\
 \hline
 \end{tabular}
-
+\newline
+\vspace{1cm}
+\noindent
 \begin{tabular}{| p{4cm} | p{4cm} | p{4cm} | p{4cm} |}
 \hline
 Team medlem & Total antal tilgængelige dage & Tilgængelige timer per dag & Total antal timer \\ \hline
@@ -515,6 +528,7 @@ Jannie & 4 & 6 & 24 \\ \hline
 Erik & 4 & 6 & 24 \\
 \hline
 \end{tabular}
+\newline
 
 Andet sprint startede igen ud med et sprint planning meeting. Vi fastsatte sprintets velocity til 48 units og udvalgte vha. den fastsatte estimering user stories svarende til dette ud fra prioriteringen. Da vi ikke kunne få det til at gå op med den fastsatte velocity, blev vi på baggrund af erfaring fra første sprint, enige om at tage en stor user story med (nr. 6 som er implementering af advanceret søgning), som går ud over vores velocity. Der er derfor risiko for at alle tasks for den pågældende user story ikke bliver færdig, hvor vi i så fald overdrager den/dem til næste sprint.
 
@@ -523,7 +537,7 @@ Formålet med dette sprint var hovedsageligt, at implementere user stories der v
 \begin{figure}
 \includegraphics[width=0.5\textwidth]{sprint2log}
 \caption{Grafisk fremstilling af sprint backlog}
-\label{sprintlog1}
+\label{sprintlog2}
 \end{figure}
 
 \subsubsection{Revision af product backlog}

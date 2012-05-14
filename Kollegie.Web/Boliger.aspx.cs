@@ -26,6 +26,17 @@ public partial class Boliger : System.Web.UI.Page
         //eget køkken 0 || 1
         //antal vær >= ?
         //fritekst LIKE %?%
+
+        // building query with method syntax:
+        IQueryable<bolig> test = DB.boligs; // initialise query
+        int pris = 3000; // get variables
+        if (pris != 0) // add filters with filter methods
+        {
+            test = FilterPrice(test, pris);
+        }
+
+        test = test.Select(b => b); // finally select boliger, optionally order etc.
+
         OpretTableRow.Controls.Add(new Literal()
                                        {
                                            Text = "<tr>\n" +
@@ -81,5 +92,10 @@ public partial class Boliger : System.Web.UI.Page
                 });
             }           
         }
+    }
+
+    private IQueryable<bolig> FilterPrice(IQueryable<bolig> test, int price)
+    {
+        return test.Where<bolig>(b => b.monthly_price < price);
     }
 }
