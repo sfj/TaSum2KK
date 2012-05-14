@@ -46,7 +46,7 @@ public partial class NewsEditorControl : UserControl
         else
         {
             ny.text_dk = NewsEditor.Value;
-            ny.headline_dk = NewsEditor.Value;
+            ny.headline_dk = NewsEditorHead.Value;
         }
         DB.SaveChanges();
         Text = ny;
