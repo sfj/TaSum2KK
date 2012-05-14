@@ -22,8 +22,9 @@ public partial class NewsEditorControl : UserControl
     {
         if (Text != null)
         {
-            NewsEditorHead.Value = Text.headline_dk;
-            NewsEditor.Value = Text.text_dk;
+
+            NewsEditorHead.Value = ((string)Session["lang"]) == "da" ? Text.headline_dk : Text.headline_en;
+            NewsEditor.Value = ((string)Session["lang"]) == "da" ? Text.text_dk : Text.text_en;
             HideButton.Text = (Text.hidden != true) ? "Skjul" : "Vis";
         }
         else
@@ -37,8 +38,16 @@ public partial class NewsEditorControl : UserControl
     protected void SubmitButtonClick(object sender, EventArgs e)
     {
         nyhed ny = GetNyhed();
-        ny.text_dk = NewsEditor.Value;
-        ny.headline_dk = NewsEditorHead.Value;
+        if (((string)Session["lang"]) == "da")
+        {
+            ny.text_dk = NewsEditor.Value;
+            ny.headline_dk = NewsEditorHead.Value;
+        }
+        else if ((String)Session["lang"] == "en")
+        {
+            ny.text_en = NewsEditor.Value;
+            ny.headline_en = NewsEditor.Value;
+        }
         DB.SaveChanges();
         Text = ny;
         Response.Redirect(Request.RawUrl);
