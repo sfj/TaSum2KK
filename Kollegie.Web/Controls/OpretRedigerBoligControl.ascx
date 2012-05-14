@@ -1,11 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpretRedigerBoligControl.ascx.cs"
     Inherits="Kollegie.Web.Controls.OpretRedigerBoligControl" %>
+<%@ Register TagPrefix="asp" Namespace="System.Web.UI.HtmlControls" Assembly="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" %>
 <table class="oprettable" runat="server" id="OpretRedigerTable">
     <tr>
         <td>
             Afdeling:<br />
-            <select id="departments" name="departments" runat="server">
-            </select>
+            <asp:HtmlSelect runat="server" ID="departments"></asp:HtmlSelect>
             <br />
             Område:<br />
             <input type="text" name="area" id="area" runat="server" /><br />

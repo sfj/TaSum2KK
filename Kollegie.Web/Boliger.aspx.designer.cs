@@ -12,6 +12,51 @@
 public partial class Boliger {
     
     /// <summary>
+    /// OpretTableRow control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.PlaceHolder OpretTableRow;
+
+    /// <summary>
+    /// sortby control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label sortby;
+    
+    /// <summary>
+    /// price control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label price;
+    
+    /// <summary>
+    /// waittime control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label waittime;
+    
+    /// <summary>
+    /// department control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label department;
+    
+    /// <summary>
     /// BoligContent control.
     /// </summary>
     /// <remarks>

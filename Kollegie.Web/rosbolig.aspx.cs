@@ -16,7 +16,6 @@ public partial class rosbolig : System.Web.UI.Page
     {
         try
         {
-
             if (Request.QueryString["opret"] != null && Request.QueryString["opret"].Equals("make"))
             {
                 if (Session["ros_bolig"] == null)

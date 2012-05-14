@@ -1,18 +1,18 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchBoligControl.ascx.cs"
-    Inherits="Kollegie.Web.Controls.OpretRedigerBoligControl" %>
-<table class="oprettable" runat="server" id="OpretRedigerTable">
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="~/Controls/SearchBoligControl.ascx.cs"
+    Inherits="Kollegie.Web.Controls.SearchBoligControl" %>
+<table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
             Afdelinger:
             <select id="departments" name="departments" runat="server" multiple="multiple">
             </select>
             Område:<br />
-            <select id="Select1" name="departments" runat="server" multiple="multiple">
+            <select id="area" name="departments" runat="server" multiple="multiple">
             </select><br />
             Kvm:<br />
             <input type="text" name="surfacearea" id="surfacearea" runat="server" /><br />
             Fritekst:<br />
-            <textarea name="description_dk" runat="server" id="description_dk" rows="5"></textarea><br />
+            <textarea name="description_dk" runat="server" id="description_dk" rows="5" cols="22"></textarea><br />
         </td>
         <td>
             Antal værelser:<br />
