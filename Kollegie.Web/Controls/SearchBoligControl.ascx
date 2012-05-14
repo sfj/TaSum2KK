@@ -1,6 +1,6 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchBoligControl.ascx.cs"
-    Inherits="Kollegie.Web.Controls.OpretRedigerBoligControl" %>
-<table class="oprettable" runat="server" id="OpretRedigerTable">
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="~/Controls/SearchBoligControl.ascx.cs"
+    Inherits="Kollegie.Web.Controls.SearchBoligControl" %>
+<table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
             Afdelinger:
