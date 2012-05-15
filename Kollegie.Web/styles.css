@@ -42,6 +42,7 @@ img
 {
     width: 970px;
     background-color: <%=color2%>;
+        text-align:justify;
 }
 .topbar
 {
@@ -62,10 +63,23 @@ img
 }
 .lang_select
 {
-    
+    text-align:right;
 }
 
-a:link.menu_link, a:active.menu_link, a:visited.menu_link
+a:link,a:active,a:visited
+{
+    color: <%=color4%>;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, Arial, Sans;
+}
+a:hover
+{
+    color: #69BBDA;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, Arial, Sans;
+}
+
+a.menu_link:link,a.menu_link:active,a.menu_link:visited
 {
     color: <%=color4%>;
     text-decoration: none;
@@ -73,9 +87,26 @@ a:link.menu_link, a:active.menu_link, a:visited.menu_link
     font-size: 18px;
     line-height: 20px;
 }
-a:hover.menu_link
+a.menu_link:hover
 {
-    color: <%=color5%>;
+    color: #eeeeee;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+a.dd_menulink:link, a.dd_menulink:active, a.dd_menulink:visited
+{
+    color: <%=color4%>;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, Arial, Sans;
+    font-size: 18px;
+    line-height: 20px;
+}
+a.dd_menulink:hover
+{
+    color: #69BBDA;
     text-decoration: none;
     font-family: Verdana, Tahoma, Arial, Sans;
     font-size: 18px;
@@ -101,22 +132,6 @@ a:hover.menu_link
     text-align: justify;
 }
 
-a:link.dd_menulink, a:active.dd_menulink, a:visited.dd_menulink
-{
-    color: <%=color4%>;
-    text-decoration: none;
-    font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 18px;
-    line-height: 20px;
-}
-a:hover.dd_menulink
-{
-    color: <%=color5%>;
-    text-decoration: none;
-    font-family: Verdana, Tahoma, Arial, Sans;
-    font-size: 18px;
-    line-height: 20px;
-}
 .space2
 {
     height: 20px;
@@ -162,6 +177,7 @@ a:hover.dd_menulink
     height: 30px;
     text-align: center;
     color: <%=color9%>;
+    padding-top:8px;
 }
 /*
     Faelles CSS
@@ -196,19 +212,19 @@ a:hover.dd_menulink
 */
 .overskrift_container
 {
-    width: 380px;
+    width: 370px;
     background-color: <%=color8%>;
     padding: 5px;
 }
 .toolbar_container
 {
-    width: 380px;
+    width: 370px;
     background-color: <%=color8%>;
     padding: 5px;
 }
 .dato_container
 {
-    width: 80px;
+    width: 90px;
     background-color: <%=color8%>;
     padding: 5px;
 }
@@ -220,14 +236,14 @@ a:hover.dd_menulink
 }
 .overskrift
 {
-    width: 380px;
+    width: 370px;
     font-family: Verdana, Tahoma, Arial, Sans;
     color: <%=color1%>;
     font-size: 14px;
 }
 .broedtekst_container
 {
-    width: 380px;
+    width: 480px;
     background-color: <%=color7%>;
     padding: 5px 5px 5px 5px;
     line-height: 19px;
@@ -238,6 +254,7 @@ a:hover.dd_menulink
     font-family: Verdana, Tahoma, Arial, Sans;
     color: <%=color1%>;
     font-size: 14px;
+    width: 370px;
 }
 .editing_box_head
 {
@@ -247,6 +264,7 @@ a:hover.dd_menulink
     font-size: 14px;
     padding: 5px 3px 5px 3px;
     height: 13px;
+    width: 200px;
 }
 .editing_box
 {
@@ -265,7 +283,7 @@ a:hover.dd_menulink
 }
 .tekst_container
 {
-    width: 380px;
+    width: 370px;
     background-color: transparent;
     padding: 5px 5px 5px 0px;
     line-height: 19px;
