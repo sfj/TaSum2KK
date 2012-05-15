@@ -5,7 +5,7 @@
     <tr>
         <td>
             Afdeling:<br />
-            <asp:HtmlSelect runat="server" ID="departments"></asp:HtmlSelect>
+            <asp:HtmlSelect runat="server" ID="departments" style="height: 50px;"></asp:HtmlSelect>
             <br />
             Område:<br />
             <input type="text" name="area" id="area" runat="server" /><br />

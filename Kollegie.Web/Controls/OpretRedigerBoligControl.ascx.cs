@@ -24,6 +24,7 @@ namespace Kollegie.Web.Controls
             }
 
             departments.DataBind();
+            departments.Multiple = true;
         }
 
         protected void Page_Load(object sender, EventArgs e)
