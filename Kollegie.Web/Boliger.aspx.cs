@@ -30,19 +30,37 @@ public partial class Boliger : System.Web.UI.Page
         // building query with method syntax:
         IQueryable<bolig> query = DB.boligs; // initialise query
         int pris = 3000; // get variables
-        if (pris != 0) // add filters with filter methods
+        int cats = 2;
+        int dogs = 1;
+        if (pris > 0) // add filters with filter methods
         {
             query = query.Where<bolig>(b => b.monthly_price < pris);
+        }
+        if (cats > 0)
+        {
+            query = query.Where<bolig>(b => b.cat_amount >= cats);
+        }
+        else
+        {
+            query = query.Where<bolig>(b => b.cat_amount == 0);
+        }
+        if (dogs > 0)
+        {
+            query = query.Where<bolig>(b => b.dog_amount >= dogs);
+        }
+        else
+        {
+            query = query.Where<bolig>(b => b.dog_amount == 0);
         }
 
         query = query.Select(b => b); // finally select boliger, optionally order etc.
 
         OpretTableRow.Controls.Add(new Literal()
-                                       {
-                                           Text = "<tr>\n" +
-                                            "<td colspan=\"4\" align=\"right\"><a href=\"rosbolig.aspx?opret=make\">Opret bolig</a></td>" +
-                                            "</tr>"
-                                       });
+            {
+                Text = "<tr>\n" +
+                "<td colspan=\"4\" align=\"right\"><a href=\"rosbolig.aspx?opret=make\">Opret bolig</a></td>" +
+                "</tr>"
+            });
         user u = ((user)Session["user"]);
         bool ros_visible;
         if (u != null && u.userlevel <= 2)
