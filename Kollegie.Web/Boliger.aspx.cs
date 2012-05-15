@@ -28,14 +28,14 @@ public partial class Boliger : System.Web.UI.Page
         //fritekst LIKE %?%
 
         // building query with method syntax:
-        IQueryable<bolig> test = DB.boligs; // initialise query
+        IQueryable<bolig> query = DB.boligs; // initialise query
         int pris = 3000; // get variables
         if (pris != 0) // add filters with filter methods
         {
-            test = FilterPrice(test, pris);
+            query = query.Where<bolig>(b => b.monthly_price < pris);
         }
 
-        test = test.Select(b => b); // finally select boliger, optionally order etc.
+        query = query.Select(b => b); // finally select boliger, optionally order etc.
 
         OpretTableRow.Controls.Add(new Literal()
                                        {
@@ -92,10 +92,5 @@ public partial class Boliger : System.Web.UI.Page
                 });
             }           
         }
-    }
-
-    private IQueryable<bolig> FilterPrice(IQueryable<bolig> test, int price)
-    {
-        return test.Where<bolig>(b => b.monthly_price < price);
     }
 }
