@@ -26,6 +26,17 @@ public partial class Boliger : System.Web.UI.Page
         //eget køkken 0 || 1
         //antal vær >= ?
         //fritekst LIKE %?%
+
+        // building query with method syntax:
+        IQueryable<bolig> query = DB.boligs; // initialise query
+        int pris = 3000; // get variables
+        if (pris != 0) // add filters with filter methods
+        {
+            query = query.Where<bolig>(b => b.monthly_price < pris);
+        }
+
+        query = query.Select(b => b); // finally select boliger, optionally order etc.
+
         OpretTableRow.Controls.Add(new Literal()
                                        {
                                            Text = "<tr>\n" +

@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{report}
+o\documentclass[12pt, a4paper]{report}
 
 %% Dansk shizzle
 \usepackage[utf8]{inputenc}
@@ -13,6 +13,7 @@
 \usepackage{lastpage}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+\usepackage{sidecap}
 \pagestyle{fancy} %skift til fancy
 \fancyhead[L]{Kollegiekontoret}
 \fancyhead[R]{\today}
@@ -41,6 +42,10 @@ Forord
 
 \chapter{Forundersøgelse}
 
+% SKRIV OM HVAD EN FORUNDERSØGELSE ER
+
+Vi har lært om at bruge MUST-metoden, og det er overordnet denne metode vi vil anvende principper og værktøjer fra i forundersøgelsen. På vores plan under afsnittet metode, kan overskrifter for de begreber vi har arbejdet med ses.
+
 \section{Forberedelse og projektgrundlag}
 På vores indledende projektetableringsmøde blev vi enige om projektets omfang og blev enige om, at vi med al sandsynlighed ikke når at levere et færdigt og brugbart produkt indenfor den afsatte tid.
 
@@ -62,7 +67,9 @@ Projektgruppen består primært at de fem undertegnede, hvoraf Tina Jensen er va
 I princippet kunne en formel styregruppe etableres med kontaktpersonerne fra kollegiekontoret, men da dette også er et læringsprojekt vil vi alle gerne være lidt involveret i beslutningsprocesserne, og når hele projektgruppen indgår er det lidt strakt at kalde det en styregruppe.
 
 \subsubsection{Ressourcer}
-Uden tildelte økonomiske midler må vi anvende de gratis værktøjer vi kan få fat i, heldigvis er det er udbudet af gratis værktøjer ganske omfattende, og vi har opsat infrastruktur i form af dokumentstyring og versionskontrol, og vi har de nødvendige udviklingsværktøjer til rådighed.
+Uden tildelte økonomiske midler må vi anvende de gratis værktøjer vi kan få fat i, heldigvis er udbudet af gratis værktøjer ganske omfattende. Vi har opsat infrastruktur i form af dokumentstyring og versionskontrol, og vi har de nødvendige udviklingsværktøjer til rådighed.
+Til versionsstyring og generel filudveksling har vi valgt at bruge Git. Det er ikke hele teamet der har erfaring med dette værktøj, men grundet dårlige erfaringer med konkurrerende værktøjer ser det ud som om det er det bedste bud.
+Til rapporten faldt valget på Latex og Google docs. Google docs fungerer godt når flere skal rette i et dokument på samme tid og Latex hjælper os vældig meget med at spilde en masse tid :-)
 
 \subsubsection{Interessenter}
 Vi vurderer, at der på projektet findes følgende relevante og klart definerede interessenter:
@@ -86,32 +93,25 @@ Vi vurderer, at der på projektet findes følgende relevante og klart definerede
   \caption{Figur, der viserinteressenternes succeskriterier .}
 \end{figure}
 
-En mulig konflikt i vores succeskriterier - i og med at der er tale om et skoleprojekt - kan være at vi som studerende har mere fokus på at lære noget, end at levere noget kunden kan bruge og bliver tilfreds med. Udviklingsforløbet er en læreproces for os, som derfor vil bruge længere tid på hver enkelt del end en udvikler fra erhvervslivet, og vi vil lave flere eksperimenter med hvordan produktet skal fungere, som måske ikke er forenlige med kundens forestillinger om et færdigt system.
+En mulig konflikt i vores succeskriterier - i og med at der er tale om et skoleprojekt - kan være at vi som studerende har mere fokus på at lære noget, end at levere noget kunden kan bruge og bliver tilfreds med. Udviklingsforløbet er en læringsproces for os, som derfor vil tage længere tid på hver enkelt del end en udvikler fra erhvervslivet, og vi vil lave flere eksperimenter med hvordan produktet skal fungere, som måske ikke er forenlige med kundens forestillinger om et færdigt system.
 
-Grundet projektets størrelse er det næppe sandsynligt at et færdigt system vil kunne leveres indenfor tidsfristen, er der opnået et fælles mål fra leverandørens såvel som fra kundens side, om fokus på læringsprocessen. For kunden er det vigtigt at opleve, hvordan et udviklingsforløb er. Det indebærer, at det i høj grad er leverandøren (og dermed også projektlederen), der i sidste ende tager beslutninger angående projektet.
+Grundet projektets størrelse er det næppe sandsynligt at et færdigt produkt vil kunne leveres indenfor tidsfristen. Der er derfor opstillet et fælles mål fra leverandørens såvel som fra kundens side om fokus på læringsprocessen. For kunden er det vigtigt at opleve, hvordan et udviklingsforløb er. Det indebærer, at det i høj grad er leverandøren (og dermed også projektlederen), der i sidste ende tager beslutninger angående projektet.
 
 
-
-\subsection{Risikoanalyse}
 \subsubsection{Produkt}
 
 \subsubsection{Proces}
 
-\subsubsection{Personressourcer}
-Hele holdet har taget en TRAP-test. Testen viste at holdet har balance i de fleste punkter men har en manglende evne i kommunikation. Holdet har ellers medlemmer, som har mindst 15 point i de andre kategorier mens den højeste scorer i kommunikation kun er ca. 11 point. Selvom kommunikationen er lav kender hele holdet hinanden forholdsvis godt, da vi har arbejdet sammen flere gange før.
-TRAP-testen skal ikke ses som endegyldige fakta, men mere skal bruges som en test der giver et fingerpeg om hvordan gruppen er sammensat, og hvordan de enkeltes styrker dækker de andres svagheder ind. Testen giver også et overbliksbillede over gruppens generelle svagheder, som vi skal være særligt opmærksomme på. De områder hvor flere gruppemedlemmer er mindre stærke, kræver fælles indsats for at opnå bedst mulig synergi på området.
-
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{itsaTRAP}
 \caption{Figur, der viser resultatet af TRAP-testen.}
+\label{trap}
 \end{figure}
 
 \subsubsection{Aftaler og koordinering}
 Møder med kollegiekontoret er umiddelbart aftalt i et fåtal, og vi forventer ikke at kunne bruge tid fast til at udvikle sammen med dem “ved siden af”. Møder aftales med Lene Billeskov Jensen.
 
 \subsection{Metode}
-\subsubsection{Overordnet fremgangsmåde}
-Vi har lært om at bruge MUST-metoden, og det er overordnet denne metode vi vil anvende principper og værktøjer fra i forundersøgelsen. På vores plan kan ses overskrifter for de begreber vi har arbejdet med.
 
 \subsubsection{Plan}
 \begin{figure}[h!]
@@ -134,6 +134,7 @@ Hvis man er ung og skal i uddannelse eller er i gang med en uddannelse i Aarhus 
 De ansatte ved kollegiekontoret er primært kontorarbejdere der administrerer ungdomsboligerne igennem webbolig, der er et ERP værktøj for boliger. Arbejdet består bl.a i at tildele tilbud til ansøgere ved ledige boliger og opsige aftaler, samt rydde op i information som brugerne indtaster forkert, fx dobbelte ansøgninger. Opgaven er til dels papirtung da der anvendes udkørsler fra systemet som en oversigt over ledige boliger der skal tildeles. Arbejdsfordelingen er ret afklaret, og webbolig fungerer rimelig effektivt til at klare opgaven. Arbejdsgangen er tilrettelagt for at undgå fejl der kan medføre lejetab for de kollegier der administreres, omend i en idéel verden udføres der et arbejde der fra et teknisk synspunkt godt kunne automatiseres.
 
 Ønsket om forandring ligger derimod i præsentationen af data ind/ud fra brugerne, der groft sagt er meget basal og uoverskuelig for mange. Der er ønsker om at gøre det lettere at udvælge relevante boliger i forbindelse med oprettelse af ansøgning, så det mindsker antallet af fejl brugerne laver, samt reducerer behovet for henvendelser fra ansøgere der ikke har kunnet overskue systemet.
+
   \subsubsection{Omgivelser}
 Da man som ung boligsøgende under uddannelse reelt ikke har et andet alternativ end ungdomsbolig Århus har de tilnærmelsesvis opnået et markedsmonopol. Markedssituationen i sig selv må ses som værende stabilt, om end der typisk er større efterspørgsel end udbud. Det er dog ikke faktorer, som Kollegiekontoret som sådan hverken kan eller skal ændre på. Det er naturligvis nødvendigt at indrette sig efter den gældende lovgivning på området, og til dels også boligforeningerne, som de har et tæt samarbejde med.
 
@@ -181,6 +182,7 @@ Se Figur ~\ref{r_billede}
 Se: Tabel ~\ref{d_kort}
 \begin{table}
 \caption{Diagnostiske kort}
+\label{d_kort}
 \begin{tabular}{| p{4cm} | p{4cm} | p{4cm} | p{4cm} |}
 \hline
 Problem & Årsag & Konsekvens & Ideer til løsning \\ \hline
@@ -249,68 +251,289 @@ Vi har været godt rundt om Kollegiekontoret, og afklaret at de har et reelt beh
 %Seriøst..
 %Det fungerer jo ikke i multiplayer.. latexforholdet er anstrengt nok i forvejen
 
-\chapter{Processen}
-\section{Projektetablering}
-%TODO Rewrite
 
-Vi har lavet meget teambuilding
-Indledende snakket med kollegiekontoret om at arbejde med en agil metode
+%NYNYNYNYNYNYNY UDVIKLINGSPROJEKTSRAPPORT
+
+\chapter{Udviklingsprojekt}
+
+Eftersom vi under forundersøgelsen er kommet frem til at den mest rentable løsning vil være at implementere en ny webside fra bunden, kan udviklingsprojektet starte.
+
+I rapporten herunder har vi dokumenteret hvordan processen er forløbet, samt redegjort for det produkt, som vi har lavet i sammenarbejde Kollegiekontoret.
+
+\section{Projektetablering}
+
+For at projektet skal have et solidt fundament med en god organisering, har vi valgt at analysere vores udgangspunkt så vi ved, hvor vores styrker ligger, og hvor der kan opstå forhindringer, som vi skal forsøge at styre udenom.
+
+Fra starten har vi lavet teambuilding, fx ved at tage en øl sammen og lave aftaler om organisering og skabe entusiasme for projektet. Vi har også haft en indledende snak med Kollegiekontoret om at arbejde med en agil metode, så vi kan have en tæt kontakt gennem hele forløbet.
+
+\section{Projektets organisering}
+
+Hele teamet har taget en TRAP-test (se ~\ref{trap}) for at vurdere vores personressourcer. Testen viste at holdet har balance i de fleste punkter men har en manglende evne i kommunikation. Holdet har ellers medlemmer, som har mindst 15 point i de andre kategorier mens den højeste scorer i kommunikation kun er ca. 11 point. Selvom kommunikationen er lav kender hele teamet hinanden forholdsvis godt, da vi har arbejdet sammen flere gange før.
+
+TRAP-testen skal ikke ses som endegyldige fakta, men mere skal bruges som en test der giver et fingerpeg om hvordan gruppen er sammensat, og hvordan de enkeltes styrker dækker de andres svagheder ind. Testen giver også et overbliksbillede over gruppens generelle svagheder, som vi skal være særligt opmærksomme på. De områder hvor flere gruppemedlemmer er mindre stærke, kræver fælles indsats for at opnå bedst mulig synergi på området.
 
 \subsection{Turboanalyse}
+
+For at kunne forudse mulige problemområder og finde de områder hvor vi kan udnytte teamets stærke sider til fulde, har vi valgt at lave en TURBO-analyse.
+
 \begin{tabular}{| p{3cm} | p{3cm} | p{3cm} | p{5cm} |}
+
 \hline
+
 Mål og vilkår & Særlig styrke & Særlig svaghed & Mulige beslutninger \\ \hline
+
 Teknikken &  & Usikkerhed om nuværende anvendt teknik & Vi kan starte fra bunden, fremfor at bygge ovenpå eksisterende \\ \hline
+
 Udviklerne &  & Uerfarne & Vi skal være forberedte på at få hjælp fra undervisere. \\ \hline
+
 Resultat & Skal ikke blive færdigt, da det ikke er målet &  & Fokuser på at lære noget \\ \hline
+
 Brugerne & Brugerne har svært ved at fravælge produktet &  &  \\ \hline
+
 Omgivelserne &  & Projektgruppen har andre opgaver under forløbet & Afstem forventninger og prioriteter \\ \hline
+
 & \multicolumn{3}{| c |}{Projektets strategi} \\ \hline
+
 Sammenfatning & \multicolumn{3}{| p {11cm} |}{ Vi starter umiddelbart udviklingsprojektet fra bar bund, og satser ikke på at levere et færdig produkt, men at vi lærer noget af proccessen ved et udviklingsprojekt. Vi vil også være eksperimenterende i idéerne så der kan komme noget brugbart og inspirerende ud af projektet for alle parter. } \\ \hline
+
 \end{tabular}
 
 \subsection{Risikoanalyse}
 
-\begin{tabular}{| p {5cm} | p{2cm} | p{2cm} | p{2cm} | p{4cm}}
+Herunder har vi forsøgt at opstille de risikofaktorer, som omstændighederne for projektet ligger under for. Risikofaktorerne omhandler interessenterne, omgivelserne og processen. På denne måde kan vi foregribe eventuelle problemer og forhåbentligt afværge dem.
+
+\begin{tabular}{| p {5cm} | p{2cm} | p{2cm} | p{2cm} | p{4cm} |}
+
 \hline
-Risici & Sandsynlighed & Alvorlighed & Riskotal (Sansynlighed * alvor) & Håndtering \\ \hline
+
+Risici & Sandsynlighed & Alvorlighed & Riskotal (Sandsynlighed * alvor) & Håndtering \\ \hline
+
 For lidt viden om det eksisterende system & 37 & 3 & 111 & Kommunikere ofte med kunden \\ \hline
+
 Miskommunikation med kunden & 10 & 7 & 70 & Opnå enighed i gruppen om kundens udmeldinger \\ \hline
+
 Manglende kommunikation internt i projektteamet & 5 & 8 & 40 & Være åbne overfor hinanden \\ \hline
+
 Manglende teknisk viden hos udviklerne & 25 & 3 & 75 & Søge hjælp ved lærere, hinanden og internettet \\ \hline
+
 Sygdom i teamet & 75 & 3 & 225 & Tage højde for dette i planlægning og metodevalg \\ \hline
+
 Tekniske problemer med udviklingsværktøjer & 80 & 1 & 80 & Vælge værktøjer vi ved fungerer godt og søge teknisk hjælp hvis det alligevel ikke fungerer \\ \hline
+
 Mangelfuld planlægning fra udviklernes side & 10 & 4 & 40 & Holde møder ofte og vælge en udviklingsmetode der understøtter tæt kommunikation \\ \hline
+
+Problemer med skolens net & 100 & 9 & 900 & Tage et andet sted hen for at arbejde \\ \hline
+
 \end{tabular}
 
 \subsection{Metodevalg}
 
-Projektets karakter gør det oplagt at bruge agile metoder, da der er brug for en tæt kontakt mellem os som udviklere og kollegiekontoret, da der er en vis usikkerhed i kravene til systemet og ikke så klare retningslinjer for dets funktionalitet. Personalet er ikke særligt teknisk anlagt, og vi har ikke noget stort indblik i det eksisterende systems implementation og funktioner.
+Projektets karakter gør det oplagt at bruge agile metoder, da der er brug for en tæt kontakt mellem os som udviklere og Kollegiekontoret, da der er en vis usikkerhed i kravene til systemet og ikke så klare retningslinjer for dets funktionalitet. Personalet er ikke særligt teknisk anlagt, og vi har ikke noget stort indblik i det eksisterende systems implementation og funktioner.
 
 \begin{figure}
+
 \includegraphics[width=0.5\textwidth]{amoebe}
+
 \caption{Boehms Dimensioner}
+
 \label{amoeb}
+
 \end{figure}
 
 Figur ~\ref{amoeb} viser forholdet mellem opgavens kompleksitet, antallet af personer på projektteamet, kundens afhængighed af systemet, projektmedlemmernes evne til at arbejde agilt og produktkravenes foranderlighed.
 
+Foranderlighed, agil arbejdsevne og afhængighed af systemet er faktorer der peger på at vælge en plandreven metode, men agil arbejdsevne er dels vurderet så højt fordi vi aldrig har arbejdet med det før, og den erfaring kan kun komme ved at prøve og få erfaringer.
+
 Derfor har vi valgt at vi gerne vil arbejde med en agil metode, der bl.a. sikrer at vi når at lære noget om udviklingsprocessen involveret i det, og fordi det også har være salgstalen overfor Kollegiekontoret, så de får en smag for den side af udviklingsverdenen inden de endeligt får løst deres behov for en ny hjemmeside.
 
-Vi har endeligt valgt SCRUM som udviklingsmetode, da vi gerne selv vil prøve at arbejde efter en ny metode, og da principperne i SCRUM passer godt til projektets lidt usikre og udefinerede karakter.
+Vi har endeligt valgt SCRUM som udviklingsmetode, da vi gerne selv vil prøve at arbejde efter en ny metode, og da principperne i SCRUM passer godt til projektets lidt usikre og udefinerede karakter. Vi krydrer vores SCRUM med nogle af elementerne fra XP som vi mener kan gavne vores udviklingsprojekt.
 
-\subsection{Projektets organisering}
+Pair programming mener vi er en god praktik da det er første gang vi skal udvikle en opgave af større omfang i et nyt udviklingssprog, er det en god måde at opveje for hinandens usikkerhed.
+
+Informative workspace opsætter vi for at have informationer samlet og tilgængelige. Ligeledes er det vigtigt at alle har koden tilgængeligt til at arbejde på, og vi vil lægge energi i at have versionsstyring til koden.
+
+Sit together er en god udviklingspraksis, fordi der er flere øjne over koden på en gang, og fordelen i form af synergieffekt ved at forene evner og overblik opvejer det kaotiske ved at arbejde flere mennesker på den samme opgave. Dette hjælper med at spotte problemer når de opstår, hurtigere end hvis man kodede selv.
+
 Overordnet set er vi alle ansvarlige for at projektet går godt, da en af hovedkarakteristika ved agil udvikling er en flad organisatorisk struktur med fælles ansvarsfordeling i et projektteam. Teamet har en ansvarlig for overholdelse af metoden, en SCRUM-master. Der er i metoden også brug for en ansvarlig til at opretholde en Product Backlog for kunden, denne er Product Owner.
 
-SCRUM-Master: Tina Jensen
-Product Owner: Erik Sejersen
-Dokument- og versionsstyring: Andreas Kristoffersen
+\subsection{Fordeling af roller}
 
-\section{Projektplan}
+SCRUM-Master: Tina Jensen \newline
 
+Product Owner: Jannie Gier Larsen \newline
+
+Dokument- og versionsstyring: Andreas Kristoffersen \newline
+
+
+\section{Projektplanlægning}
+
+\subsection{Product backlog}
+
+På baggrund af møde med Kollegiekontoret under forundersøgelsen, udarbejdede teamet en product backlog med en komplet liste over deres og slutbrugeres ønsker for systemet. Der blev senere holdt et møde, hvor repræsentanter fra Kollegiekontoret godkendte features listen uden ønske om ændringer af denne. Herunder kan det ses, hvad vi kom frem til.
+
+\subsubsection{Features}
+
+\begin{enumerate}
+
+\item Der skal kunne vælges mellem en dansk- og engelsksproget version af siden. Estimeres til 3 units.
+
+\item Man skal kunne se en oversigt over de fremsøgte boliger med sammenlignelig info om hver bolig. Estimeres til 8 units.
+
+\item Understøttelse af de mest udbredte browsere, herunder de nyeste to versioner af Mozilla, Safari, Opera og IE, samt de tre nyeste versioner af Chrome. Estimeres til 17 units.
+
+\item Nyheder vises på forsiden Estimeres til 2 units.
+
+\item Content management system, hvor webmasteren skal kunne rette nyheder, boliger og tekst generelt. Estimeres til 80 units.
+
+\item Finde boliger ved at bruge avanceret søgning. Ting man f.eks. kan søge på: km^2, husdyr, børn, eget bad og køkken, antal værelse og hvilken internet og tv udbyder man vil have. Estimeres til 20 units.
+
+\item Bolig kvik-søgning på forsiden. Man skal kunne søge på antal personer (1 eller 2) og postnr. Estimeres til 5 units.
+
+\item En liste med boliger der har ingen eller kort ventetid til studerende i akut bolignød. Estimeres til 2 units.
+
+\item Man skal kunne sortere de fremsøgte boliger efter pris, ventetid, beliggenhed. Beliggenhed er umuligt at estimere på nuværende tidpunkt. Range 2-100.
+
+\item Hjemmesiden skal være brugervenlig så man hurtigt kan finde en bolig der passer til ens behov. Information skal derfor være nemt tilgængeligt og struktureret. Estimeres til 17 units.
+
+\item Mulighed for brugerne at logge ind med emails istedet for bruger nummer. Er udgangspunkt og estimeres derfor til 1 unit.
+
+\item Boliger skal placeres med geografisk lokation på et kort
+
+\item Integration med webbolig, så informationsmedarbejderne nemt kan bearbejde ansøgningerne.
+
+\end{enumerate}
+
+\subsection{Release planning meeting}
+
+Vi valgte at estimere vha. planning poker. 11. punkt, der vedrører login via. email estimeres til 1 unit. De øvrige features estimerede vi  ud fra denne feature og prioriterede dem derefter udfra bubblesort metoden. Resultatet er vist ovenover.
+
+Foruden at hjælpe os til at estimere, gav planning poker også anledning til at diskutere de enkelte user stories, og hvad de hver især indebærer. Da vi ved en user story kom frem til et spænd på 2-100, fandt vi ud af at der ikke var taget højde for nødvendigheden af et Content management system. Som det ses ud fra listen over features, har vi estimeret det til at være meget tidskrævende at implementere i forhold til mange af de andre features.
+
+Vi er kommet frem til følgende done kriterie, som passer til den valgte udviklingsmetode: Code complete, merged og gennemført peer review..
+
+For at fastsætte, hvor lang tid en unit udgør, implementerede vi user story 11. Vi kom frem til at én unit svarer til ca. 70 minutters pair programming.
+
+Da vi havde estimeret os frem til en idé om, hvor lang tid det vil tage at implementere systemet, fastsatte vi første og eneste release til d. 21 maj 2012. Pga. den korte tidsperiode, vurderede vi at vi ikke kan nå at implementere alle features inden deadline.
+
+Vi har valgt medtage festures 1-11 i release, da features 12 og 13 er for omfattende. De kræver dels at vi får adgang til Kollegiekontorets bagvedlæggende system, og dels at det kan koste penge at integrere systemet med kort. Begge features vurderes desuden til at være meget tidskrævende, idet udviklerne skal være fortrolige med API’erne.
+
+\subsection{Releaseplan}
+På figur ~\ref{release_plan} ses vores releaseplan.
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{releaseplan}
+\caption{Releaseplan}
+\label{release_plan}
+\end{figure}
 
 \section{Iterationer}
 
+Herunder har vi dokumenteret, hvordan vi konkret har valgt at bruge SCRUM og XP i det daglige.
+
+Stedet vi havde valgt at have vores ‘base’ var i vores klasselokale. Rundt om bordet hvor vi sad havde vi stillet tavler op som vi kunne skrive på og hænge vores plancher op som f.eks. burn-down charts og scrumboards. Af mangel på bedre muligheder, fungerede tavlerne også som rumopdelere, så gruppen sad i en såkaldt “cubicle”.
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{ziriuzarbejde}
+\caption{Vores cubicle}
+\label{cubicle}
+\end{figure}
+
+Som tidligere nævnt har vi benyttet os af planning poker til at estimere vores user stories og tasks. Det har gjort, at vi nemt har kunnet planlægge vores sprints, hvilket har været meget rart.
+
+User stories og tasks blev arrangeret på et traditionelt scrumboard (Fig. ~\ref{s_board}), hvor tasks kan være hhv. “not checked out”, “checked out”, og “done” (som er de tasks, der opfylder vores done kriterie).
+
+Denne anvendelse har gjort vores user stories mere håndgribelige, og har betydet, at vi nemmere har kunnet følge med i hvor langt vi er kommet.
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{scrumboard}
+\caption{SCRUM board}
+\label{s_board}
+\end{figure}
+
+Til at styre den daglige planlægning, har vi holdt standup-meetings á 10 minutters varighed. De blev brugt til at belyse dagsordenen, blotlægge eventuelle forhindringer og snakke om sprintets generelle status.
+
+Pair programming og sit together, fra XP, har også været praktikker, som har fungeret rigtig godt og resulteret i at vi alle er blevet stærkere i de benyttede udviklingsværktøjer.
+
+Desuden har vi gennem hele projektet har vi benyttet os af slack, som er endnu en af XP’s praktikker, og det har medført at der har været en god koncentration om opgaven når vi har arbejdet aktivt på projektet. Slack har været i form af sociale aktiviteter i gruppen, som har holdt humør og energi oppe.
+
+\subsection{Sprint planning meeting: 1. sprint}
+
+\begin{tabular}{| l | l |}
+
+\hline
+Sprint længde & 1½ uge \\ \hline
+Arbejdsdage i dette sprint & 7 dage \\ hline
+\end{tabular}
+
+\begin{tabular}{| p{4cm} | p{4cm} | p{4cm} | p{4cm} |}
+Team medlem & Total antal tilgængelige dage & Tilgængelige timer per dag & Total antal timer \\ \hline
+Silas & 7 & 6 & 42 \\ \hline
+Tina & 7 & 6 & 42 \\ \hline
+Andreas & 7 & 6 & 42 \\ \hline
+Jannie & 5 & 6 & 30 \\ \hline
+Erik & 5 & 6 & 30 \\ \hline
+\end{tabular}
+
+Vi startede første sprint med at estimere vores velocity, som er fastsat til omkring 12 units per dag. Vi er kommet frem til at der er 186 timer tilgængelig til sprintet, og har vurderet at for at overhovedet at kunne løse story 5 på 80u skal den passe ind her. Da story 4 er en byggesten til story 5 og til sammenligning ubetydelig lille, ender sprint 1 på at omfatte 82u eller 95 pair programming timer. For at få det til at passe sammen kan al programmering dog ikke være i par.
+
+Formålet med sprintet er at få fremstillet grundpillen for resten af systemet og få det op og køre, så der er noget at arbejde videre på.
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{sprint1log}
+\caption{Grafisk fremstilling af sprint backlog}
+\label{sprintlog1}
+\end{figure}
+
+\subsubsection{Sprint review}
+
+Sidste dag i sprintet blev der lagt en prøve version af sitet på nettet og derefter tog vi ind til Kollegiekontoret for at lave et sprint review og derved vise dem, hvad vi har nået i sprintet. Lene var hovedsageligt positiv overfor den nuværende implementation og syntes, at vi har ramt godt i forhold til deres ønsker, samt at systemet ser intuitivt ud at bruge. Vi snakkede dog om, hvorvidt man kan fokusere for meget på brugervenlighed. Det blev derfor aftalt, at der skal oprettes en bruger med admin-rettigheder, så flere brugere hos Kollegiekontoret kan prøve systemet på egen hånd på et aftalt tidspunkt, og vurdere om der skal laves ændringer. Desuden blev det aftalt at vi skulle fortsætte med implementationen i samme stil som hidtil.
+
+\subsubsection{Sprint retrospective}
+
+Efter mødet satte teamet sig ned og snakkede om hvordan sprintet var forløbet. Det foregik ved at bruge en tavle med to spalter, hhv. “what works” og “what could be improved”. På den positive side fandt vi ud af, at vi havde nået vores mål, at scrum board og backlogs samt gruppe programmering/sit together fungerede godt. Jf. burn down chartet havde sprintet en hård start, hvilket kan skyldes nye arbejdsmetoder samt generelle opstartsproblemer, men efter tilvænningsperioden blev gruppen mere effektiv. Det at bruge scrum værktøjer som boards og backlogs gjorde det meget nemmere at koordinere arbejdet og det gav en positiv følelse at kunne følge sprintets fremskridt hele tiden. Modsat fandt vi ud af, at vi ikke har været gode til at holde standup meetings. Det vil vi førsøge at forbedre i næste sprint. Desuden kunne vi ikke undgå at komme ind på at omgivelserne ikke er optimale, og at problemer med skolens internet har været en stor hindring for vores arbejde.
+
+\subsection{Sprint planning meeting: 2. sprint}
+
+\begin{tabular}{| l | l |}
+
+\hline
+Sprint længde & 1 uge \\ \hline
+Arbejdsdage i dette sprint & 4 dage \\ hline
+\end{tabular}
+
+\begin{tabular}{| p{4cm} | p{4cm} | p{4cm} | p{4cm} |}
+Team medlem & Total antal tilgængelige dage & Tilgængelige timer per dag & Total antal timer \\ \hline
+Silas & 4 & 6 & 24 \\ \hline
+Tina & 4 & 6 & 24 \\ \hline
+Andreas & 4 & 6 & 24 \\ \hline
+Jannie & 4 & 6 & 24 \\ \hline
+Erik & 4 & 6 & 24 \\ \hline
+\end{tabular}
+
+Andet sprint startede igen ud med et sprint planning meeting. Vi fastsatte sprintets velocity til 48 units og udvalgte vha. den fastsatte estimering user stories svarende til dette ud fra prioriteringen. Da vi ikke kunne få det til at gå op med den fastsatte velocity, blev vi på baggrund af erfaring fra første sprint, enige om at tage en stor user story med (nr. 6 som er implementering af advanceret søgning), som går ud over vores velocity. Der er derfor risiko for at alle tasks for den pågældende user story ikke bliver færdig, hvor vi i så fald overdrager den/dem til næste sprint.
+
+Formålet med dette sprint var hovedsageligt, at implementere user stories der vedrører slutbrugerne.
+
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{sprint2log}
+\caption{Grafisk fremstilling af sprint backlog}
+\label{sprintlog1}
+\end{figure}
+
+\subsubsection{Revision af product backlog}
+
+Under sprintet kom det pludselig frem, at en essentiel del af funktionaliteten ikke er dækket ind, nævnlig den del, der vedrører ansøgning af boliger. Under hidtidige møder med Kollegiekontoret er emnet ikke blevet bragt op. Det viser, at det er vigtigt at være påpasselig med at user stories dækker al funktionalitet og at ingenting er underforstået, men skal blotlægges og dokumenteres. På grund af vores valg af en agil udviklingsmetode er det nemt at tilføje funktionalitet til systemet - det handler blot om at tilpasse fremtidige releases og sprints herefter.
+
+De nye user stories er beskrevet således:
+
+\begin{enumerate}
+
+\item Brugere skal kunne oprette en profil der indeholder generelle brugeroplysninger, samt oplysninger om hvornår de ønsker en bolig fra og tidsperioden de forventes under uddannelse.
+
+\item Når en bruger er inde på en bolig’s side, skal det være muligt at oprette en boligansøgning baseret på dennes info og brugerens oplysninger.
+
+\end{enumerate}
+
+Idet første release lægger fast, er det ikke muligt at tilføje funktionaliteten herunder, så vi har valgt ikke at estimere disse user stories. Dog vurderer vi, at de trods deres vigtighed ikke er særlig omfattende, så hvis der var flere releases inden deadline ville det ikke kræve megen tid at implementere dem.
 
 \section{Kvalitetsbeskrivelse}
 
@@ -320,10 +543,10 @@ Dokument- og versionsstyring: Andreas Kristoffersen
 
 \chapter{Produktet}
 \section{Kravspecifikation}
-
+%Indsæt billede backlog
 
 \section{Testcases}
-
+%lolwut
 
 \section{Modeller}
 
@@ -332,27 +555,26 @@ Dokument- og versionsstyring: Andreas Kristoffersen
 
 
 \section{Kode}
+%Indsæt interessant kode
 
+\chapter{Bilag}
 
-\section{Bilag}
-
-\begin{figure}
+\begin{SCfigure}
 \includegraphics[width=0.5\textwidth]{eksperiment_forside}
-\caption{Eksperiment: Forside}
+\caption{Eksperiment: Forside med nyheder som hovedelementet, en simpel menu i toppen giver bedre overblik og navigation}
 \label{e_forside}
-\end{figure}
+\end{SCfigure}
 
-\begin{figure}
+\begin{SCfigure}
 \includegraphics[width=0.5\textwidth]{eksperiment_liste}
-\caption{Eksperiment: Liste / Søgeresultat}
+\caption{Eksperiment: Liste / Søgeresultat med fokus på det værelse der passer til søgningen men stadig med data fra den afdeling det hører under}
 \label{e_liste}
-\end{figure}
+\end{SCfigure}
 
-\begin{figure}
+\begin{SCfigure}
 \includegraphics[width=0.5\textwidth]{eksperiment_soeg}
-\caption{Eksperiment: Avanceret søgning}
+\caption{Eksperiment: Avanceret søgning. Overblik over de muligheder der kunne være i en avanceret og tilpasset søgning, layout vil blive optimeret.}
 \label{e_soeg}
-\end{figure}
+\end{SCfigure}
 
 \end{document}
-
