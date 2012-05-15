@@ -36,6 +36,7 @@ namespace Kollegie.Web.Controls
                 bolig temp = query.First();
                 Session.Add("bolig", temp); 
 
+                area.Value = temp.area.ToString();
                 bath.Checked = temp.bath == 1;
                 cats.Value = temp.cat_amount.ToString();
                 children.Checked = temp.children == 1;
