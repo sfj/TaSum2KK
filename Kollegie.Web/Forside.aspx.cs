@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -23,7 +24,7 @@ public partial class Forside : System.Web.UI.Page
         {
             NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
             OControl.Text = null;
-            NewsContent.Controls.Add(OControl);
+            //NewsContent.Controls.Add(OControl);
         }
 
         var tekster = from t in DB.nyheds orderby t.created descending select t;
@@ -33,12 +34,12 @@ public partial class Forside : System.Web.UI.Page
             {
                 NewsEditorControl OControl = (NewsEditorControl)LoadControl("~/Controls/NewsEditorControl.ascx");
                 OControl.Text = t;
-                NewsContent.Controls.Add(OControl);
+                //NewsContent.Controls.Add(OControl);
             }
             else if (CanEditPage() || t.hidden != true)
             {
                 RenderControl OControl = (RenderControl)LoadControl("~/Controls/NewsRenderControl.ascx");
-                OControl.Text = t;                
+                OControl.Text = t;
                 OControl.canEdit = CanEditPage();
                 NewsContent.Controls.Add(OControl);
             }

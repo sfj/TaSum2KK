@@ -29,7 +29,7 @@
 			<tr><td class="space1"><asp:HyperLink NavigateUrl="Forside.aspx" runat="server"><img src="img/titlebanner.jpg" alt="title banner" /></asp:HyperLink></td></tr>    
 			<tr><td class="menubar">
             
-            	<table><tr><asp:PlaceHolder ID="Menu" runat="server"></asp:PlaceHolder></tr></table>
+            	<table width="100%"><tr><asp:PlaceHolder ID="Menu" runat="server"></asp:PlaceHolder></tr></table>
                     
 			</td></tr>    
 			<tr><td class="space2"></td></tr>

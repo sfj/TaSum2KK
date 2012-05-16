@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,8 +15,7 @@ namespace Kollegie.Web.Controls
         private Entities DB = Global.DB;
 
         protected void Page_Load(object sender, EventArgs e)
-        {            
-        
+        {
         }
 
         protected override void OnPreRender(EventArgs e)
@@ -26,7 +26,7 @@ namespace Kollegie.Web.Controls
                 {
                     ValidateLogin();
                 }
-            }    
+            }
             if (Session["user"] != null)
             {
                 LoginTable.Visible = false;
@@ -40,7 +40,7 @@ namespace Kollegie.Web.Controls
             }
         }
 
-        protected void LogoutButtonClick(object sender, EventArgs e) 
+        protected void LogoutButtonClick(object sender, EventArgs e)
         {
             Session["user"] = null;
             FormsAuthentication.SignOut();
@@ -64,6 +64,7 @@ namespace Kollegie.Web.Controls
             {
                 Response.Redirect("LoginError.aspx");
             }
+            
         }
     }
 }

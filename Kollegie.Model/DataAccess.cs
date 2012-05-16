@@ -12,7 +12,6 @@ public class DataAccess
 {
 
     private static DataAccess uniqueInstance;
-    private static Object lockObj = new Object();
 
     private Entities db;
 
@@ -48,10 +47,7 @@ public class DataAccess
     {
         if (uniqueInstance == null)
         {
-            lock(lockObj) 
-            {
                 uniqueInstance = uniqueInstance == null ? new DataAccess(mappath) : uniqueInstance;
-            }
             
         }
         return uniqueInstance;
