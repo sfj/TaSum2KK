@@ -3,9 +3,9 @@
 <table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
-            Afdelinger:
+            Afdelinger:<br />
             <select id="departments" name="departments" runat="server" size="5">
-            </select>
+            </select><br />
             Område:<br />
             <select id="area" name="area" runat="server" size="5">
             </select><br />
@@ -42,7 +42,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <asp:Button runat="server" ID="derp" Text="Gem" OnClick="derp_OnClick" CssClass="button" />
+            <asp:Button runat="server" ID="derp" Text="Søg" OnClick="derp_OnClick" CssClass="button" />
         </td>
     </tr>
 </table>
