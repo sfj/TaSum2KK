@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="~/Controls/SearchBoligControl.ascx.cs"
     Inherits="Kollegie.Web.Controls.SearchBoligControl" %>
+    <br />
 <table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
