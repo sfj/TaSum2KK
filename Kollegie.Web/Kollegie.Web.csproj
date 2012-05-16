@@ -119,6 +119,13 @@
     <Compile Include="Controls\SubMenuPunktControl.ascx.designer.cs">
       <DependentUpon>SubMenuPunktControl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Formularside.aspx.cs">
+      <DependentUpon>Formularside.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularside.aspx.designer.cs">
+      <DependentUpon>Formularside.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forside.aspx.designer.cs">
       <DependentUpon>Forside.aspx</DependentUpon>
     </Compile>
@@ -175,6 +182,7 @@
     <Content Include="Controls\NewsRenderControl.ascx" />
     <Content Include="Controls\OpretRedigerBoligControl.ascx" />
     <Content Include="Controls\SubMenuPunktControl.ascx" />
+    <Content Include="Formularside.aspx" />
     <Content Include="img\fed.png" />
     <Content Include="Forside.aspx" />
     <Content Include="Global.asax" />

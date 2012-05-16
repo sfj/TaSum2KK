@@ -15,43 +15,56 @@ public partial class Boliger : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        var temp = from t in DB.boligs select t;
-        //where
-        //pris < ?
-        //kat >= ?, kat = 0
-        //hund >= ? hund = 0
-        //andre dyr >= ? andre dyr = 0
-        //børn 0 || 1
-        //eget bad 0 || 1
-        //eget køkken 0 || 1
-        //antal vær >= ?
-        //fritekst LIKE %?%
+        
 
         // building query with method syntax:
         IQueryable<bolig> query = DB.boligs; // initialise query
-        int pris = 3000; // get variables
-        int cats = 2;
-        int dogs = 1;
-        if (pris > 0) // add filters with filter methods
-        {
-            query = query.Where<bolig>(b => b.monthly_price < pris);
+        bolig bolig_result = (bolig)Session["search_result"];
+        if(bolig_result != null){
+
+            if (bolig_result.monthly_price != -1) // add filters with filter methods
+            {
+                query = query.Where<bolig>(b => b.monthly_price < bolig_result.monthly_price);
+            }
+            if (bolig_result.cat_amount != -1)
+            {
+                query = query.Where<bolig>(b => b.cat_amount >= bolig_result.cat_amount);
+            }
+            if (bolig_result.dog_amount != -1)
+            {
+                query = query.Where<bolig>(b => b.dog_amount >= bolig_result.dog_amount);
+            }
+            if (bolig_result.small_pets_amount != -1) {
+                query = query.Where<bolig>(b => b.small_pets_amount >= bolig_result.small_pets_amount);
+            }
+            if (bolig_result.persons != -1) {
+                query = query.Where<bolig>(b => b.persons >= bolig_result.persons);
+            }
+            if (bolig_result.children == 1) {
+                query = query.Where<bolig>(b => b.children == bolig_result.children);
+            }
+            if (bolig_result.kitchen == 1) {
+                query = query.Where<bolig>(b => b.kitchen == bolig_result.kitchen);
+            }
+            if (bolig_result.bath == 1) {
+                query = query.Where<bolig>(b => b.bath == bolig_result.bath);
+            }
+            if (bolig_result.rooms != -1) {
+                query = query.Where<bolig>(b => b.rooms >= bolig_result.rooms);
+            }
+            if (bolig_result.surfacearea != -1) {
+                query = query.Where<bolig>(b => b.surfacearea >= bolig_result.surfacearea);
+            }
+            if (bolig_result.description_dk != null) {
+                if (Session["lang"] == "da") {
+                    query = query.Where<bolig>(b => b.description_dk.Contains(bolig_result.description_dk));
+                }
+                else if(Session["lang"] == "en") {
+                    query = query.Where<bolig>(b => b.description_en.Contains(bolig_result.description_en));
+                }
+            }
         }
-        if (cats > 0)
-        {
-            query = query.Where<bolig>(b => b.cat_amount >= cats);
-        }
-        else
-        {
-            query = query.Where<bolig>(b => b.cat_amount == 0);
-        }
-        if (dogs > 0)
-        {
-            query = query.Where<bolig>(b => b.dog_amount >= dogs);
-        }
-        else
-        {
-            query = query.Where<bolig>(b => b.dog_amount == 0);
-        }
+        
 
         query = query.Select(b => b); // finally select boliger, optionally order etc.
 
@@ -89,7 +102,7 @@ public partial class Boliger : System.Web.UI.Page
             department.Text = "Department";
         }
 
-        foreach (var t in temp)
+        foreach (var t in query)
         {
             if(((string)Session["lang"]) == "da")
             {

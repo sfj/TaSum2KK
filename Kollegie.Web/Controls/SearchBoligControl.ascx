@@ -4,10 +4,10 @@
     <tr>
         <td>
             Afdelinger:
-            <select id="departments" name="departments" runat="server" multiple="multiple">
+            <select id="departments" name="departments" runat="server" size="5">
             </select>
             Område:<br />
-            <select id="area" name="departments" runat="server" multiple="multiple">
+            <select id="area" name="area" runat="server" size="5">
             </select><br />
             Kvm:<br />
             <input type="text" name="surfacearea" id="surfacearea" runat="server" /><br />
@@ -18,7 +18,7 @@
             Antal værelser:<br />
             <input type="text" name="rooms" id="rooms" runat="server" /><br />
             Antal personer:<br />
-            <select id="Select2" name="departments" runat="server">
+            <select id="persons" name="persons" runat="server">
             <option>1</option>
             <option>2</option>
             </select><br />
