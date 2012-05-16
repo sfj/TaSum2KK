@@ -16,6 +16,8 @@ namespace Kollegie.Web.Controls
         protected override void OnInit(EventArgs e) {
             base.OnInit(e);
 
+            departments.Items.Add("Alle afdelinger");
+
 
             foreach (var b in DB.departments) {
                 departments.Items.Add(b.name);
@@ -24,11 +26,25 @@ namespace Kollegie.Web.Controls
             departments.DataBind();
         }
 
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+            derp.Text = ((string)Session["lang"]) == "en" ? "Search" : "Søg" ;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             bolig bolig_search = (bolig)Session["search_result"];
 
             if (bolig_search != null) {
+                int index_department = 0;
+                if(bolig_search.department != -1) {
+                    index_department = departments.Items.IndexOf(
+                        departments.Items.FindByText(
+                            (from d in DB.departments where d.id == bolig_search.department select d.name).First()));
+                }
+
+                departments.SelectedIndex = index_department;
                 area.Value = bolig_search.area != -1 ? bolig_search.area.ToString() : "";
                 bath.Checked = bolig_search.bath != 0 ? bolig_search.bath == 1 : false;
                 cats.Value = bolig_search.cat_amount != -1 ? bolig_search.cat_amount.ToString() : "";
@@ -42,25 +58,31 @@ namespace Kollegie.Web.Controls
                 surfacearea.Value = bolig_search.surfacearea != -1 ? bolig_search.surfacearea.ToString() : "";
             }
 
-            area.Multiple = true;
-            departments.Multiple = true;
+            //area.Multiple = true;
+            //departments.Multiple = true;
         }
 
         protected void derp_OnClick(object sender, EventArgs e)
         {
             bolig b = new bolig();
 
+            int selected_department = -1;
+            if (departments.SelectedIndex > 0)
+            {
+                selected_department = (from temp in DB.departments where departments.Value == temp.name select temp).SingleOrDefault().id;
+            }
+
             b.bath = (bath.Checked) ? 1 : 0;
             b.cat_amount = cats.Value != "" ? Convert.ToInt32(cats.Value) : -1;
             b.children = (children.Checked) ? 1 : 0;
-            b.department = (from temp in DB.departments where departments.Value == temp.name select temp).SingleOrDefault().id;
+            b.department = selected_department;
             b.description_dk = description_dk.Value != "" ? description_dk.Value : null;
             b.dog_amount = dogs.Value != "" ? Convert.ToInt32(dogs.Value) : -1;
             b.persons = persons.Value != "" ? Convert.ToInt32(persons.Value) : -1;
             b.kitchen = (kitchen.Checked) ? 1 : 0;
             b.monthly_price = monthly_price.Value != "" ? Convert.ToDecimal(monthly_price.Value) : -1;
             b.rooms = rooms.Value != "" ? Convert.ToInt32(rooms.Value) : -1;
-            b.small_pets_amount = monthly_price.Value != "" ? Convert.ToInt32(small_pets.Value) : -1;
+            b.small_pets_amount = small_pets.Value != "" ? Convert.ToInt32(small_pets.Value) : -1;
             b.surfacearea = surfacearea.Value != "" ? Convert.ToDecimal(surfacearea.Value) : -1;
 
             Session["search_result"] = b;

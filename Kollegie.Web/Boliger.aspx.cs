@@ -36,6 +36,9 @@ public partial class Boliger : System.Web.UI.Page
             if (bolig_result.small_pets_amount != -1) {
                 query = query.Where<bolig>(b => b.small_pets_amount >= bolig_result.small_pets_amount);
             }
+            if (bolig_result.department != -1) {
+                query = query.Where<bolig>(b => b.department == bolig_result.department);
+            }
             if (bolig_result.persons != -1) {
                 query = query.Where<bolig>(b => b.persons >= bolig_result.persons);
             }
