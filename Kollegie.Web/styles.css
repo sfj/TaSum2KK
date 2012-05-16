@@ -361,3 +361,19 @@ textarea.rediger {
     width: 600px;
     height: 200px;
 }
+
+td.area, td.boliginfo, td.boligcontent {
+    vertical-align: top;
+}
+
+td.area {
+    width: 175px;
+}
+
+td.boliginfo {
+    width: 125px;
+}
+
+td.boligcontent {
+    width: auto;
+}
