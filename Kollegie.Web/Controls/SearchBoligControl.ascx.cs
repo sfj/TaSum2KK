@@ -37,6 +37,14 @@ namespace Kollegie.Web.Controls
             bolig bolig_search = (bolig)Session["search_result"];
 
             if (bolig_search != null) {
+                int index_department = 0;
+                if(bolig_search.department != -1) {
+                    index_department = departments.Items.IndexOf(
+                        departments.Items.FindByText(
+                            (from d in DB.departments where d.id == bolig_search.department select d.name).First()));
+                }
+
+                departments.SelectedIndex = index_department;
                 area.Value = bolig_search.area != -1 ? bolig_search.area.ToString() : "";
                 bath.Checked = bolig_search.bath != 0 ? bolig_search.bath == 1 : false;
                 cats.Value = bolig_search.cat_amount != -1 ? bolig_search.cat_amount.ToString() : "";
@@ -50,8 +58,8 @@ namespace Kollegie.Web.Controls
                 surfacearea.Value = bolig_search.surfacearea != -1 ? bolig_search.surfacearea.ToString() : "";
             }
 
-            area.Multiple = true;
-            departments.Multiple = true;
+            //area.Multiple = true;
+            //departments.Multiple = true;
         }
 
         protected void derp_OnClick(object sender, EventArgs e)

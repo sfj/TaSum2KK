@@ -3,11 +3,11 @@
 <table class="oprettable" runat="server" id="OpretRedigerTable"> 
     <tr>
         <td>
-            Afdelinger:<br />
-            <select id="departments" name="departments" runat="server" size="5">
+            Afdelinger:<br />            
+            <select id="departments" name="departments" runat="server">
             </select><br />
             Område:<br />
-            <select id="area" name="area" runat="server" size="5">
+            <select id="area" name="area" runat="server">
             </select><br />
             Kvm:<br />
             <input type="text" name="surfacearea" id="surfacearea" runat="server" /><br />
