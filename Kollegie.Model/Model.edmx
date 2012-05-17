@@ -416,30 +416,30 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Model">
-        <EntityTypeShape EntityType="Model.bolig" Width="1.5" PointX="3" PointY="6" Height="4.480205078125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.department" Width="1.5" PointX="0.75" PointY="7.125" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.menu" Width="1.5" PointX="3" PointY="1" Height="3.1340950520833313" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.nyhed" Width="1.5" PointX="5.75" PointY="4.75" Height="2.3648893229166656" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.skabelon" Width="1.5" PointX="0.75" PointY="1.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.tekst" Width="1.5" PointX="5.25" PointY="1.5" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.user" Width="1.5" PointX="7.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.bolig" Width="1.5" PointX="4.5" PointY="0.5" Height="4.480205078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.department" Width="1.5" PointX="2.5" PointY="4.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.menu" Width="1.5" PointX="2.5" PointY="0.5" Height="3.1340950520833313" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.nyhed" Width="1.5" PointX="6.5" PointY="0.5" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.skabelon" Width="1.5" PointX="0.5" PointY="0.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tekst" Width="1.5" PointX="0.5" PointY="2.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.user" Width="1.5" PointX="6.5" PointY="3.125" Height="1.7879850260416674" IsExpanded="true" />
         <AssociationConnector Association="Model.FK__bolig__departmen__398D8EEE" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="8.3074446614583337" />
-          <ConnectorPoint PointX="3" PointY="8.3074446614583337" />
+          <ConnectorPoint PointX="4" PointY="4.5526025390625" />
+          <ConnectorPoint PointX="4.5" PointY="4.5526025390625" />
         </AssociationConnector>
         <AssociationConnector Association="Model.FK__menu__page_type__0519C6AF" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.547841796875" />
-          <ConnectorPoint PointX="3" PointY="2.547841796875" />
+          <ConnectorPoint PointX="2" PointY="1.2978417968749998" />
+          <ConnectorPoint PointX="2.5" PointY="1.2978417968749998" />
         </AssociationConnector>
         <AssociationConnector Association="Model.FK__menu__parent__060DEAE8" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.5319230769230767" PointY="4.1340950520833317" />
-          <ConnectorPoint PointX="3.5319230769230767" PointY="4.3840950520833317" />
-          <ConnectorPoint PointX="3.9784615384615383" PointY="4.3840950520833317" />
-          <ConnectorPoint PointX="3.9784615384615383" PointY="4.1340950520833317" />
+          <ConnectorPoint PointX="3.0319230769230767" PointY="3.6340950520833313" />
+          <ConnectorPoint PointX="3.0319230769230767" PointY="3.8840950520833317" />
+          <ConnectorPoint PointX="3.4784615384615383" PointY="3.8840950520833317" />
+          <ConnectorPoint PointX="3.4784615384615383" PointY="3.6340950520833313" />
         </AssociationConnector>
         <AssociationConnector Association="Model.FK__tekst__side_id__0EA330E9" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="2.4901432291666659" />
-          <ConnectorPoint PointX="5.25" PointY="2.4901432291666659" />
+          <ConnectorPoint PointX="2.5" PointY="2.9420475260416659" />
+          <ConnectorPoint PointX="2" PointY="2.9420475260416659" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
